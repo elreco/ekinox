@@ -33,11 +33,11 @@ const defaultConfig: BrandConfig = {
   termsUrl: undefined,
   privacyUrl: undefined,
   theme: {
-    primaryColor: '#701ffc',
-    primaryHoverColor: '#802fff',
-    accentColor: '#9d54ff',
-    accentHoverColor: '#a66fff',
-    backgroundColor: '#0c0c0c',
+    primaryColor: '#1e40af',
+    primaryHoverColor: '#1e3a8a',
+    accentColor: '#3b82f6',
+    accentHoverColor: '#2563eb',
+    backgroundColor: '#f8fafc',
   },
 }
 

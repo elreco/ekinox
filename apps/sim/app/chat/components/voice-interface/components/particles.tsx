@@ -70,16 +70,16 @@ class SimpleBloomComposer {
         uniform float threshold;
         uniform float radius;
         varying vec2 vUv;
-        
+
         void main() {
           vec4 color = texture2D(tDiffuse, vUv);
-          
+
           // Simple bloom effect
           float brightness = dot(color.rgb, vec3(0.299, 0.587, 0.114));
           if (brightness > threshold) {
             color.rgb *= strength;
           }
-          
+
           gl_FragColor = color;
         }
       `,
@@ -412,7 +412,7 @@ export function ParticlesVisualization({
         uniforms.u_green.value = 0.2
         uniforms.u_blue.value = 0.9
       } else if (isPlayingAudio) {
-        // AI speaking: brand purple (#701FFC)
+        // AI speaking: brand purple (#1e40af)
         uniforms.u_red.value = 0.44
         uniforms.u_green.value = 0.12
         uniforms.u_blue.value = 0.99

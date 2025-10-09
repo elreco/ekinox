@@ -293,7 +293,7 @@ export function Account(_props: AccountProps) {
               {/* Profile Picture Upload */}
               <div className='relative'>
                 <div
-                  className='group relative flex h-12 w-12 flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#802FFF] transition-all hover:opacity-80'
+                  className='group relative flex h-12 w-12 flex-shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#1e3a8a] transition-all hover:opacity-80'
                   onClick={handleProfilePictureClick}
                 >
                   {(() => {

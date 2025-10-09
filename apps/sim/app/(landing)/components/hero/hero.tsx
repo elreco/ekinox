@@ -100,7 +100,7 @@ const LANDING_BLOCKS: LandingManualBlock[] = [
   {
     id: 'agent',
     name: 'Agent',
-    color: '#802FFF',
+    color: '#1e3a8a',
     icon: <AgentIcon className='h-4 w-4' />,
     positions: {
       mobile: { x: 340, y: 60 },
