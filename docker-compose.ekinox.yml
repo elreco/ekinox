@@ -1,0 +1,146 @@
+services:
+  ekinox:
+    build:
+      context: .
+      dockerfile: docker/app.Dockerfile
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    deploy:
+      resources:
+        limits:
+          memory: 12G
+        reservations:
+          memory: 4G
+    environment:
+      - NODE_ENV=production
+      - DOCKER_BUILD=true
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-ekinox}
+      - BETTER_AUTH_URL=${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+      - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET:-your_auth_secret_here}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY:-your_encryption_key_here}
+      - INTERNAL_API_SECRET=${INTERNAL_API_SECRET:-your_internal_secret_here}
+
+      # AI/LLM Configuration
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY_1=${ANTHROPIC_API_KEY_1}
+      - OLLAMA_URL=${OLLAMA_URL:-http://localhost:11434}
+      - COPILOT_API_KEY=${COPILOT_API_KEY}
+      - SIM_AGENT_API_URL=${SIM_AGENT_API_URL}
+
+      # Socket Configuration
+      - SOCKET_SERVER_URL=${SOCKET_SERVER_URL:-http://localhost:3002}
+      - NEXT_PUBLIC_SOCKET_URL=${NEXT_PUBLIC_SOCKET_URL:-http://localhost:3002}
+
+      # Ekinox Branding Variables (compilées dans l'image)
+      - NEXT_PUBLIC_BRAND_NAME=${NEXT_PUBLIC_BRAND_NAME:-Ekinox}
+      - NEXT_PUBLIC_BRAND_PRIMARY_COLOR=${NEXT_PUBLIC_BRAND_PRIMARY_COLOR:-#1e40af}
+      - NEXT_PUBLIC_BRAND_PRIMARY_HOVER_COLOR=${NEXT_PUBLIC_BRAND_PRIMARY_HOVER_COLOR:-#1e3a8a}
+      - NEXT_PUBLIC_BRAND_ACCENT_COLOR=${NEXT_PUBLIC_BRAND_ACCENT_COLOR:-#3b82f6}
+      - NEXT_PUBLIC_BRAND_ACCENT_HOVER_COLOR=${NEXT_PUBLIC_BRAND_ACCENT_HOVER_COLOR:-#2563eb}
+      - NEXT_PUBLIC_BRAND_BACKGROUND_COLOR=${NEXT_PUBLIC_BRAND_BACKGROUND_COLOR:-#f8fafc}
+      - NEXT_PUBLIC_BRAND_LOGO_URL=${NEXT_PUBLIC_BRAND_LOGO_URL}
+      - NEXT_PUBLIC_BRAND_FAVICON_URL=${NEXT_PUBLIC_BRAND_FAVICON_URL}
+      - NEXT_PUBLIC_SUPPORT_EMAIL=${NEXT_PUBLIC_SUPPORT_EMAIL}
+      - NEXT_PUBLIC_DOCUMENTATION_URL=${NEXT_PUBLIC_DOCUMENTATION_URL}
+      - NEXT_PUBLIC_TERMS_URL=${NEXT_PUBLIC_TERMS_URL}
+      - NEXT_PUBLIC_PRIVACY_URL=${NEXT_PUBLIC_PRIVACY_URL}
+
+      # SaaS Features
+      - NEXT_PUBLIC_BILLING_ENABLED=${NEXT_PUBLIC_BILLING_ENABLED:-true}
+      - BILLING_ENABLED=${BILLING_ENABLED:-true}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+      - STRIPE_FREE_PRICE_ID=${STRIPE_FREE_PRICE_ID}
+      - STRIPE_PRO_PRICE_ID=${STRIPE_PRO_PRICE_ID}
+      - STRIPE_TEAM_PRICE_ID=${STRIPE_TEAM_PRICE_ID}
+      - STRIPE_ENTERPRISE_PRICE_ID=${STRIPE_ENTERPRISE_PRICE_ID}
+
+      # Features & Analytics
+      - NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED=${NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED:-true}
+      - NEXT_PUBLIC_POSTHOG_ENABLED=${NEXT_PUBLIC_POSTHOG_ENABLED:-true}
+      - NEXT_PUBLIC_POSTHOG_KEY=${NEXT_PUBLIC_POSTHOG_KEY}
+      - NEXT_PUBLIC_E2B_ENABLED=${NEXT_PUBLIC_E2B_ENABLED:-true}
+      - NEXT_PUBLIC_TRIGGER_DEV_ENABLED=${NEXT_PUBLIC_TRIGGER_DEV_ENABLED:-true}
+
+      # Email Configuration
+      - EMAIL_VERIFICATION_ENABLED=${EMAIL_VERIFICATION_ENABLED:-true}
+      - FROM_EMAIL_ADDRESS=${FROM_EMAIL_ADDRESS}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+
+      # Security
+      - NEXT_TELEMETRY_DISABLED=1
+
+    depends_on:
+      db:
+        condition: service_healthy
+      migrations:
+        condition: service_completed_successfully
+      realtime:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'wget', '--spider', '--quiet', 'http://127.0.0.1:3000']
+      interval: 90s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  realtime:
+    build:
+      context: .
+      dockerfile: docker/realtime.Dockerfile
+    restart: unless-stopped
+    ports:
+      - '3002:3002'
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-ekinox}
+      - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+      - BETTER_AUTH_URL=${BETTER_AUTH_URL:-http://localhost:3000}
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET:-your_auth_secret_here}
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'wget', '--spider', '--quiet', 'http://127.0.0.1:3002/health']
+      interval: 90s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  migrations:
+    build:
+      context: .
+      dockerfile: docker/db.Dockerfile
+    working_dir: /app/packages/db
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-ekinox}
+    depends_on:
+      db:
+        condition: service_healthy
+    command: ['bun', 'run', 'db:migrate']
+    restart: 'no'
+
+  db:
+    image: pgvector/pgvector:pg17
+    restart: unless-stopped
+    ports:
+      - '${POSTGRES_PORT:-5432}:5432'
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - POSTGRES_DB=${POSTGRES_DB:-ekinox}
+    volumes:
+      - postgres_data_ekinox:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data_ekinox:
