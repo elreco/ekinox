@@ -1,7 +1,6 @@
 'use client'
 
 import { useMemo } from 'react'
-import { cloneDeep } from 'lodash'
 import ReactFlow, {
   Background,
   ConnectionLineType,
@@ -175,7 +174,7 @@ export function WorkflowPreview({
         return
       }
 
-      const subBlocksClone = block.subBlocks ? cloneDeep(block.subBlocks) : {}
+      const subBlocksClone = block.subBlocks ? structuredClone(block.subBlocks) : {}
 
       nodeArray.push({
         id: blockId,
