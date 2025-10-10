@@ -9,7 +9,7 @@ export const JiraBlock: BlockConfig<JiraResponse> = {
   description: 'Interact with Jira',
   authMode: AuthMode.OAuth,
   longDescription: 'Integrate Jira into the workflow. Can read, write, and update issues.',
-  docsLink: 'https://docs.sim.ai/tools/jira',
+  docsLink: 'https://docs.ekinox.app/tools/jira',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: JiraIcon,

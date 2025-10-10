@@ -469,18 +469,18 @@ telemetry:
     requests:
       memory: "512Mi"
       cpu: "200m"
-  
+
   # Enable Jaeger for distributed tracing
   jaeger:
     enabled: true
     endpoint: "http://jaeger-collector:14250"
-  
+
   # Enable Prometheus for metrics
   prometheus:
     enabled: true
     endpoint: "http://prometheus-server/api/v1/write"
     auth: "Bearer your-prometheus-token"
-  
+
   # Enable generic OTLP for flexibility
   otlp:
     enabled: true
@@ -552,22 +552,22 @@ Enable automated scheduled tasks functionality:
 ```yaml
 cronjobs:
   enabled: true
-  
+
   # Customize individual jobs
   jobs:
     scheduleExecution:
       enabled: true
       schedule: "*/1 * * * *"  # Every minute
-    
+
     gmailWebhookPoll:
       enabled: true
       schedule: "*/1 * * * *"  # Every minute
-    
+
     outlookWebhookPoll:
       enabled: true
       schedule: "*/1 * * * *"  # Every minute
-    
-      
+
+
   # Global job configuration
   resources:
     limits:
@@ -690,6 +690,6 @@ kubectl logs job/<release>-migrations
 
 ## Support
 
-- Documentation: https://docs.sim.ai
+- Documentation: https://docs.ekinox.app
 - GitHub Issues: https://github.com/simstudioai/sim/issues
 - Discord: https://discord.gg/Hr4UWYEcTT

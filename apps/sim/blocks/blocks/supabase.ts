@@ -12,7 +12,7 @@ export const SupabaseBlock: BlockConfig<SupabaseResponse> = {
   authMode: AuthMode.ApiKey,
   longDescription:
     'Integrate Supabase into the workflow. Can get many rows, get, create, update, delete, and upsert a row.',
-  docsLink: 'https://docs.sim.ai/tools/supabase',
+  docsLink: 'https://docs.ekinox.app/tools/supabase',
   category: 'tools',
   bgColor: '#1C1C1C',
   icon: SupabaseIcon,

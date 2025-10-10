@@ -218,7 +218,7 @@ export function SearchModal({
         id: 'docs',
         name: 'Docs',
         icon: BookOpen,
-        href: brand.documentationUrl || 'https://docs.sim.ai/',
+        href: brand.documentationUrl || 'https://docs.ekinox.app/',
       },
     ],
     [workspaceId]

@@ -10,7 +10,7 @@ export const TelegramBlock: BlockConfig<TelegramMessageResponse> = {
   authMode: AuthMode.BotToken,
   longDescription:
     'Integrate Telegram into the workflow. Can send messages. Can be used in trigger mode to trigger a workflow when a message is sent to a chat.',
-  docsLink: 'https://docs.sim.ai/tools/telegram',
+  docsLink: 'https://docs.ekinox.app/tools/telegram',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: TelegramIcon,

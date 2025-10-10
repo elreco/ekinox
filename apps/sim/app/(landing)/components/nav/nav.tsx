@@ -60,7 +60,7 @@ export default function Nav({ hideAuthButtons = false, variant = 'landing' }: Na
     <>
       <li>
         <Link
-          href='https://docs.sim.ai'
+          href='https://docs.ekinox.app'
           target='_blank'
           rel='noopener noreferrer'
           className='text-[16px] text-muted-foreground transition-colors hover:text-foreground'

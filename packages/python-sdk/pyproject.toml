@@ -46,7 +46,7 @@ dev = [
 
 [project.urls]
 Homepage = "https://sim.ai"
-Documentation = "https://docs.sim.ai"
+Documentation = "https://docs.ekinox.app"
 Repository = "https://github.com/simstudioai/sim"
 "Bug Reports" = "https://github.com/simstudioai/sim/issues"
 
@@ -81,4 +81,4 @@ strict_equality = true
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
-python_functions = ["test_*"] 
+python_functions = ["test_*"]

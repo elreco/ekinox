@@ -70,15 +70,15 @@ jobs:
           name: TypeScript SDK v${{ steps.package_version.outputs.version }}
           body: |
             ## TypeScript SDK v${{ steps.package_version.outputs.version }}
-            
+
             Published simstudio-ts-sdk@${{ steps.package_version.outputs.version }} to npm.
-            
+
             ### Installation
             ```bash
             npm install simstudio-ts-sdk@${{ steps.package_version.outputs.version }}
             ```
-            
+
             ### Documentation
-            See the [README](https://github.com/simstudioai/sim/tree/main/packages/ts-sdk) or the [docs](https://docs.sim.ai/sdks/typescript) for more information.
+            See the [README](https://github.com/simstudioai/sim/tree/main/packages/ts-sdk) or the [docs](https://docs.ekinox.app/sdks/typescript) for more information.
           draft: false
-          prerelease: false 
+          prerelease: false

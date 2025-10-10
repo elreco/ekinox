@@ -8,7 +8,7 @@ export const LinkupBlock: BlockConfig<LinkupSearchToolResponse> = {
   description: 'Search the web with Linkup',
   authMode: AuthMode.ApiKey,
   longDescription: 'Integrate Linkup into the workflow. Can search the web.',
-  docsLink: 'https://docs.sim.ai/tools/linkup',
+  docsLink: 'https://docs.ekinox.app/tools/linkup',
   category: 'tools',
   bgColor: '#D6D3C7',
   icon: LinkupIcon,

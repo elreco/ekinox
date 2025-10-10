@@ -15,7 +15,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[]; l
   if (!page) notFound()
 
   const MDX = page.data.body
-  const baseUrl = 'https://docs.sim.ai'
+  const baseUrl = 'https://docs.ekinox.app'
 
   const pageTreeRecord = source.pageTree as Record<string, any>
   const pageTree =
@@ -100,7 +100,7 @@ export async function generateMetadata(props: {
   const page = source.getPage(params.slug, params.lang)
   if (!page) notFound()
 
-  const baseUrl = 'https://docs.sim.ai'
+  const baseUrl = 'https://docs.ekinox.app'
   const fullUrl = `${baseUrl}${page.url}`
 
   return {

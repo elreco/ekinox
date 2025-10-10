@@ -8,7 +8,7 @@ export const ClayBlock: BlockConfig<ClayPopulateResponse> = {
   description: 'Populate Clay workbook',
   authMode: AuthMode.ApiKey,
   longDescription: 'Integrate Clay into the workflow. Can populate a table with data.',
-  docsLink: 'https://docs.sim.ai/tools/clay',
+  docsLink: 'https://docs.ekinox.app/tools/clay',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: ClayIcon,

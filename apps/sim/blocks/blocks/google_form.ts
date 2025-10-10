@@ -7,7 +7,7 @@ export const GoogleFormsBlock: BlockConfig = {
   description: 'Read responses from a Google Form',
   longDescription:
     'Integrate Google Forms into your workflow. Provide a Form ID to list responses, or specify a Response ID to fetch a single response. Requires OAuth.',
-  docsLink: 'https://docs.sim.ai/tools/google_forms',
+  docsLink: 'https://docs.ekinox.app/tools/google_forms',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: GoogleFormsIcon,

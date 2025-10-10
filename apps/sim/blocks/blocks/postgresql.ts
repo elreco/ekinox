@@ -8,7 +8,7 @@ export const PostgreSQLBlock: BlockConfig<PostgresResponse> = {
   description: 'Connect to PostgreSQL database',
   longDescription:
     'Integrate PostgreSQL into the workflow. Can query, insert, update, delete, and execute raw SQL.',
-  docsLink: 'https://docs.sim.ai/tools/postgresql',
+  docsLink: 'https://docs.ekinox.app/tools/postgresql',
   category: 'tools',
   bgColor: '#336791',
   icon: PostgresIcon,
@@ -145,13 +145,13 @@ Return ONLY the SQL query. Do not include any explanations, markdown formatting,
 ### EXAMPLES
 
 **Simple Select**: "Get all active users"
-→ SELECT id, name, email, created_at 
-  FROM users 
-  WHERE active = true 
+→ SELECT id, name, email, created_at
+  FROM users
+  WHERE active = true
   ORDER BY created_at DESC;
 
 **Complex Join**: "Get users with their order counts and total spent"
-→ SELECT 
+→ SELECT
       u.id,
       u.name,
       u.email,
@@ -166,7 +166,7 @@ Return ONLY the SQL query. Do not include any explanations, markdown formatting,
 
 **With CTE**: "Get top 10 products by sales"
 → WITH product_sales AS (
-      SELECT 
+      SELECT
           p.id,
           p.name,
           SUM(oi.quantity * oi.price) as total_sales
@@ -221,13 +221,13 @@ Return ONLY the SQL query. Do not include any explanations, markdown formatting,
 ### EXAMPLES
 
 **Simple Select**: "Get all active users"
-→ SELECT id, name, email, created_at 
-  FROM users 
-  WHERE active = true 
+→ SELECT id, name, email, created_at
+  FROM users
+  WHERE active = true
   ORDER BY created_at DESC;
 
 **Complex Join**: "Get users with their order counts and total spent"
-→ SELECT 
+→ SELECT
       u.id,
       u.name,
       u.email,
@@ -242,7 +242,7 @@ Return ONLY the SQL query. Do not include any explanations, markdown formatting,
 
 **With CTE**: "Get top 10 products by sales"
 → WITH product_sales AS (
-      SELECT 
+      SELECT
           p.id,
           p.name,
           SUM(oi.quantity * oi.price) as total_sales

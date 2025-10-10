@@ -10,7 +10,7 @@ export const OutlookBlock: BlockConfig<OutlookResponse> = {
   authMode: AuthMode.OAuth,
   longDescription:
     'Integrate Outlook into the workflow. Can read, draft, and send email messages. Can be used in trigger mode to trigger a workflow when a new email is received.',
-  docsLink: 'https://docs.sim.ai/tools/outlook',
+  docsLink: 'https://docs.ekinox.app/tools/outlook',
   category: 'tools',
   triggerAllowed: true,
   bgColor: '#E0E0E0',

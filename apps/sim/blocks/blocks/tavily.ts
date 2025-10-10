@@ -11,7 +11,7 @@ export const TavilyBlock: BlockConfig<TavilyResponse> = {
   longDescription:
     'Integrate Tavily into the workflow. Can search the web and extract content from specific URLs. Requires API Key.',
   category: 'tools',
-  docsLink: 'https://docs.sim.ai/tools/tavily',
+  docsLink: 'https://docs.ekinox.app/tools/tavily',
   bgColor: '#0066FF',
   icon: TavilyIcon,
   subBlocks: [

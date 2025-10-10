@@ -194,7 +194,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
             <h2 className='mb-[16px] font-medium text-[14px] text-foreground'>More Sim</h2>
             <div className='flex flex-col gap-[12px]'>
               <Link
-                href='https://docs.sim.ai'
+                href='https://docs.ekinox.app'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='text-[14px] text-muted-foreground transition-colors hover:text-foreground'
@@ -253,7 +253,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
               {blocks.map((block) => (
                 <Link
                   key={block}
-                  href={`https://docs.sim.ai/blocks/${block.toLowerCase().replace(' ', '-')}`}
+                  href={`https://docs.ekinox.app/blocks/${block.toLowerCase().replace(' ', '-')}`}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='text-[14px] text-muted-foreground transition-colors hover:text-foreground'
@@ -273,7 +273,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
                 {tools.slice(0, Math.ceil(tools.length / 4)).map((tool) => (
                   <Link
                     key={tool}
-                    href={`https://docs.sim.ai/tools/${tool.toLowerCase().replace(/\s+/g, '_')}`}
+                    href={`https://docs.ekinox.app/tools/${tool.toLowerCase().replace(/\s+/g, '_')}`}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='whitespace-nowrap text-[14px] text-muted-foreground transition-colors hover:text-foreground'
@@ -289,7 +289,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
                   .map((tool) => (
                     <Link
                       key={tool}
-                      href={`https://docs.sim.ai/tools/${tool.toLowerCase().replace(/\s+/g, '_')}`}
+                      href={`https://docs.ekinox.app/tools/${tool.toLowerCase().replace(/\s+/g, '_')}`}
                       target='_blank'
                       rel='noopener noreferrer'
                       className='whitespace-nowrap text-[14px] text-muted-foreground transition-colors hover:text-foreground'
@@ -305,7 +305,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
                   .map((tool) => (
                     <Link
                       key={tool}
-                      href={`https://docs.sim.ai/tools/${tool.toLowerCase().replace(/\s+/g, '_')}`}
+                      href={`https://docs.ekinox.app/tools/${tool.toLowerCase().replace(/\s+/g, '_')}`}
                       target='_blank'
                       rel='noopener noreferrer'
                       className='whitespace-nowrap text-[14px] text-muted-foreground transition-colors hover:text-foreground'
@@ -319,7 +319,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
                 {tools.slice(Math.ceil((tools.length * 3) / 4)).map((tool) => (
                   <Link
                     key={tool}
-                    href={`https://docs.sim.ai/tools/${tool.toLowerCase().replace(/\s+/g, '_')}`}
+                    href={`https://docs.ekinox.app/tools/${tool.toLowerCase().replace(/\s+/g, '_')}`}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='whitespace-nowrap text-[14px] text-muted-foreground transition-colors hover:text-foreground'

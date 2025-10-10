@@ -8,7 +8,7 @@ export const JinaBlock: BlockConfig<ReadUrlResponse> = {
   description: 'Convert website content into text',
   authMode: AuthMode.ApiKey,
   longDescription: 'Integrate Jina into the workflow. Extracts content from websites.',
-  docsLink: 'https://docs.sim.ai/tools/jina',
+  docsLink: 'https://docs.ekinox.app/tools/jina',
   category: 'tools',
   bgColor: '#333333',
   icon: JinaAIIcon,

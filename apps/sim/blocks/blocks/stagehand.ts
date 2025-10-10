@@ -15,7 +15,7 @@ export const StagehandBlock: BlockConfig<StagehandExtractResponse> = {
   authMode: AuthMode.ApiKey,
   longDescription:
     'Integrate Stagehand into the workflow. Can extract structured data from webpages.',
-  docsLink: 'https://docs.sim.ai/tools/stagehand',
+  docsLink: 'https://docs.ekinox.app/tools/stagehand',
   category: 'tools',
   bgColor: '#FFC83C',
   icon: StagehandIcon,

@@ -9,7 +9,7 @@ export const ConfluenceBlock: BlockConfig<ConfluenceResponse> = {
   description: 'Interact with Confluence',
   authMode: AuthMode.OAuth,
   longDescription: 'Integrate Confluence into the workflow. Can read and update a page.',
-  docsLink: 'https://docs.sim.ai/tools/confluence',
+  docsLink: 'https://docs.ekinox.app/tools/confluence',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: ConfluenceIcon,

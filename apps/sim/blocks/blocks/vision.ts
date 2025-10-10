@@ -9,7 +9,7 @@ export const VisionBlock: BlockConfig<VisionResponse> = {
   description: 'Analyze images with vision models',
   authMode: AuthMode.ApiKey,
   longDescription: 'Integrate Vision into the workflow. Can analyze images with vision models.',
-  docsLink: 'https://docs.sim.ai/tools/vision',
+  docsLink: 'https://docs.ekinox.app/tools/vision',
   category: 'tools',
   bgColor: '#4D5FFF',
   icon: EyeIcon,

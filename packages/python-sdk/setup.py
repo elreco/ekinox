@@ -46,6 +46,6 @@ setup(
     project_urls={
         "Bug Reports": "https://github.com/simstudioai/sim/issues",
         "Source": "https://github.com/simstudioai/sim",
-        "Documentation": "https://docs.sim.ai",
+        "Documentation": "https://docs.ekinox.app",
     },
-) 
+)

@@ -9,7 +9,7 @@ export const PerplexityBlock: BlockConfig<PerplexityChatResponse> = {
   longDescription:
     'Integrate Perplexity into the workflow. Can generate completions using Perplexity AI chat models.',
   authMode: AuthMode.ApiKey,
-  docsLink: 'https://docs.sim.ai/tools/perplexity',
+  docsLink: 'https://docs.ekinox.app/tools/perplexity',
   category: 'tools',
   bgColor: '#20808D', // Perplexity turquoise color
   icon: PerplexityIcon,

@@ -8,7 +8,7 @@ export const MistralParseBlock: BlockConfig<MistralParserOutput> = {
   description: 'Extract text from PDF documents',
   authMode: AuthMode.ApiKey,
   longDescription: `Integrate Mistral Parse into the workflow. Can extract text from uploaded PDF documents, or from a URL.`,
-  docsLink: 'https://docs.sim.ai/tools/mistral_parse',
+  docsLink: 'https://docs.ekinox.app/tools/mistral_parse',
   category: 'tools',
   bgColor: '#000000',
   icon: MistralIcon,
@@ -70,7 +70,7 @@ export const MistralParseBlock: BlockConfig<MistralParserOutput> = {
       layout: 'full',
       placeholder: 'e.g. 0,1,2 (leave empty for all pages)',
     },
-    /* 
+    /*
      * Image-related parameters - temporarily disabled
      * Uncomment if PDF image extraction is needed
      *

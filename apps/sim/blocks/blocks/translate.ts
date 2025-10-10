@@ -31,7 +31,7 @@ export const TranslateBlock: BlockConfig = {
   description: 'Translate text to any language',
   authMode: AuthMode.ApiKey,
   longDescription: 'Integrate Translate into the workflow. Can translate text to any language.',
-  docsLink: 'https://docs.sim.ai/tools/translate',
+  docsLink: 'https://docs.ekinox.app/tools/translate',
   category: 'tools',
   bgColor: '#FF4B4B',
   icon: TranslateIcon,

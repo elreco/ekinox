@@ -9,7 +9,7 @@ export const FirecrawlBlock: BlockConfig<FirecrawlResponse> = {
   description: 'Scrape or search the web',
   authMode: AuthMode.ApiKey,
   longDescription: 'Integrate Firecrawl into the workflow. Can search, scrape, or crawl websites.',
-  docsLink: 'https://docs.sim.ai/tools/firecrawl',
+  docsLink: 'https://docs.ekinox.app/tools/firecrawl',
   category: 'tools',
   bgColor: '#181C1E',
   icon: FirecrawlIcon,

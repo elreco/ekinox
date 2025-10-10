@@ -8,7 +8,7 @@ export const MySQLBlock: BlockConfig<MySQLResponse> = {
   description: 'Connect to MySQL database',
   longDescription:
     'Integrate MySQL into the workflow. Can query, insert, update, delete, and execute raw SQL.',
-  docsLink: 'https://docs.sim.ai/tools/mysql',
+  docsLink: 'https://docs.ekinox.app/tools/mysql',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: MySQLIcon,
@@ -145,13 +145,13 @@ Return ONLY the SQL query. Do not include any explanations, markdown formatting,
 ### EXAMPLES
 
 **Simple Select**: "Get all active users"
-→ SELECT id, name, email, created_at 
-  FROM users 
-  WHERE active = 1 
+→ SELECT id, name, email, created_at
+  FROM users
+  WHERE active = 1
   ORDER BY created_at DESC;
 
 **Complex Join**: "Get users with their order counts and total spent"
-→ SELECT 
+→ SELECT
       u.id,
       u.name,
       u.email,
@@ -165,13 +165,13 @@ Return ONLY the SQL query. Do not include any explanations, markdown formatting,
   ORDER BY total_spent DESC;
 
 **With Subquery**: "Get top 10 products by sales"
-→ SELECT 
+→ SELECT
       p.id,
       p.name,
       (SELECT SUM(oi.quantity * oi.price)
-       FROM order_items oi 
+       FROM order_items oi
        JOIN orders o ON oi.order_id = o.id
-       WHERE oi.product_id = p.id 
+       WHERE oi.product_id = p.id
        AND o.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
       ) as total_sales
   FROM products p
@@ -220,13 +220,13 @@ Return ONLY the SQL query. Do not include any explanations, markdown formatting,
 ### EXAMPLES
 
 **Simple Select**: "Get all active users"
-→ SELECT id, name, email, created_at 
-  FROM users 
-  WHERE active = 1 
+→ SELECT id, name, email, created_at
+  FROM users
+  WHERE active = 1
   ORDER BY created_at DESC;
 
 **Complex Join**: "Get users with their order counts and total spent"
-→ SELECT 
+→ SELECT
       u.id,
       u.name,
       u.email,
@@ -240,13 +240,13 @@ Return ONLY the SQL query. Do not include any explanations, markdown formatting,
   ORDER BY total_spent DESC;
 
 **With Subquery**: "Get top 10 products by sales"
-→ SELECT 
+→ SELECT
       p.id,
       p.name,
       (SELECT SUM(oi.quantity * oi.price)
-       FROM order_items oi 
+       FROM order_items oi
        JOIN orders o ON oi.order_id = o.id
-       WHERE oi.product_id = p.id 
+       WHERE oi.product_id = p.id
        AND o.created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
       ) as total_sales
   FROM products p

@@ -10,7 +10,7 @@ export const SlackBlock: BlockConfig<SlackResponse> = {
   authMode: AuthMode.OAuth,
   longDescription:
     'Integrate Slack into the workflow. Can send messages, create canvases, and read messages. Requires Bot Token instead of OAuth in advanced mode. Can be used in trigger mode to trigger a workflow when a message is sent to a channel.',
-  docsLink: 'https://docs.sim.ai/tools/slack',
+  docsLink: 'https://docs.ekinox.app/tools/slack',
   category: 'tools',
   bgColor: '#611f69',
   icon: SlackIcon,

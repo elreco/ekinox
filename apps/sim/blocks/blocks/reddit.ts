@@ -10,7 +10,7 @@ export const RedditBlock: BlockConfig<RedditResponse> = {
   authMode: AuthMode.OAuth,
   longDescription:
     'Integrate Reddit into the workflow. Can get posts and comments from a subreddit.',
-  docsLink: 'https://docs.sim.ai/tools/reddit',
+  docsLink: 'https://docs.ekinox.app/tools/reddit',
   category: 'tools',
   bgColor: '#FF5700',
   icon: RedditIcon,

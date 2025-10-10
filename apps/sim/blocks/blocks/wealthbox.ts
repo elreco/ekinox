@@ -10,7 +10,7 @@ export const WealthboxBlock: BlockConfig<WealthboxResponse> = {
   authMode: AuthMode.OAuth,
   longDescription:
     'Integrate Wealthbox into the workflow. Can read and write notes, read and write contacts, and read and write tasks.',
-  docsLink: 'https://docs.sim.ai/tools/wealthbox',
+  docsLink: 'https://docs.ekinox.app/tools/wealthbox',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: WealthboxIcon,

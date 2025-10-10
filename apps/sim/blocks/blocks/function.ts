@@ -15,7 +15,7 @@ export const FunctionBlock: BlockConfig<CodeExecutionOutput> = {
   - If the user asks for a simple function, don't turn on the Remote Code Execution switch and write it in javascript.
   - Can reference workflow variables using <blockName.output> syntax as usual within code. Avoid XML/HTML tags.
   `,
-  docsLink: 'https://docs.sim.ai/blocks/function',
+  docsLink: 'https://docs.ekinox.app/blocks/function',
   category: 'blocks',
   bgColor: '#FF402F',
   icon: CodeIcon,

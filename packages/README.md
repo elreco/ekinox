@@ -18,7 +18,7 @@ The TypeScript SDK provides type-safe workflow execution for Node.js and browser
 **Installation:**
 ```bash
 npm install simstudio-ts-sdk
-# or 
+# or
 yarn add simstudio-ts-sdk
 # or
 bun add simstudio-ts-sdk
@@ -54,7 +54,7 @@ from simstudio import SimStudioClient
 
 client = SimStudioClient(api_key='your-api-key-here')
 
-result = client.execute_workflow('workflow-id', 
+result = client.execute_workflow('workflow-id',
     input_data={'message': 'Hello, world!'})
 ```
 
@@ -62,12 +62,12 @@ result = client.execute_workflow('workflow-id',
 
 Both SDKs provide the same core functionality:
 
-✅ **Workflow Execution** - Execute deployed workflows with optional input data  
-✅ **Status Checking** - Check deployment status and workflow readiness  
-✅ **Error Handling** - Comprehensive error handling with specific error codes  
-✅ **Timeout Support** - Configurable timeouts for workflow execution  
-✅ **Input Validation** - Validate workflows before execution  
-✅ **Type Safety** - Full type definitions (TypeScript) and data classes (Python)  
+✅ **Workflow Execution** - Execute deployed workflows with optional input data
+✅ **Status Checking** - Check deployment status and workflow readiness
+✅ **Error Handling** - Comprehensive error handling with specific error codes
+✅ **Timeout Support** - Configurable timeouts for workflow execution
+✅ **Input Validation** - Validate workflows before execution
+✅ **Type Safety** - Full type definitions (TypeScript) and data classes (Python)
 
 ## API Compatibility
 
@@ -159,13 +159,13 @@ try:
         raise Exception('Workflow not deployed')
 
     # Execute workflow
-    result = client.execute_workflow('workflow-id', 
+    result = client.execute_workflow('workflow-id',
         input_data={'data': 'example'},
         timeout=30.0)
 
     if result.success:
         print(f'Output: {result.output}')
-        
+
 except SimStudioError as error:
     print(f'Error {error.code}: {error}')
 ```
@@ -243,7 +243,7 @@ Both SDKs are licensed under the Apache-2.0 License. See the [LICENSE](../LICENS
 
 ## Support
 
-- 📖 [Documentation](https://docs.sim.ai)
+- 📖 [Documentation](https://docs.ekinox.app)
 - 💬 [Discord Community](https://discord.gg/simstudio)
 - 🐛 [Issue Tracker](https://github.com/simstudioai/sim/issues)
-- 📧 [Email Support](mailto:support@sim.ai) 
+- 📧 [Email Support](mailto:support@sim.ai)

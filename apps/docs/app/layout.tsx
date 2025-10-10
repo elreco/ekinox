@@ -5,7 +5,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 }
 
 export const metadata = {
-  metadataBase: new URL('https://docs.sim.ai'),
+  metadataBase: new URL('https://docs.ekinox.app'),
   title: {
     default: 'Sim Documentation - Visual Workflow Builder for AI Applications',
     template: '%s',
@@ -45,7 +45,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['fr_FR', 'zh_CN'],
-    url: 'https://docs.sim.ai',
+    url: 'https://docs.ekinox.app',
     siteName: 'Sim Documentation',
     title: 'Sim Documentation - Visual Workflow Builder for AI Applications',
     description:
@@ -70,7 +70,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://docs.sim.ai',
+    canonical: 'https://docs.ekinox.app',
     languages: {
       en: '/en',
       fr: '/fr',

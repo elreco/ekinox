@@ -8,7 +8,7 @@ export const MongoDBBlock: BlockConfig<MongoDBResponse> = {
   description: 'Connect to MongoDB database',
   longDescription:
     'Integrate MongoDB into the workflow. Can find, insert, update, delete, and aggregate data.',
-  docsLink: 'https://docs.sim.ai/tools/mongodb',
+  docsLink: 'https://docs.ekinox.app/tools/mongodb',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: MongoDBIcon,
@@ -259,7 +259,7 @@ Return ONLY the aggregation pipeline as a valid JSON array. Do not include any e
 
 **Transformation:**
 - $project: Select/transform fields
-- $addFields: Add computed fields  
+- $addFields: Add computed fields
 - $set: Set field values
 - $unset: Remove fields
 - $unwind: Deconstruct arrays
@@ -287,7 +287,7 @@ Return ONLY the aggregation pipeline as a valid JSON array. Do not include any e
 → [
     {"$match": {"status": "completed"}},
     {"$group": {
-      "_id": "$customerId", 
+      "_id": "$customerId",
       "totalValue": {"$sum": "$amount"},
       "orderCount": {"$sum": 1}
     }},
@@ -359,7 +359,7 @@ Return ONLY the aggregation pipeline as a valid JSON array. Do not include any e
     }},
     {"$project": {
       "period": "$monthlyData.period",
-      "totalSales": "$monthlyData.totalSales", 
+      "totalSales": "$monthlyData.totalSales",
       "orderCount": "$monthlyData.orderCount",
       "previousSales": {"$arrayElemAt": ["$monthlyData.totalSales", {"$subtract": ["$index", 1]}]},
       "growthRate": {"$cond": [
@@ -417,7 +417,7 @@ Return ONLY the aggregation pipeline as a valid JSON array. Do not include any e
     {"$lookup": {
       "from": "inventory",
       "localField": "_id",
-      "foreignField": "storeId", 
+      "foreignField": "storeId",
       "as": "inventory"
     }},
     {"$addFields": {
@@ -437,7 +437,7 @@ Return ONLY the aggregation pipeline as a valid JSON array. Do not include any e
 
 ### PERFORMANCE TIPS
 - Place $match as early as possible to reduce document flow
-- Use $limit after $sort for top-N queries  
+- Use $limit after $sort for top-N queries
 - Index fields used in $match, $sort, and $lookup operations
 - Use $project to reduce document size in multi-stage pipelines
 - Consider $facet for multiple aggregations on same data

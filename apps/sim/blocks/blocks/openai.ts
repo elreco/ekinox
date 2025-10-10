@@ -9,7 +9,7 @@ export const OpenAIBlock: BlockConfig = {
   authMode: AuthMode.ApiKey,
   longDescription: 'Integrate Embeddings into the workflow. Can generate embeddings from text.',
   category: 'tools',
-  docsLink: 'https://docs.sim.ai/tools/openai',
+  docsLink: 'https://docs.ekinox.app/tools/openai',
   bgColor: '#10a37f',
   icon: OpenAIIcon,
   subBlocks: [

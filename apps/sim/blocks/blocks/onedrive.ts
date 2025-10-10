@@ -9,7 +9,7 @@ export const OneDriveBlock: BlockConfig<OneDriveResponse> = {
   description: 'Create, upload, and list files',
   authMode: AuthMode.OAuth,
   longDescription: 'Integrate OneDrive into the workflow. Can create, upload, and list files.',
-  docsLink: 'https://docs.sim.ai/tools/onedrive',
+  docsLink: 'https://docs.ekinox.app/tools/onedrive',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: MicrosoftOneDriveIcon,

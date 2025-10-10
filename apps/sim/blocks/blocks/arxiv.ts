@@ -8,7 +8,7 @@ export const ArxivBlock: BlockConfig<ArxivResponse> = {
   description: 'Search and retrieve academic papers from ArXiv',
   longDescription:
     'Integrates ArXiv into the workflow. Can search for papers, get paper details, and get author papers. Does not require OAuth or an API key.',
-  docsLink: 'https://docs.sim.ai/tools/arxiv',
+  docsLink: 'https://docs.ekinox.app/tools/arxiv',
   category: 'tools',
   bgColor: '#E0E0E0',
   icon: ArxivIcon,

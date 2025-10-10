@@ -11,7 +11,7 @@ export const YouTubeBlock: BlockConfig<YouTubeSearchResponse> = {
   description: 'Search for videos on YouTube',
   authMode: AuthMode.ApiKey,
   longDescription: 'Integrate YouTube into the workflow. Can search for videos.',
-  docsLink: 'https://docs.sim.ai/tools/youtube',
+  docsLink: 'https://docs.ekinox.app/tools/youtube',
   category: 'tools',
   bgColor: '#FF0000',
   icon: YouTubeBlockIcon,
