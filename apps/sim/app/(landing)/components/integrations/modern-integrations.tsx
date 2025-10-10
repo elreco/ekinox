@@ -90,20 +90,15 @@ export default function ModernIntegrations() {
           <div className="bg-white rounded-2xl p-8 border border-gray-200">
             <div className="flex items-center justify-center gap-8 flex-wrap">
               {modelProviderIcons.map((integration, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-gray-50 transition-all cursor-pointer border border-transparent hover:border-gray-200"
+                  className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-gray-50 transition-transform duration-200 cursor-pointer border border-transparent hover:border-gray-200 hover:scale-[1.05]"
                 >
-                  <integration.icon className="w-8 h-8 text-gray-700 transition-transform" />
+                  <integration.icon className="w-8 h-8 text-gray-700" />
                   <span className="text-sm font-medium text-gray-600">
                     {integration.label}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -123,20 +118,15 @@ export default function ModernIntegrations() {
           <div className="bg-white rounded-2xl p-8 border border-gray-200">
             <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6">
               {communicationIcons.map((integration, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-gray-50 transition-all cursor-pointer border border-transparent hover:border-gray-200"
+                  className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-gray-50 transition-transform duration-200 cursor-pointer border border-transparent hover:border-gray-200 hover:scale-[1.05]"
                 >
-                  <integration.icon className="w-8 h-8 text-gray-700 transition-transform" />
+                  <integration.icon className="w-8 h-8 text-gray-700" />
                   <span className="text-xs font-medium text-gray-600 text-center">
                     {integration.label}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -156,20 +146,15 @@ export default function ModernIntegrations() {
           <div className="bg-white rounded-2xl p-8 border border-gray-200">
             <div className="flex items-center justify-center gap-8 flex-wrap">
               {dataStorageIcons.map((integration, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-gray-50 transition-all cursor-pointer border border-transparent hover:border-gray-200"
+                  className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-gray-50 transition-transform duration-200 cursor-pointer border border-transparent hover:border-gray-200 hover:scale-[1.05]"
                 >
-                  <integration.icon className="w-8 h-8 text-gray-700 transition-transform" />
+                  <integration.icon className="w-8 h-8 text-gray-700" />
                   <span className="text-sm font-medium text-gray-600">
                     {integration.label}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
