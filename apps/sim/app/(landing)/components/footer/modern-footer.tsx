@@ -20,26 +20,20 @@ const FOOTER_LINKS = [
     links: [
       { name: 'Features', href: '#features' },
       { name: 'Pricing', href: '#pricing' },
-      { name: 'API', href: '/api' },
       { name: 'Integrations', href: '#integrations' }
     ]
   },
   {
     title: 'Resources',
     links: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Help Center', href: '/help' },
-      { name: 'Status', href: '/status' }
+      { name: 'Documentation', href: 'https://docs.ekinox.app' },
+      { name: 'Help Center', href: 'https://docs.ekinox.app' }
     ]
   },
   {
     title: 'Company',
     links: [
-      { name: 'About', href: '/about' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Contact', href: '/contact' },
-      { name: 'Privacy', href: '/privacy' }
+      { name: 'Contact', href: 'mailto:hello@ekinox.app' }
     ]
   }
 ]
@@ -47,8 +41,7 @@ const FOOTER_LINKS = [
 const SOCIAL_LINKS = [
   { icon: Twitter, href: 'https://twitter.com/ekinox', name: 'Twitter' },
   { icon: Linkedin, href: 'https://linkedin.com/company/ekinox', name: 'LinkedIn' },
-  { icon: Github, href: 'https://github.com/ekinox', name: 'GitHub' },
-  { icon: MessageCircle, href: '/discord', name: 'Discord' }
+  { icon: Github, href: 'https://github.com/ekinox', name: 'GitHub' }
 ]
 
 export default function ModernFooter() {
@@ -56,52 +49,6 @@ export default function ModernFooter() {
     <footer className="relative bg-gray-900 overflow-hidden">
 
       <div className="relative z-10">
-        {/* Newsletter Section */}
-        <div className="border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-6 py-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center max-w-3xl mx-auto"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 backdrop-blur-sm bg-white/5 rounded-full border border-white/10">
-                <Sparkles className="w-4 h-4 text-cyan-400" />
-                <span className="text-white/90 font-medium text-sm">Stay Updated</span>
-              </div>
-
-              <h3 className="text-4xl font-bold text-white mb-4">
-                Get the Latest in AI Automation
-              </h3>
-
-              <p className="text-white/70 mb-8 text-lg">
-                Join our community of innovators. Get exclusive tips, feature updates,
-                and automation strategies delivered to your inbox.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-                <div className="relative flex-1 w-full">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full px-6 py-4 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl text-white placeholder:text-white/50 focus:outline-none focus:border-white/40 transition-all duration-300"
-                  />
-                </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <span className="flex items-center gap-2">
-                    Subscribe
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </motion.button>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
         {/* Main Footer */}
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
@@ -114,13 +61,11 @@ export default function ModernFooter() {
                 className="mb-8"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-lg opacity-30" />
-                    <div className="relative w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                      <Sparkles className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                  <span className="text-2xl font-bold text-white">Ekinox</span>
+                  <img
+                    src="/logo/426-240/primary/primary.svg"
+                    alt="Ekinox"
+                    className="h-12 w-auto"
+                  />
                 </div>
 
                 <p className="text-white/70 leading-relaxed mb-6">
