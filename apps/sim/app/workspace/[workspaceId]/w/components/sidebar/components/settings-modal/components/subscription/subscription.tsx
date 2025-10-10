@@ -27,8 +27,8 @@ import { useSubscriptionStore } from '@/stores/subscription/store'
 const CONSTANTS = {
   UPGRADE_ERROR_TIMEOUT: 3000, // 3 seconds
   TYPEFORM_ENTERPRISE_URL: 'https://form.typeform.com/to/jqCO12pF',
-  PRO_PRICE: '$20',
-  TEAM_PRICE: '$40',
+  PRO_PRICE: '$30',
+  TEAM_PRICE: '$100',
   INITIAL_TEAM_SEATS: 1,
 } as const
 

@@ -89,7 +89,7 @@ export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps
     },
     {
       name: 'Pro',
-      price: '$20',
+      price: '$30',
       description: '/month',
       features: [
         { text: '25 runs per minute (sync)', included: true, icon: Zap },
@@ -104,7 +104,7 @@ export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps
     },
     {
       name: 'Team',
-      price: '$40',
+      price: '$100',
       description: '/month',
       features: [
         { text: '75 runs per minute (sync)', included: true, icon: Zap },

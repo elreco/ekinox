@@ -32,10 +32,10 @@ export async function getOrganizationSubscription(organizationId: string) {
 
 /**
  * BILLING MODEL:
- * 1. User purchases $20 Pro plan → Gets charged $20 immediately via Stripe subscription
- * 2. User uses $15 during the month → No additional charge (covered by $20)
- * 3. User uses $35 during the month → Gets charged $15 overage at month end
- * 4. Usage resets, next month they pay $20 again + any overages
+ * 1. User purchases $30 Pro plan → Gets charged $30 immediately via Stripe subscription
+ * 2. User uses $15 during the month → No additional charge (covered by $30)
+ * 3. User uses $35 during the month → Gets charged $5 overage at month end
+ * 4. Usage resets, next month they pay $30 again + any overages
  */
 
 /**
