@@ -73,8 +73,8 @@ export default async function Layout({ children, params }: LayoutProps) {
             }}
             links={[
               {
-                text: 'Visit Sim',
-                url: 'https://sim.ai',
+                text: 'Visit Ekinox',
+                url: 'https://www.ekinox.app',
                 icon: <ExternalLink className='h-4 w-4' />,
               },
             ]}

@@ -65,7 +65,7 @@ Workflows können über mehrere Kanäle ausgeführt werden:
 ### Als API bereitstellen
 
 Wenn Sie einen Workflow als API bereitstellen, macht Sim Folgendes:
-- Erstellt einen eindeutigen HTTP-Endpunkt: `https://sim.ai/api/workflows/{workflowId}/execute`
+- Erstellt einen eindeutigen HTTP-Endpunkt: `https://www.ekinox.app/api/workflows/{workflowId}/execute`
 - Generiert einen API-Schlüssel zur Authentifizierung
 - Akzeptiert POST-Anfragen mit JSON-Payloads
 - Gibt Workflow-Ausführungsergebnisse als JSON zurück
@@ -73,7 +73,7 @@ Wenn Sie einen Workflow als API bereitstellen, macht Sim Folgendes:
 Beispiel für einen API-Aufruf:
 
 ```bash
-curl -X POST https://sim.ai/api/workflows/your-workflow-id/execute \
+curl -X POST https://www.ekinox.app/api/workflows/your-workflow-id/execute \
   -H "X-API-Key: your-api-key" \
   -H "Content-Type: application/json" \
   -d '{"input": "your data here"}'
@@ -82,7 +82,7 @@ curl -X POST https://sim.ai/api/workflows/your-workflow-id/execute \
 ### Als Chat bereitstellen
 
 Die Chat-Bereitstellung erstellt eine Konversationsschnittstelle für Ihren Workflow:
-- Gehostet auf einer benutzerdefinierten Subdomain: `https://your-name.sim.ai`
+- Gehostet auf einer benutzerdefinierten Subdomain: `https://your-name.www.ekinox.app`
 - Optionale Authentifizierung (öffentlich, passwortgeschützt oder E-Mail-basiert)
 - Anpassbare Benutzeroberfläche mit Ihrem Branding
 - Streaming-Antworten für Echtzeit-Interaktion

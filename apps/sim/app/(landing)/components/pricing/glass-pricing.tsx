@@ -103,7 +103,7 @@ export default function GlassPricing() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: tier.popular ? 0.1 : tier.delay }}
+              transition={{ delay: tier.popular ? 0.1 : 0 }}
               whileHover={{ y: -10, scale: 1.02 }}
               className={`group relative ${tier.popular ? 'lg:-mt-8 lg:scale-105' : ''}`}
             >

@@ -65,7 +65,7 @@ Los flujos de trabajo pueden ejecutarse a través de múltiples canales:
 ### Desplegar como API
 
 Cuando despliegas un flujo de trabajo como API, Sim:
-- Crea un punto de conexión HTTP único: `https://sim.ai/api/workflows/{workflowId}/execute`
+- Crea un punto de conexión HTTP único: `https://www.ekinox.app/api/workflows/{workflowId}/execute`
 - Genera una clave API para autenticación
 - Acepta solicitudes POST con cargas útiles JSON
 - Devuelve los resultados de ejecución del flujo de trabajo como JSON
@@ -73,7 +73,7 @@ Cuando despliegas un flujo de trabajo como API, Sim:
 Ejemplo de llamada API:
 
 ```bash
-curl -X POST https://sim.ai/api/workflows/your-workflow-id/execute \
+curl -X POST https://www.ekinox.app/api/workflows/your-workflow-id/execute \
   -H "X-API-Key: your-api-key" \
   -H "Content-Type: application/json" \
   -d '{"input": "your data here"}'
@@ -82,7 +82,7 @@ curl -X POST https://sim.ai/api/workflows/your-workflow-id/execute \
 ### Desplegar como Chat
 
 El despliegue de chat crea una interfaz conversacional para tu flujo de trabajo:
-- Alojado en un subdominio personalizado: `https://your-name.sim.ai`
+- Alojado en un subdominio personalizado: `https://your-name.www.ekinox.app`
 - Autenticación opcional (pública, con contraseña o basada en correo electrónico)
 - Interfaz de usuario personalizable con tu marca
 - Respuestas en streaming para interacción en tiempo real
