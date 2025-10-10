@@ -120,7 +120,7 @@
     --base-muted-foreground: #737373;
 
     /* Gradient Colors */
-    --gradient-primary: 263 85% 70%; /* More vibrant purple */
+    --gradient-primary: 234 90% 75%; /* More vibrant purple */
     --gradient-secondary: 336 95% 65%; /* More vibrant pink */
 
     /* Brand Colors (Default Sim Theme) */
@@ -190,7 +190,7 @@
     --base-muted-foreground: #a3a3a3;
 
     /* Gradient Colors - Adjusted for dark mode */
-    --gradient-primary: 263 90% 75%; /* More vibrant purple for dark mode */
+    --gradient-primary: 234 90% 75%; /* More vibrant purple for dark mode */
     --gradient-secondary: 336 100% 72%; /* More vibrant pink for dark mode */
 
     /* Brand Colors (Keep dark background for actual dark mode) */
