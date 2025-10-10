@@ -109,10 +109,10 @@ export default function Footer({ fullWidth = false }: FooterProps) {
         <div className={`flex gap-[80px] ${fullWidth ? 'justify-center' : ''}`}>
           {/* Logo and social links */}
           <div className='flex flex-col gap-[24px]'>
-            <Link href='/' aria-label='Sim home'>
+            <Link href='/' aria-label='Ekinox home'>
               <Image
                 src='/logo/b&w/text/b&w.svg'
-                alt='Sim - Workflows for LLMs'
+                alt='Ekinox - Visual AI Workflow Builder'
                 width={49.78314}
                 height={24.276}
                 priority
@@ -150,7 +150,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
                 <LinkedInIcon className='h-[18px] w-[18px]' aria-hidden='true' />
               </a>
               <a
-                href='https://github.com/simstudioai/sim'
+                href='https://docs.ekinox.app'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='flex items-center text-[16px] text-muted-foreground transition-colors hover:text-foreground'
@@ -191,7 +191,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
 
           {/* Links section */}
           <div>
-            <h2 className='mb-[16px] font-medium text-[14px] text-foreground'>More Sim</h2>
+            <h2 className='mb-[16px] font-medium text-[14px] text-foreground'>More Ekinox</h2>
             <div className='flex flex-col gap-[12px]'>
               <Link
                 href='https://docs.ekinox.app'

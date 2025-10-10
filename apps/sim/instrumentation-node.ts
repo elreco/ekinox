@@ -1,5 +1,5 @@
 /**
- * Sim Telemetry - Server-side Instrumentation
+ * Ekinox Telemetry - Server-side Instrumentation
  *
  * This file contains all server-side instrumentation logic.
  */

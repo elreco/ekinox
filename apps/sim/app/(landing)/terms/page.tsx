@@ -17,8 +17,8 @@ export default function TermsOfService() {
       <section>
         <p className='mb-4'>Last Updated: September 10, 2025</p>
         <p>
-          Please read these Terms of Service ("Terms") carefully before using the Sim platform (the
-          "Service") operated by Sim, Inc ("us", "we", or "our").
+          Please read these Terms of Service ("Terms") carefully before using the Ekinox platform (the
+          "Service") operated by Ekinox, Inc ("us", "we", or "our").
         </p>
         <p className='mt-4'>
           By accessing or using the Service, you agree to be bound by these Terms. If you disagree
@@ -47,12 +47,12 @@ export default function TermsOfService() {
         <h2 className='mb-4 font-semibold text-2xl'>2. Intellectual Property</h2>
         <p className='mb-4'>
           The Service and its original content, features, and functionality are and will remain the
-          exclusive property of Sim, Inc and its licensors. The Service is protected by copyright,
+          exclusive property of Ekinox, Inc and its licensors. The Service is protected by copyright,
           trademark, and other laws of both the United States and foreign countries.
         </p>
         <p>
           Our trademarks and trade dress may not be used in connection with any product or service
-          without the prior written consent of Sim, Inc.
+          without the prior written consent of Ekinox, Inc.
         </p>
       </section>
 
@@ -99,7 +99,7 @@ export default function TermsOfService() {
             including any "junk mail", "chain letter," "spam," or any other similar solicitation.
           </li>
           <li>
-            To impersonate or attempt to impersonate Sim, Inc, a Sim employee, another user, or any
+            To impersonate or attempt to impersonate Ekinox, Inc, a Ekinox employee, another user, or any
             other person or entity.
           </li>
           <li>
@@ -108,7 +108,7 @@ export default function TermsOfService() {
           </li>
           <li>
             To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of
-            the Service, or which, as determined by us, may harm Sim, Inc or users of the Service or
+            the Service, or which, as determined by us, may harm Ekinox, Inc or users of the Service or
             expose them to liability.
           </li>
         </ul>
@@ -129,7 +129,7 @@ export default function TermsOfService() {
       <section>
         <h2 className='mb-4 font-semibold text-2xl'>6. Limitation of Liability</h2>
         <p className='mb-4'>
-          In no event shall Sim, Inc, nor its directors, employees, partners, agents, suppliers, or
+          In no event shall Ekinox, Inc, nor its directors, employees, partners, agents, suppliers, or
           affiliates, be liable for any indirect, incidental, special, consequential or punitive
           damages, including without limitation, loss of profits, data, use, goodwill, or other
           intangible losses, resulting from:
@@ -154,7 +154,7 @@ export default function TermsOfService() {
           express or implied, including, but not limited to, implied warranties of merchantability,
           fitness for a particular purpose, non-infringement or course of performance.
         </p>
-        <p>Sim, Inc, its subsidiaries, affiliates, and its licensors do not warrant that:</p>
+        <p>Ekinox, Inc, its subsidiaries, affiliates, and its licensors do not warrant that:</p>
         <ul className='mb-4 list-disc space-y-2 pl-6'>
           <li>
             The Service will function uninterrupted, secure or available at any particular time or
@@ -183,7 +183,7 @@ export default function TermsOfService() {
         <h2 className='mb-4 font-semibold text-2xl'>9. Arbitration Agreement</h2>
         <p className='mb-4'>
           Please read the following arbitration agreement carefully. It requires you to arbitrate
-          disputes with Sim, Inc, its parent companies, subsidiaries, affiliates, successors and
+          disputes with Ekinox, Inc, its parent companies, subsidiaries, affiliates, successors and
           assigns and all of their respective officers, directors, employees, agents, and
           representatives (collectively, the "Company Parties") and limits the manner in which you
           can seek relief from the Company Parties.
@@ -211,10 +211,10 @@ export default function TermsOfService() {
           You have the right to opt out of the provisions of this Arbitration Agreement by sending a
           timely written notice of your decision to opt out to:{' '}
           <Link
-            href='mailto:legal@sim.ai'
+            href='mailto:legal@www.ekinox.app'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            legal@sim.ai{' '}
+            legal@www.ekinox.app{' '}
           </Link>
           within 30 days after first becoming subject to this Arbitration Agreement.
         </p>
@@ -261,10 +261,10 @@ export default function TermsOfService() {
         <p>
           Our Copyright Agent can be reached at:{' '}
           <Link
-            href='mailto:copyright@sim.ai'
+            href='mailto:copyright@www.ekinox.app'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            copyright@sim.ai
+            copyright@www.ekinox.app
           </Link>
         </p>
       </section>
@@ -274,10 +274,10 @@ export default function TermsOfService() {
         <p>
           If you have any questions about these Terms, please contact us at:{' '}
           <Link
-            href='mailto:legal@sim.ai'
+            href='mailto:legal@www.ekinox.app'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            legal@sim.ai
+            legal@www.ekinox.app
           </Link>
         </p>
       </section>

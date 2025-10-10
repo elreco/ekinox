@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import OpenAiN8nSim from './openai-n8n-sim'
 
-const baseUrl = 'https://sim.ai'
+const baseUrl = 'https://www.ekinox.app'
 const canonicalUrl = `${baseUrl}/building/openai-vs-n8n-vs-sim`
 
 export const metadata: Metadata = {
-  title: 'OpenAI AgentKit vs n8n vs Sim: AI Agent Workflow Builder Comparison | Sim',
+  title: 'OpenAI AgentKit vs n8n vs Ekinox: AI Agent Workflow Builder Comparison | Ekinox',
   description:
-    'Compare OpenAI AgentKit, n8n, and Sim for building AI agent workflows. Explore key differences in capabilities, integrations, collaboration, and which platform best fits your production AI agent needs.',
+    'Compare OpenAI AgentKit, n8n, and Ekinox for building AI agent workflows. Explore key differences in capabilities, integrations, collaboration, and which platform best fits your production AI agent needs.',
   keywords: [
     'AgentKit',
     'AI agents',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'n8n workflow automation',
     'AI workflow automation',
     'workflow automation platform',
-    'Sim',
+    'Ekinox',
     'agent builder comparison',
     'RAG agents',
     'RAG systems',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Emir Karabeg', url: 'https://x.com/karabegemir' }],
   creator: 'Emir Karabeg',
-  publisher: 'Sim',
+  publisher: 'Ekinox',
   robots: {
     index: true,
     follow: true,
@@ -82,11 +82,11 @@ export const metadata: Metadata = {
     canonical: canonicalUrl,
   },
   openGraph: {
-    title: 'OpenAI AgentKit vs n8n vs Sim: AI Agent Workflow Builder Comparison',
+    title: 'OpenAI AgentKit vs n8n vs Ekinox: AI Agent Workflow Builder Comparison',
     description:
-      'Compare OpenAI AgentKit, n8n, and Sim for building AI agent workflows. Explore key differences in capabilities, integrations, and which platform fits your production needs.',
+      'Compare OpenAI AgentKit, n8n, and Ekinox for building AI agent workflows. Explore key differences in capabilities, integrations, and which platform fits your production needs.',
     url: canonicalUrl,
-    siteName: 'Sim',
+    siteName: 'Ekinox',
     locale: 'en_US',
     type: 'article',
     publishedTime: '2025-10-06T00:00:00.000Z',
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
       'Workflow Automation',
       'OpenAI AgentKit',
       'n8n',
-      'Sim',
+      'Ekinox',
       'AgentKit',
       'AI Development',
       'RAG',
@@ -109,15 +109,15 @@ export const metadata: Metadata = {
         url: `${baseUrl}/building/openai-vs-n8n-vs-sim/workflow.png`,
         width: 1200,
         height: 630,
-        alt: 'Sim AI agent workflow builder interface comparison',
+        alt: 'Ekinox AI agent workflow builder interface comparison',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OpenAI AgentKit vs n8n vs Sim: AI Agent Workflow Builder Comparison',
+    title: 'OpenAI AgentKit vs n8n vs Ekinox: AI Agent Workflow Builder Comparison',
     description:
-      'Compare OpenAI AgentKit, n8n, and Sim for building AI agent workflows. Explore key differences in capabilities, integrations, and which platform fits your production needs.',
+      'Compare OpenAI AgentKit, n8n, and Ekinox for building AI agent workflows. Explore key differences in capabilities, integrations, and which platform fits your production needs.',
     images: ['/building/openai-vs-n8n-vs-sim/workflow.png'],
     creator: '@karabegemir',
     site: '@simai',
@@ -131,7 +131,7 @@ export const metadata: Metadata = {
 }
 
 /**
- * Blog post page comparing OpenAI AgentKit, n8n, and Sim workflow builders for AI agents.
+ * Blog post page comparing OpenAI AgentKit, n8n, and Ekinox workflow builders for AI agents.
  * Optimized for SEO with structured data, canonical URLs, and comprehensive metadata.
  */
 export default function Page() {

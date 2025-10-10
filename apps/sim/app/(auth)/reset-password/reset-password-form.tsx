@@ -34,7 +34,7 @@ export function RequestResetForm({
       const computedStyle = getComputedStyle(document.documentElement)
       const brandAccent = computedStyle.getPropertyValue('--brand-accent-hex').trim()
 
-      if (brandAccent && brandAccent !== '#6f3dfa') {
+      if (brandAccent && brandAccent !== '#2563eb') {
         setButtonClass('auth-button-custom')
       } else {
         setButtonClass('auth-button-gradient')
@@ -133,7 +133,7 @@ export function SetNewPasswordForm({
       const computedStyle = getComputedStyle(document.documentElement)
       const brandAccent = computedStyle.getPropertyValue('--brand-accent-hex').trim()
 
-      if (brandAccent && brandAccent !== '#6f3dfa') {
+      if (brandAccent && brandAccent !== '#2563eb') {
         setButtonClass('auth-button-custom')
       } else {
         setButtonClass('auth-button-gradient')

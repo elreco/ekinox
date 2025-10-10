@@ -385,7 +385,7 @@ export async function POST(req: NextRequest) {
     }
 
     try {
-      logger.info(`[${tracker.requestId}] About to call Sim Agent with context`, {
+      logger.info(`[${tracker.requestId}] About to call Ekinox Agent with context`, {
         context: (requestPayload as any).context,
         messagesCount: messagesForAgent.length,
         chatMessagesCount: messages.length,
@@ -409,13 +409,13 @@ export async function POST(req: NextRequest) {
       }
 
       const errorText = await simAgentResponse.text().catch(() => '')
-      logger.error(`[${tracker.requestId}] Sim agent API error:`, {
+      logger.error(`[${tracker.requestId}] Ekinox agent API error:`, {
         status: simAgentResponse.status,
         error: errorText,
       })
 
       return NextResponse.json(
-        { error: `Sim agent API error: ${simAgentResponse.statusText}` },
+        { error: `Ekinox agent API error: ${simAgentResponse.statusText}` },
         { status: simAgentResponse.status }
       )
     }

@@ -3140,7 +3140,7 @@ const UserInput = forwardRef<UserInputRef, UserInputProps>(
                           className='max-w-[220px] border bg-popover p-2 text-[11px] text-popover-foreground leading-snug shadow-md'
                         >
                           Ask mode can help answer questions about your workflow, tell you about
-                          Sim, and guide you in building/editing.
+                          Ekinox, and guide you in building/editing.
                         </TooltipContent>
                       </Tooltip>
                       <Tooltip>

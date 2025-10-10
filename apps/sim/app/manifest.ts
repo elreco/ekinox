@@ -5,14 +5,14 @@ export default function manifest(): MetadataRoute.Manifest {
   const brand = getBrandConfig()
 
   return {
-    name: brand.name === 'Sim' ? 'Sim - AI Agent Workflow Builder' : brand.name,
+    name: brand.name === 'Ekinox' ? 'Ekinox - AI Agent Workflow Builder' : brand.name,
     short_name: brand.name,
     description:
-      'Open-source AI agent workflow builder. 30,000+ developers build and deploy agentic workflows on Sim. Visual drag-and-drop interface for creating AI automations. SOC2 and HIPAA compliant.',
+      'Open-source AI agent workflow builder. 30,000+ developers build and deploy agentic workflows on Ekinox. Visual drag-and-drop interface for creating AI automations. SOC2 and HIPAA compliant.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: brand.theme?.primaryColor || '#6F3DFA',
+    theme_color: brand.theme?.primaryColor || '#2563eb',
     orientation: 'portrait-primary',
     icons: [
       {

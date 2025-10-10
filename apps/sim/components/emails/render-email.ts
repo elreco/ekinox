@@ -89,7 +89,7 @@ export async function renderEnterpriseSubscriptionEmail(
   userName: string,
   userEmail: string
 ): Promise<string> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
   const loginLink = `${baseUrl}/login`
 
   return await render(

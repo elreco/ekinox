@@ -27,7 +27,7 @@ export function SuccessView({ deployedUrl, existingChat, onDelete, onUpdate }: S
   const hostname = url.hostname
   const isDevelopmentUrl = hostname.includes('localhost')
 
-  // Extract identifier from path-based URL format (e.g., sim.ai/chat/identifier)
+  // Extract identifier from path-based URL format (e.g., www.ekinox.app/chat/identifier)
   const pathParts = url.pathname.split('/')
   const identifierPart = pathParts[2] || '' // /chat/identifier
 

@@ -617,7 +617,7 @@ export async function maybeSendUsageThresholdEmail(params: {
     if (!(params.percentBefore < 80 && params.percentAfter >= 80)) return
     if (params.limit <= 0 || params.currentUsageAfter <= 0) return
 
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
     const ctaLink = `${baseUrl}/workspace?billing=usage`
     const sendTo = async (email: string, name?: string) => {
       const prefs = await getEmailPreferences(email)

@@ -27,13 +27,12 @@ function handleRootPathRedirects(
     return null
   }
 
-  if (!isHosted) {
     // Self-hosted: Always redirect based on session
     if (hasActiveSession) {
       return NextResponse.redirect(new URL('/workspace', request.url))
     }
-    return NextResponse.redirect(new URL('/login', request.url))
-  }
+    //return NextResponse.redirect(new URL('/login', request.url))
+
 
   // Hosted: Allow access to /homepage route even for authenticated users
   if (url.pathname === '/homepage') {

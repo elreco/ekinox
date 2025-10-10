@@ -23,7 +23,7 @@ interface HelpConfirmationEmailProps {
   submittedDate?: Date
 }
 
-const baseUrl = getEnv('NEXT_PUBLIC_APP_URL') || 'https://sim.ai'
+const baseUrl = getEnv('NEXT_PUBLIC_APP_URL') || 'https://www.ekinox.app'
 
 const getTypeLabel = (type: string) => {
   switch (type) {

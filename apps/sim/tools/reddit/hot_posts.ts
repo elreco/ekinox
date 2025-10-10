@@ -56,7 +56,7 @@ export const hotPostsTool: ToolConfig<HotPostsParams, RedditHotPostsResponse> = 
 
       return {
         Authorization: `Bearer ${params.accessToken}`,
-        'User-Agent': 'sim-studio/1.0 (https://github.com/simstudioai/sim)',
+        'User-Agent': 'sim-studio/1.0 (https://docs.ekinox.app)',
         Accept: 'application/json',
       }
     },

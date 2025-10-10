@@ -67,7 +67,7 @@ export function InviteStatusCard({
     const checkCustomBrand = () => {
       const computedStyle = getComputedStyle(document.documentElement)
       const brandAccent = computedStyle.getPropertyValue('--brand-accent-hex').trim()
-      if (brandAccent && brandAccent !== '#6f3dfa') {
+      if (brandAccent && brandAccent !== '#2563eb') {
         setButtonClass('auth-button-custom')
       } else {
         setButtonClass('auth-button-gradient')
@@ -104,7 +104,7 @@ export function InviteStatusCard({
         >
           Need help?{' '}
           <a
-            href='mailto:help@sim.ai'
+            href='mailto:help@www.ekinox.app'
             className='auth-link underline-offset-4 transition hover:underline'
           >
             Contact support

@@ -3,20 +3,20 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { soehne } from '@/app/fonts/soehne/soehne'
 
 /**
- * Blog post component comparing OpenAI AgentKit, n8n, and Sim workflow builders for building AI agents.
+ * Blog post component comparing OpenAI AgentKit, n8n, and Ekinox workflow builders for building AI agents.
  * Layout inspired by Anthropic's engineering blog posts.
  * Includes structured data (JSON-LD) for enhanced SEO and LLM discoverability.
  */
 export default function OpenAiN8nSim() {
-  const baseUrl = 'https://sim.ai'
+  const baseUrl = 'https://www.ekinox.app'
   const articleUrl = `${baseUrl}/building/openai-vs-n8n-vs-sim`
 
   const articleStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    headline: 'OpenAI AgentKit vs n8n vs Sim: AI Agent Workflow Builder Comparison',
+    headline: 'OpenAI AgentKit vs n8n vs Ekinox: AI Agent Workflow Builder Comparison',
     description:
-      'Compare OpenAI AgentKit, n8n, and Sim for building AI agent workflows. Explore key differences in capabilities, integrations, collaboration, and which platform best fits your production AI agent needs.',
+      'Compare OpenAI AgentKit, n8n, and Ekinox for building AI agent workflows. Explore key differences in capabilities, integrations, collaboration, and which platform best fits your production AI agent needs.',
     image: `${baseUrl}/building/openai-vs-n8n-vs-sim/workflow.png`,
     datePublished: '2025-10-06T00:00:00.000Z',
     dateModified: '2025-10-06T00:00:00.000Z',
@@ -28,7 +28,7 @@ export default function OpenAiN8nSim() {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Sim',
+      name: 'Ekinox',
       logo: {
         '@type': 'ImageObject',
         url: `${baseUrl}/logo/sim-logo.png`,
@@ -40,7 +40,7 @@ export default function OpenAiN8nSim() {
       '@id': articleUrl,
     },
     keywords:
-      'AI agents, OpenAI AgentKit, n8n, Sim, workflow automation, AI agent development, RAG, MCP protocol, agentic workflows, ChatKit, AI Copilot',
+      'AI agents, OpenAI AgentKit, n8n, Ekinox, workflow automation, AI agent development, RAG, MCP protocol, agentic workflows, ChatKit, AI Copilot',
     articleSection: 'Technology',
     inLanguage: 'en-US',
     about: [
@@ -62,7 +62,7 @@ export default function OpenAiN8nSim() {
       },
       {
         '@type': 'SoftwareApplication',
-        name: 'Sim',
+        name: 'Ekinox',
       },
     ],
   }
@@ -86,7 +86,7 @@ export default function OpenAiN8nSim() {
       {
         '@type': 'ListItem',
         position: 3,
-        name: 'OpenAI AgentKit vs n8n vs Sim',
+        name: 'OpenAI AgentKit vs n8n vs Ekinox',
         item: articleUrl,
       },
     ],
@@ -121,7 +121,7 @@ export default function OpenAiN8nSim() {
               <div className='relative h-full w-full overflow-hidden rounded-lg md:aspect-[5/4]'>
                 <Image
                   src='/building/openai-vs-n8n-vs-sim/workflow.png'
-                  alt='Sim AI agent workflow builder interface'
+                  alt='Ekinox AI agent workflow builder interface'
                   width={300}
                   height={240}
                   className='h-full w-full object-cover'
@@ -137,7 +137,7 @@ export default function OpenAiN8nSim() {
                 className='font-medium text-[36px] leading-tight tracking-tight sm:text-[48px] md:text-[56px] lg:text-[64px]'
                 itemProp='headline'
               >
-                OpenAI AgentKit vs n8n vs Sim: AI Agent Workflow Builder Comparison
+                OpenAI AgentKit vs n8n vs Ekinox: AI Agent Workflow Builder Comparison
               </h1>
               <div className='mt-4 hidden items-center justify-end gap-2 sm:flex'>
                 <a
@@ -219,7 +219,7 @@ export default function OpenAiN8nSim() {
                 itemProp='description'
               >
                 OpenAI just released AgentKit for building AI agents. How does it compare to
-                workflow automation platforms like n8n and purpose-built AI agent builders like Sim?
+                workflow automation platforms like n8n and purpose-built AI agent builders like Ekinox?
               </p>
             </div>
           </div>
@@ -234,7 +234,7 @@ export default function OpenAiN8nSim() {
                 When building AI agent workflows, developers often evaluate multiple platforms to
                 find the right fit for their needs. Three platforms frequently come up in these
                 discussions: OpenAI's new AgentKit, the established workflow automation tool n8n,
-                and Sim, a purpose-built AI agent workflow builder. While all three enable AI agent
+                and Ekinox, a purpose-built AI agent workflow builder. While all three enable AI agent
                 development, they take fundamentally different approaches, each with distinct
                 strengths and ideal use cases.
               </p>
@@ -459,15 +459,15 @@ export default function OpenAiN8nSim() {
               </ul>
             </section>
 
-            {/* Section 3: Sim */}
+            {/* Section 3: Ekinox */}
             <section className='mb-12'>
               <h2 className='mb-4 font-medium text-[28px] leading-tight sm:text-[32px]'>
-                What is Sim?
+                What is Ekinox?
               </h2>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Sim is a fully open-source platform (Apache 2.0 license) specifically designed for
+                Ekinox is a fully open-source platform (Apache 2.0 license) specifically designed for
                 AI agent development. Unlike platforms that added AI capabilities as an
-                afterthought, Sim was created from the ground up to address the unique challenges of
+                afterthought, Ekinox was created from the ground up to address the unique challenges of
                 building, testing, and deploying production-ready AI agents.
               </p>
 
@@ -479,10 +479,10 @@ export default function OpenAiN8nSim() {
                 Visual AI Workflow Builder
               </h4>
               <p className='mb-6 text-[19px] text-gray-800 leading-relaxed'>
-                Sim provides an intuitive drag-and-drop canvas where developers can build complex AI
+                Ekinox provides an intuitive drag-and-drop canvas where developers can build complex AI
                 agent workflows visually. The platform supports sophisticated agent architectures,
                 including multi-agent systems, conditional logic, loops, and parallel execution
-                paths. Additionally, Sim's built-in AI Copilot can assist you directly in the
+                paths. Additionally, Ekinox's built-in AI Copilot can assist you directly in the
                 editor, helping you build and modify workflows faster with intelligent suggestions
                 and explanations.
               </p>
@@ -490,13 +490,13 @@ export default function OpenAiN8nSim() {
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
                   src='/building/openai-vs-n8n-vs-sim/sim.png'
-                  alt='Sim visual workflow builder with AI agent blocks'
+                  alt='Ekinox visual workflow builder with AI agent blocks'
                   width={800}
                   height={450}
                   className='w-full'
                 />
                 <figcaption className='sr-only'>
-                  Sim drag-and-drop AI agent workflow builder canvas
+                  Ekinox drag-and-drop AI agent workflow builder canvas
                 </figcaption>
               </figure>
 
@@ -504,7 +504,7 @@ export default function OpenAiN8nSim() {
                 AI Copilot for Workflow Building
               </h4>
               <p className='mb-6 text-[19px] text-gray-800 leading-relaxed'>
-                Sim includes an intelligent in-editor AI assistant that helps you build and edit
+                Ekinox includes an intelligent in-editor AI assistant that helps you build and edit
                 workflows faster. Copilot can explain complex concepts, suggest best practices, and
                 even make changes to your workflow when you approve them. Using the @ context menu,
                 you can reference workflows, blocks, knowledge bases, documentation, templates, and
@@ -516,13 +516,13 @@ export default function OpenAiN8nSim() {
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
                   src='/building/openai-vs-n8n-vs-sim/copilot.png'
-                  alt='Sim AI Copilot assisting with workflow development'
+                  alt='Ekinox AI Copilot assisting with workflow development'
                   width={800}
                   height={450}
                   className='w-full'
                 />
                 <figcaption className='sr-only'>
-                  Sim AI Copilot in-editor assistant for workflow building
+                  Ekinox AI Copilot in-editor assistant for workflow building
                 </figcaption>
               </figure>
 
@@ -530,24 +530,24 @@ export default function OpenAiN8nSim() {
                 Pre-Built Workflow Templates
               </h4>
               <p className='mb-6 text-[19px] text-gray-800 leading-relaxed'>
-                Get started quickly with Sim's extensive library of pre-built workflow templates.
+                Get started quickly with Ekinox's extensive library of pre-built workflow templates.
                 Browse templates across categories like Marketing, Sales, Finance, Support, and
                 Artificial Intelligence. Each template is a production-ready workflow you can
                 customize for your needs, saving hours of development time. Templates are created by
-                the Sim team and community members, with popularity ratings and integration counts
+                the Ekinox team and community members, with popularity ratings and integration counts
                 to help you find the right starting point.
               </p>
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
                   src='/building/openai-vs-n8n-vs-sim/templates.png'
-                  alt='Sim workflow templates gallery'
+                  alt='Ekinox workflow templates gallery'
                   width={800}
                   height={450}
                   className='w-full'
                 />
                 <figcaption className='sr-only'>
-                  Sim pre-built workflow templates library
+                  Ekinox pre-built workflow templates library
                 </figcaption>
               </figure>
 
@@ -555,7 +555,7 @@ export default function OpenAiN8nSim() {
                 80+ Built-in Integrations
               </h4>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Out of the box, Sim connects with 80+ services including multiple AI providers
+                Out of the box, Ekinox connects with 80+ services including multiple AI providers
                 (OpenAI, Anthropic, Google, Groq, Cerebras, local Ollama models), communication
                 tools (Gmail, Slack, Teams, Telegram, WhatsApp), productivity apps (Notion, Google
                 Sheets, Airtable, Monday.com), and developer tools (GitHub, GitLab).
@@ -565,7 +565,7 @@ export default function OpenAiN8nSim() {
                 Multiple Trigger Options
               </h4>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Unlike AgentKit, Sim workflows can be triggered in multiple ways: chat interfaces,
+                Unlike AgentKit, Ekinox workflows can be triggered in multiple ways: chat interfaces,
                 REST APIs, webhooks, scheduled jobs, or external events from integrated services
                 like Slack and GitHub. This flexibility ensures your agents can be activated however
                 your use case demands.
@@ -575,7 +575,7 @@ export default function OpenAiN8nSim() {
                 Real-Time Team Collaboration
               </h4>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Sim enables multiple team members to work simultaneously on the same workflow with
+                Ekinox enables multiple team members to work simultaneously on the same workflow with
                 real-time editing, commenting, and comprehensive permissions management. This makes
                 it ideal for teams building complex agent systems together.
               </p>
@@ -594,10 +594,10 @@ export default function OpenAiN8nSim() {
                 Intelligent Knowledge Base with Vector Search
               </h4>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Sim's native knowledge base goes far beyond simple document storage. Powered by
+                Ekinox's native knowledge base goes far beyond simple document storage. Powered by
                 pgvector, it provides semantic search that understands meaning and context, not just
                 keywords. Upload documents in multiple formats (PDF, Word, Excel, Markdown, and
-                more), and Sim automatically processes them with intelligent chunking, generates
+                more), and Ekinox automatically processes them with intelligent chunking, generates
                 vector embeddings, and makes them instantly searchable. The knowledge base supports
                 natural language queries, concept-based retrieval, multi-language understanding, and
                 configurable chunk sizes (100-4,000 characters). This makes building RAG agents
@@ -609,7 +609,7 @@ export default function OpenAiN8nSim() {
                 Comprehensive Execution Logging and Monitoring
               </h4>
               <p className='mb-6 text-[19px] text-gray-800 leading-relaxed'>
-                Sim provides enterprise-grade logging that captures every detail of workflow
+                Ekinox provides enterprise-grade logging that captures every detail of workflow
                 execution. Track workflow runs with execution IDs, view block-level logs with
                 precise timing and duration metrics, monitor token usage and costs per execution,
                 and debug failures with detailed error traces and trace spans. The logging system
@@ -622,13 +622,13 @@ export default function OpenAiN8nSim() {
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
                   src='/building/openai-vs-n8n-vs-sim/logs.png'
-                  alt='Sim execution logs and monitoring dashboard'
+                  alt='Ekinox execution logs and monitoring dashboard'
                   width={800}
                   height={450}
                   className='w-full'
                 />
                 <figcaption className='sr-only'>
-                  Sim execution logs dashboard with detailed workflow monitoring
+                  Ekinox execution logs dashboard with detailed workflow monitoring
                 </figcaption>
               </figure>
 
@@ -636,7 +636,7 @@ export default function OpenAiN8nSim() {
                 Custom Integrations via MCP Protocol
               </h4>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Beyond the 80+ built-in integrations, Sim supports the Model Context Protocol (MCP),
+                Beyond the 80+ built-in integrations, Ekinox supports the Model Context Protocol (MCP),
                 allowing developers to create custom integrations for proprietary systems or
                 specialized tools.
               </p>
@@ -645,8 +645,8 @@ export default function OpenAiN8nSim() {
                 Flexible Deployment Options
               </h4>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Sim offers both cloud-hosted and self-hosted deployment options. Organizations can
-                run Sim on their own infrastructure for complete control, or use the managed cloud
+                Ekinox offers both cloud-hosted and self-hosted deployment options. Organizations can
+                run Ekinox on their own infrastructure for complete control, or use the managed cloud
                 service for simplicity. The platform is SOC2 and HIPAA compliant, ensuring
                 enterprise-level security.
               </p>
@@ -661,7 +661,7 @@ export default function OpenAiN8nSim() {
               </p>
 
               <h3 className='mt-6 mb-3 font-medium text-[22px] leading-tight'>
-                What You Can Build with Sim
+                What You Can Build with Ekinox
               </h3>
               <ul className='mb-4 ml-6 list-disc text-[19px] text-gray-800 leading-relaxed'>
                 <li className='mb-2'>
@@ -690,11 +690,11 @@ export default function OpenAiN8nSim() {
                 Drawbacks to Consider
               </h3>
               <p className='mb-2 text-[19px] text-gray-800 leading-relaxed'>
-                While Sim excels at AI agent workflows, there are some tradeoffs:
+                While Ekinox excels at AI agent workflows, there are some tradeoffs:
               </p>
               <ul className='mb-4 ml-6 list-disc text-[19px] text-gray-800 leading-relaxed'>
                 <li className='mb-2'>
-                  Fewer pre-built integrations compared to n8n's extensive library—though Sim's 80+
+                  Fewer pre-built integrations compared to n8n's extensive library—though Ekinox's 80+
                   integrations cover most AI agent use cases and MCP protocol enables custom
                   integrations
                 </li>
@@ -737,7 +737,7 @@ export default function OpenAiN8nSim() {
                 features.
               </p>
 
-              <h3 className='mt-6 mb-3 font-medium text-[22px] leading-tight'>Sim</h3>
+              <h3 className='mt-6 mb-3 font-medium text-[22px] leading-tight'>Ekinox</h3>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
                 <strong>Best for:</strong> Building production-ready AI agent workflows that require
                 flexibility, collaboration, and comprehensive tooling. Ideal for teams that need AI
@@ -775,8 +775,8 @@ export default function OpenAiN8nSim() {
               </p>
 
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Choose <strong>Sim</strong> if you're building AI agents as your primary objective
-                and need a platform purpose-built for that use case. Sim provides the most
+                Choose <strong>Ekinox</strong> if you're building AI agents as your primary objective
+                and need a platform purpose-built for that use case. Ekinox provides the most
                 comprehensive feature set for agentic workflows, with AI Copilot to accelerate
                 development, parallel execution handling, intelligent knowledge base for RAG
                 applications, detailed execution logging for production monitoring, flexibility
@@ -788,11 +788,11 @@ export default function OpenAiN8nSim() {
         </div>
 
         {/* Publisher information for schema */}
-        <meta itemProp='publisher' content='Sim' />
+        <meta itemProp='publisher' content='Ekinox' />
         <meta itemProp='inLanguage' content='en-US' />
         <meta
           itemProp='keywords'
-          content='AI agents, OpenAI AgentKit, n8n, Sim, workflow automation'
+          content='AI agents, OpenAI AgentKit, n8n, Ekinox, workflow automation'
         />
       </article>
     </>

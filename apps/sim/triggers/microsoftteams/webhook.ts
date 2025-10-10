@@ -90,7 +90,7 @@ export const microsoftTeamsWebhookTrigger: TriggerConfig = {
     'Click the three dots (•••) next to the team name and select "Manage team".',
     'Go to the "Apps" tab and click "Create an outgoing webhook".',
     'Provide a name, description, and optionally a profile picture.',
-    'Set the callback URL to your Sim webhook URL (shown above).',
+    'Set the callback URL to your Ekinox webhook URL (shown above).',
     'Copy the HMAC security token and paste it into the "HMAC Secret" field above.',
     'Click "Create" to finish setup.',
   ],
@@ -109,7 +109,7 @@ export const microsoftTeamsWebhookTrigger: TriggerConfig = {
     conversation: {
       id: '19:meeting_abcdef@thread.v2',
     },
-    text: 'Hello Sim Bot!',
+    text: 'Hello Ekinox Bot!',
   },
 
   webhook: {

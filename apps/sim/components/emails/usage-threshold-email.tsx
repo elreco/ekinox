@@ -37,7 +37,7 @@ export function UsageThresholdEmail({
   updatedDate = new Date(),
 }: UsageThresholdEmailProps) {
   const brand = getBrandConfig()
-  const baseUrl = getEnv('NEXT_PUBLIC_APP_URL') || 'https://sim.ai'
+  const baseUrl = getEnv('NEXT_PUBLIC_APP_URL') || 'https://www.ekinox.app'
 
   const previewText = `${brand.name}: You're at ${percentUsed}% of your ${planName} monthly budget`
 
@@ -105,7 +105,7 @@ export function UsageThresholdEmail({
             <Text style={baseStyles.paragraph}>
               Best regards,
               <br />
-              The Sim Team
+              The Ekinox Team
             </Text>
 
             <Text style={{ ...baseStyles.paragraph, fontSize: '12px', color: '#666' }}>

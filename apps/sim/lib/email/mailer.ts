@@ -167,7 +167,7 @@ async function processEmailData(options: EmailOptions): Promise<ProcessedEmailDa
     // For arrays, use the first email for unsubscribe (batch emails typically go to similar recipients)
     const primaryEmail = Array.isArray(to) ? to[0] : to
     const unsubscribeToken = generateUnsubscribeToken(primaryEmail, emailType)
-    const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+    const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
     const unsubscribeUrl = `${baseUrl}/unsubscribe?token=${unsubscribeToken}&email=${encodeURIComponent(primaryEmail)}`
 
     headers['List-Unsubscribe'] = `<${unsubscribeUrl}>`

@@ -138,7 +138,7 @@ class SimAgentClient {
       const response = await this.makeRequest('/health', { method: 'GET' })
       return response.success && response.data?.healthy === true
     } catch (error) {
-      logger.error('Sim-agent health check failed:', error)
+      logger.error('Ekinox-agent health check failed:', error)
       return false
     }
   }

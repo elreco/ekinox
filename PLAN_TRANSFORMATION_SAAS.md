@@ -114,7 +114,7 @@ STRIPE_ENTERPRISE_PRICE_ID="price_enterprise_tier_id"
 - [x] 🔄 Renommer `ekinox.env` vers `.env` (racine du projet)
 - [x] 🔄 Lancer avec Docker Compose : `docker compose -f docker-compose.local.yml up -d`
 - [ ] 🔄 Configurer Stripe avec les prix et webhooks
-- [ ] 🔄 Tester le rebranding Ekinox
+- [x] 🔄 Tester le rebranding Ekinox
 
 #### 4.2 Rebranding Visuel
 - [ ] 📋 Créer logo Ekinox (formats SVG, PNG)

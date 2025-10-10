@@ -1,5 +1,5 @@
 /**
- * Sim Telemetry Configuration
+ * Ekinox Telemetry Configuration
  *
  * PRIVACY NOTICE:
  * - Telemetry is enabled by default to help us improve the product
@@ -8,7 +8,7 @@
  *   2. Setting NEXT_TELEMETRY_DISABLED=1 environment variable
  *
  * This file allows you to configure telemetry collection for your
- * Sim instance. If you've forked the repository, you can modify
+ * Ekinox instance. If you've forked the repository, you can modify
  * this file to send telemetry to your own collector.
  *
  * We only collect anonymous usage data to improve the product:

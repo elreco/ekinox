@@ -90,14 +90,14 @@ describe('Workspace Invitations API Route', () => {
     vi.doMock('@/lib/env', () => ({
       env: {
         RESEND_API_KEY: 'test-resend-key',
-        NEXT_PUBLIC_APP_URL: 'https://test.sim.ai',
-        FROM_EMAIL_ADDRESS: 'Sim <noreply@test.sim.ai>',
-        EMAIL_DOMAIN: 'test.sim.ai',
+        NEXT_PUBLIC_APP_URL: 'https://test.www.ekinox.app',
+        FROM_EMAIL_ADDRESS: 'Ekinox <noreply@test.www.ekinox.app>',
+        EMAIL_DOMAIN: 'test.www.ekinox.app',
       },
     }))
 
     vi.doMock('@/lib/urls/utils', () => ({
-      getEmailDomain: vi.fn().mockReturnValue('sim.ai'),
+      getEmailDomain: vi.fn().mockReturnValue('www.ekinox.app'),
     }))
 
     vi.doMock('drizzle-orm', () => ({

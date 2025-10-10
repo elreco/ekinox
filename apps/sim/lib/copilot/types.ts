@@ -137,8 +137,8 @@ export interface Tool {
   requiresConfirmation(toolCall: CopilotToolCall): boolean
 }
 
-// Provider configuration for Sim Agent requests
-// This type is only for the `provider` field in requests sent to the Sim Agent
+// Provider configuration for Ekinox Agent requests
+// This type is only for the `provider` field in requests sent to the Ekinox Agent
 export type CopilotProviderConfig =
   | {
       provider: 'azure-openai'

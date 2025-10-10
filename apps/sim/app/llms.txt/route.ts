@@ -1,8 +1,8 @@
 export async function GET() {
-  const llmsContent = `# Sim - AI Agent Workflow Builder
-Sim is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sim platform.
-30,000+ developers are already using Sim to build and deploy AI agent workflows.
-Sim lets developers integrate with 100+ apps to streamline workflows with AI agents. Sim is SOC2 and HIPAA compliant, ensuring enterprise-level security.
+  const llmsContent = `# Ekinox - Visual AI Agent Workflow Builder
+Ekinox is a visual AI agent workflow builder platform. Developers and businesses use Ekinox to build and deploy AI agent workflows without code.
+Build powerful AI agents using our intuitive drag-and-drop interface.
+Ekinox lets you integrate with 100+ apps to streamline workflows with AI agents. Built with enterprise-level security and compliance.
 
 ## Key Features
 - Visual Workflow Builder: Drag-and-drop interface for creating AI agent workflows
@@ -11,7 +11,7 @@ Sim lets developers integrate with 100+ apps to streamline workflows with AI age
 ## Use Cases
 - AI Agent Workflow Automation
 - RAG Agents
-- RAG Systesm and Pipline
+- RAG Systems and Pipelines
 - Chatbot Workflows
 - Document Processing Workflows
 - Customer Service Chatbot Workflows
@@ -25,10 +25,10 @@ Sim lets developers integrate with 100+ apps to streamline workflows with AI age
 
 ## Getting Started
 - [Quick Start Guide](https://docs.ekinox.app/quickstart)
-- [GitHub](https://github.com/simstudioai/sim)
+- [Website](https://www.ekinox.app)
 
 ## Resources
-- [GitHub](https://github.com/simstudioai/sim)`
+- [Website](https://www.ekinox.app)`
 
   return new Response(llmsContent, {
     headers: {

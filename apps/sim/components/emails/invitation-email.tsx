@@ -26,7 +26,7 @@ interface InvitationEmailProps {
   updatedDate?: Date
 }
 
-const baseUrl = getEnv('NEXT_PUBLIC_APP_URL') || 'https://sim.ai'
+const baseUrl = getEnv('NEXT_PUBLIC_APP_URL') || 'https://www.ekinox.app'
 
 const logger = createLogger('InvitationEmail')
 
@@ -59,7 +59,7 @@ export const InvitationEmail = ({
     <Html>
       <Head />
       <Body style={baseStyles.main}>
-        <Preview>You've been invited to join {organizationName} on Sim</Preview>
+        <Preview>You've been invited to join {organizationName} on Ekinox</Preview>
         <Container style={baseStyles.container}>
           <Section style={{ padding: '30px 0', textAlign: 'center' }}>
             <Row>
@@ -88,7 +88,7 @@ export const InvitationEmail = ({
             <Text style={baseStyles.paragraph}>Hello,</Text>
             <Text style={baseStyles.paragraph}>
               <strong>{inviterName}</strong> has invited you to join{' '}
-              <strong>{organizationName}</strong> on Sim. Sim is a powerful, user-friendly platform
+              <strong>{organizationName}</strong> on Ekinox. Ekinox is a powerful, user-friendly platform
               for building, testing, and optimizing agentic workflows.
             </Text>
             <Link href={enhancedLink} style={{ textDecoration: 'none' }}>
@@ -101,7 +101,7 @@ export const InvitationEmail = ({
             <Text style={baseStyles.paragraph}>
               Best regards,
               <br />
-              The Sim Team
+              The Ekinox Team
             </Text>
             <Text
               style={{
@@ -112,7 +112,7 @@ export const InvitationEmail = ({
               }}
             >
               This email was sent on {format(updatedDate, 'MMMM do, yyyy')} to {invitedEmail} with
-              an invitation to join {organizationName} on Sim.
+              an invitation to join {organizationName} on Ekinox.
             </Text>
           </Section>
         </Container>

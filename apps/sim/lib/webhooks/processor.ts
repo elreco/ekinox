@@ -418,7 +418,7 @@ export async function queueWebhookExecution(
     if (foundWebhook.provider === 'microsoftteams') {
       return NextResponse.json({
         type: 'message',
-        text: 'Sim',
+        text: 'Ekinox',
       })
     }
 

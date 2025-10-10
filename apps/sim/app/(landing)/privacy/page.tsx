@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
         <p className='mb-4'>Last Updated: September 10, 2025</p>
         <p>
           This Privacy Policy describes how your personal information is collected, used, and shared
-          when you visit or use Sim ("the Service", "we", "us", or "our").
+          when you visit or use Ekinox ("the Service", "we", "us", or "our").
         </p>
         <p className='mt-4'>
           By using the Service, you agree to the collection and use of information in accordance
@@ -63,7 +63,7 @@ export default function PrivacyPolicy() {
           </li>
           <li>
             <strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in
-            this Agreement) refers to Sim. For the purpose of the GDPR, the Company is the Data
+            this Agreement) refers to Ekinox. For the purpose of the GDPR, the Company is the Data
             Controller.
           </li>
           <li>
@@ -126,7 +126,7 @@ export default function PrivacyPolicy() {
             duration of a page visit).
           </li>
           <li>
-            <strong>Website</strong> refers to Sim, accessible from sim.ai
+            <strong>Website</strong> refers to Ekinox, accessible from www.ekinox.app
           </li>
           <li>
             <strong>You</strong> means the individual accessing or using the Service, or the
@@ -252,12 +252,12 @@ export default function PrivacyPolicy() {
 
         <h3 className='mb-2 font-medium text-xl'>Legal Requirements</h3>
         <p className='mb-4'>
-          Sim may disclose your Personal Information in the good faith belief that such action is
+          Ekinox may disclose your Personal Information in the good faith belief that such action is
           necessary to:
         </p>
         <ul className='list-disc space-y-2 pl-6'>
           <li>To comply with a legal obligation</li>
-          <li>To protect and defend the rights or property of Sim</li>
+          <li>To protect and defend the rights or property of Ekinox</li>
           <li>To prevent or investigate possible wrongdoing in connection with the Service</li>
           <li>To protect the personal safety of users of the Service or the public</li>
           <li>To protect against legal liability</li>
@@ -382,7 +382,7 @@ export default function PrivacyPolicy() {
           11. Information Collected while Using Google APIs
         </h2>
         <p className='mb-4'>
-          Sim's use and transfer to any other app of information received from Google APIs will
+          Ekinox's use and transfer to any other app of information received from Google APIs will
           adhere to Google API Services User Data Policy, including the Limited Use requirements.
         </p>
       </section>
@@ -437,7 +437,7 @@ export default function PrivacyPolicy() {
         </h2>
         <p className='mb-4'>
           If you are a resident of the European Economic Area (EEA), you have certain data
-          protection rights. Sim aims to take reasonable steps to allow you to correct, amend,
+          protection rights. Ekinox aims to take reasonable steps to allow you to correct, amend,
           delete, or limit the use of your Personal Information.
         </p>
         <p className='mb-4'>
@@ -467,7 +467,7 @@ export default function PrivacyPolicy() {
           </li>
           <li>
             The right to withdraw consent. You also have the right to withdraw your consent at any
-            time where Sim relied on your consent to process your personal information.
+            time where Ekinox relied on your consent to process your personal information.
           </li>
         </ul>
         <p className='mb-4'>
@@ -502,7 +502,7 @@ export default function PrivacyPolicy() {
 
         <h3 className='mb-2 font-medium text-xl'>Introduction</h3>
         <p className='mb-4'>
-          Sim is dedicated to preserving data security by preventing unauthorized disclosure of
+          Ekinox is dedicated to preserving data security by preventing unauthorized disclosure of
           information. This policy was created to provide security researchers with instructions for
           conducting vulnerability discovery activities and to provide information on how to report
           vulnerabilities that have been discovered. This policy explains which systems and sorts of
@@ -541,28 +541,28 @@ export default function PrivacyPolicy() {
         <h3 className='mb-2 font-medium text-xl'>Authorization</h3>
         <p className='mb-4'>
           Security research carried out in conformity with this policy is deemed permissible. We'll
-          work with you to swiftly understand and fix the problem, and Sim will not suggest or
+          work with you to swiftly understand and fix the problem, and Ekinox will not suggest or
           pursue legal action in connection with your study.
         </p>
 
         <h3 className='mb-2 font-medium text-xl'>Scope</h3>
         <p className='mb-4'>This policy applies to the following systems and services:</p>
         <ul className='mb-4 list-disc space-y-2 pl-6'>
-          <li>sim.ai website</li>
-          <li>Sim web application</li>
-          <li>Sim API services</li>
+          <li>www.ekinox.app website</li>
+          <li>Ekinox web application</li>
+          <li>Ekinox API services</li>
         </ul>
         <p className='mb-4'>
           Any service that isn't explicitly specified above, such as related services, is out of
           scope and isn't allowed to be tested. Vulnerabilities discovered in third-party solutions
-          Sim interacts with are not covered by this policy and should be reported directly to the
+          Ekinox interacts with are not covered by this policy and should be reported directly to the
           solution vendor in accordance with their disclosure policy (if any). Before beginning your
           inquiry, email us at{' '}
           <Link
-            href='mailto:security@sim.ai'
+            href='mailto:security@www.ekinox.app'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            security@sim.ai
+            security@www.ekinox.app
           </Link>{' '}
           if you're unsure whether a system or endpoint is in scope.
         </p>
@@ -581,10 +581,10 @@ export default function PrivacyPolicy() {
         <p className='mb-4'>
           To report any security flaws, send an email to{' '}
           <Link
-            href='mailto:security@sim.ai'
+            href='mailto:security@www.ekinox.app'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            security@sim.ai
+            security@www.ekinox.app
           </Link>
           . The next business day, we'll acknowledge receipt of your vulnerability report and keep
           you updated on our progress. Reports can be anonymously submitted.
@@ -621,10 +621,10 @@ export default function PrivacyPolicy() {
         <p>
           If you have any questions about this Privacy Policy, please contact us at:{' '}
           <Link
-            href='mailto:privacy@sim.ai'
+            href='mailto:privacy@www.ekinox.app'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            privacy@sim.ai
+            privacy@www.ekinox.app
           </Link>
         </p>
       </section>

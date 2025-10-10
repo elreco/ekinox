@@ -15,7 +15,7 @@ export const ChatTriggerBlock: BlockConfig = {
   - Can run the workflow manually to test implementation when this is the trigger point by passing in a message.
   `,
   category: 'triggers',
-  bgColor: '#6F3DFA',
+  bgColor: '#2563eb',
   icon: ChatTriggerIcon,
   subBlocks: [],
   tools: {

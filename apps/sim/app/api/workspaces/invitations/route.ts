@@ -232,7 +232,7 @@ async function sendInvitationEmail({
   token: string
 }) {
   try {
-    const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+    const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
     // Use invitation ID in path, token in query parameter for security
     const invitationLink = `${baseUrl}/invite/${invitationId}?token=${token}`
 
@@ -250,7 +250,7 @@ async function sendInvitationEmail({
 
     const result = await sendEmail({
       to,
-      subject: `You've been invited to join "${workspaceName}" on Sim`,
+      subject: `You've been invited to join "${workspaceName}" on Ekinox`,
       html: emailHtml,
       from: fromAddress,
       emailType: 'transactional',

@@ -33,7 +33,7 @@ export async function GET(
       return NextResponse.redirect(
         new URL(
           `/invite/${invitationId}?token=${token}`,
-          env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+          env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
         )
       )
     }
@@ -56,7 +56,7 @@ export async function GET(
         return NextResponse.redirect(
           new URL(
             `/invite/${invitationId}?error=invalid-token`,
-            env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+            env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
           )
         )
       }
@@ -68,7 +68,7 @@ export async function GET(
         return NextResponse.redirect(
           new URL(
             `/invite/${invitation.id}?error=expired`,
-            env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+            env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
           )
         )
       }
@@ -86,7 +86,7 @@ export async function GET(
         return NextResponse.redirect(
           new URL(
             `/invite/${invitation.id}?error=workspace-not-found`,
-            env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+            env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
           )
         )
       }
@@ -98,7 +98,7 @@ export async function GET(
         return NextResponse.redirect(
           new URL(
             `/invite/${invitation.id}?error=already-processed`,
-            env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+            env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
           )
         )
       }
@@ -116,7 +116,7 @@ export async function GET(
         return NextResponse.redirect(
           new URL(
             `/invite/${invitation.id}?error=user-not-found`,
-            env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+            env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
           )
         )
       }
@@ -127,7 +127,7 @@ export async function GET(
         return NextResponse.redirect(
           new URL(
             `/invite/${invitation.id}?error=email-mismatch`,
-            env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+            env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
           )
         )
       }
@@ -156,7 +156,7 @@ export async function GET(
         return NextResponse.redirect(
           new URL(
             `/workspace/${invitation.workspaceId}/w`,
-            env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+            env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
           )
         )
       }
@@ -184,7 +184,7 @@ export async function GET(
       return NextResponse.redirect(
         new URL(
           `/workspace/${invitation.workspaceId}/w`,
-          env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+          env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
         )
       )
     }
@@ -298,7 +298,7 @@ export async function POST(
       .set({ token: newToken, expiresAt: newExpiresAt, updatedAt: new Date() })
       .where(eq(workspaceInvitation.id, invitationId))
 
-    const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+    const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
     const invitationLink = `${baseUrl}/invite/${invitationId}?token=${newToken}`
 
     const emailHtml = await render(
@@ -311,7 +311,7 @@ export async function POST(
 
     const result = await sendEmail({
       to: invitation.email,
-      subject: `You've been invited to join "${ws.name}" on Sim`,
+      subject: `You've been invited to join "${ws.name}" on Ekinox`,
       html: emailHtml,
       from: getFromEmailAddress(),
       emailType: 'transactional',

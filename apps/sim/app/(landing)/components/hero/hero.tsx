@@ -427,7 +427,7 @@ export default function Hero() {
           <textarea
             id='agent-description'
             placeholder={
-              isMobile ? 'Build an AI agent...' : 'Ask Sim to build an agent to read my emails...'
+              isMobile ? 'Build an AI agent...' : 'Ask Ekinox to build an agent to read my emails...'
             }
             className='h-[100px] w-full resize-none px-3 py-2.5 text-sm sm:h-[120px] sm:px-4 sm:py-3 sm:text-base'
             value={textValue}
@@ -462,7 +462,7 @@ export default function Hero() {
                 : {
                     border: '0.625px solid #343434',
                     background: 'linear-gradient(180deg, #060606 0%, #323232 100%)',
-                    boxShadow: '0 1.25px 2.5px 0 #9B77FF inset',
+                    boxShadow: '0 1.25px 2.5px 0 #1e40af inset',
                     cursor: 'pointer',
                   }),
             }}

@@ -1613,7 +1613,7 @@ export const useCopilotStore = create<CopilotStore>()(
           let errorContent = result.error || 'Failed to send message'
           if (result.status === 401) {
             errorContent =
-              '_Unauthorized request. You need a valid API key to use the copilot. You can get one by going to [sim.ai](https://sim.ai) settings and generating one there._'
+              '_Unauthorized request. You need a valid API key to use the copilot. You can get one by going to [www.ekinox.app](https://www.ekinox.app) settings and generating one there._'
           } else if (result.status === 402) {
             errorContent =
               '_Usage limit exceeded. To continue using this service, upgrade your plan or top up on credits._'
@@ -1622,7 +1622,7 @@ export const useCopilotStore = create<CopilotStore>()(
               '_Provider config not allowed for non-enterprise users. Please remove the provider config and try again_'
           } else if (result.status === 426) {
             errorContent =
-              '_Please upgrade to the latest version of the Sim platform to continue using the copilot._'
+              '_Please upgrade to the latest version of the Ekinox platform to continue using the copilot._'
           } else if (result.status === 429) {
             errorContent = '_Provider rate limit exceeded. Please try again later._'
           }

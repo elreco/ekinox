@@ -64,7 +64,7 @@ export const discordSendMessageTool: ToolConfig<
       }
 
       if (!body.content) {
-        body.content = 'Message sent from Sim'
+        body.content = 'Message sent from Ekinox'
       }
 
       return body

@@ -1425,7 +1425,7 @@ export const auth = betterAuth({
 
                 const result = await sendEmail({
                   to: invitation.email,
-                  subject: `${inviterName} has invited you to join ${organization.name} on Sim`,
+                  subject: `${inviterName} has invited you to join ${organization.name} on Ekinox`,
                   html,
                   from: getFromEmailAddress(),
                   emailType: 'transactional',

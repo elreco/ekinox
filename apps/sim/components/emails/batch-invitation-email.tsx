@@ -30,7 +30,7 @@ interface BatchInvitationEmailProps {
   acceptUrl: string
 }
 
-const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
 
 const getPermissionLabel = (permission: string) => {
   switch (permission) {
@@ -102,7 +102,7 @@ export const BatchInvitationEmail = ({
             <Text style={baseStyles.paragraph}>Hello,</Text>
             <Text style={baseStyles.paragraph}>
               <strong>{inviterName}</strong> has invited you to join{' '}
-              <strong>{organizationName}</strong> on Sim.
+              <strong>{organizationName}</strong> on Ekinox.
             </Text>
 
             {/* Team Role Information */}
@@ -155,7 +155,7 @@ export const BatchInvitationEmail = ({
             <Text style={baseStyles.paragraph}>
               Best regards,
               <br />
-              The Sim Team
+              The Ekinox Team
             </Text>
           </Section>
         </Container>

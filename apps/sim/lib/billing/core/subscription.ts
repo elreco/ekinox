@@ -303,7 +303,7 @@ export async function sendPlanWelcomeEmail(subscription: any): Promise<void> {
         )
         const { sendEmail } = await import('@/lib/email/mailer')
 
-        const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://sim.ai'
+        const baseUrl = env.NEXT_PUBLIC_APP_URL || 'https://www.ekinox.app'
         const html = await renderPlanWelcomeEmail({
           planName: subPlan === 'pro' ? 'Pro' : 'Team',
           userName: users[0].name || undefined,

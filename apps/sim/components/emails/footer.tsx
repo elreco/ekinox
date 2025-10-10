@@ -13,7 +13,7 @@ interface EmailFooterProps {
 }
 
 export const EmailFooter = ({
-  baseUrl = getEnv('NEXT_PUBLIC_APP_URL') || 'https://sim.ai',
+  baseUrl = getEnv('NEXT_PUBLIC_APP_URL') || 'https://www.ekinox.app',
   unsubscribe,
 }: EmailFooterProps) => {
   const brand = getBrandConfig()
@@ -42,7 +42,7 @@ export const EmailFooter = ({
                     </Link>
                   </td>
                   <td align='center' style={{ padding: '0 8px' }}>
-                    <Link href='https://github.com/simstudioai/sim' rel='noopener noreferrer'>
+                    <Link href='https://docs.ekinox.app' rel='noopener noreferrer'>
                       <Img
                         src={`${baseUrl}/static/github-icon.png`}
                         width='24'

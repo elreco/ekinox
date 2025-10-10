@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     const data = (await res.json().catch(() => null)) as { apiKey?: string; id?: string } | null
 
     if (!data?.apiKey) {
-      return NextResponse.json({ error: 'Invalid response from Sim Agent' }, { status: 500 })
+      return NextResponse.json({ error: 'Invalid response from Ekinox Agent' }, { status: 500 })
     }
 
     return NextResponse.json(

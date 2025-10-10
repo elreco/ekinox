@@ -34,7 +34,7 @@ export const SlackBlock: BlockConfig<SlackResponse> = {
       type: 'dropdown',
       layout: 'full',
       options: [
-        { label: 'Sim Bot', id: 'oauth' },
+        { label: 'Ekinox Bot', id: 'oauth' },
         { label: 'Custom Bot', id: 'bot_token' },
       ],
       value: () => 'oauth',
@@ -217,7 +217,7 @@ export const SlackBlock: BlockConfig<SlackResponse> = {
         } else {
           // Default to OAuth
           if (!credential) {
-            throw new Error('Slack account credential is required when using Sim Bot')
+            throw new Error('Slack account credential is required when using Ekinox Bot')
           }
           baseParams.credential = credential
         }
