@@ -69,7 +69,7 @@ export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps
   )
 
   const handleContactUs = () => {
-    window.open('https://form.typeform.com/to/jqCO12pF', '_blank')
+    window.open('mailto:alexandrelecorre.pro@gmail.com', '_blank')
   }
 
   // Define all 4 plans
@@ -79,7 +79,7 @@ export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps
       price: '$0',
       description: '',
       features: [
-        { text: '$10 free inference credit', included: true, icon: DollarSign },
+        { text: '$5 free inference credit', included: true, icon: DollarSign },
         { text: '10 runs per minute (sync)', included: true, icon: Zap },
         { text: '50 runs per minute (async)', included: true, icon: Clock },
         { text: '7-day log retention', included: true, icon: Database },

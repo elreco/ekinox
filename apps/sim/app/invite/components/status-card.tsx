@@ -104,7 +104,7 @@ export function InviteStatusCard({
         >
           Need help?{' '}
           <a
-            href='mailto:help@www.ekinox.app'
+            href='mailto:alexandrelecorre.pro@gmail.com'
             className='auth-link underline-offset-4 transition hover:underline'
           >
             Contact support

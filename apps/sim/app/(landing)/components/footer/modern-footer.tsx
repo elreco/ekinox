@@ -26,25 +26,23 @@ const FOOTER_LINKS = [
   {
     title: 'Resources',
     links: [
-      { name: 'Documentation', href: 'https://docs.ekinox.app' },
-      { name: 'Help Center', href: 'https://docs.ekinox.app' }
+      { name: 'Documentation', href: 'https://docs.ekinox.app' }
     ]
   },
   {
     title: 'Company',
     links: [
-      { name: 'Contact', href: 'mailto:hello@ekinox.app' }
+      { name: 'Contact', href: `mailto:alexandrelecorre.pro@gmail.com` }
     ]
   }
 ]
 
 const SOCIAL_LINKS = [
-  { icon: Twitter, href: 'https://twitter.com/ekinox', name: 'Twitter' },
-  { icon: Linkedin, href: 'https://linkedin.com/company/ekinox', name: 'LinkedIn' },
-  { icon: Github, href: 'https://github.com/ekinox', name: 'GitHub' }
+  { icon: Linkedin, href: 'https://linkedin.com/in/alexandre-le-corre', name: 'LinkedIn' },
 ]
 
 export default function ModernFooter() {
+
   return (
     <footer className="relative bg-gray-900 overflow-hidden">
 

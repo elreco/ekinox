@@ -34,7 +34,7 @@ export default function Nav({ hideAuthButtons = false, variant = 'landing' }: Na
   )
 
   const handleEnterpriseClick = useCallback(() => {
-    window.open('https://form.typeform.com/to/jqCO12pF', '_blank', 'noopener,noreferrer')
+    window.open('mailto:alexandrelecorre.pro@gmail.com', '_blank', 'noopener,noreferrer')
   }, [])
 
   const NavLinks = () => (

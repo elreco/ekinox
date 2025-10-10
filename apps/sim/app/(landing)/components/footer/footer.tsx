@@ -153,7 +153,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
                 Pricing
               </Link>
               <Link
-                href='https://form.typeform.com/to/jqCO12pF'
+                href='mailto:alexandrelecorre.pro@gmail.com'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='text-[14px] text-muted-foreground transition-colors hover:text-foreground'

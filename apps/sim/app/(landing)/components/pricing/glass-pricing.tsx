@@ -201,7 +201,7 @@ export default function GlassPricing() {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
                     if (tier.cta === 'Contact Sales') {
-                      window.location.href = 'mailto:sales@ekinox.app'
+                      window.location.href = 'mailto:alexandrelecorre.pro@gmail.com'
                     } else {
                       router.push('/signup')
                     }

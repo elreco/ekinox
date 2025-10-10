@@ -28,7 +28,7 @@ const defaultConfig: BrandConfig = {
   logoUrl: undefined,
   faviconUrl: '/favicon/favicon.ico',
   customCssUrl: undefined,
-  supportEmail: 'help@www.ekinox.app',
+  supportEmail: 'alexandrelecorre.pro@gmail.com',
   documentationUrl: undefined,
   termsUrl: undefined,
   privacyUrl: undefined,

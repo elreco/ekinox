@@ -211,10 +211,10 @@ export default function TermsOfService() {
           You have the right to opt out of the provisions of this Arbitration Agreement by sending a
           timely written notice of your decision to opt out to:{' '}
           <Link
-            href='mailto:legal@www.ekinox.app'
+            href='mailto:alexandrelecorre.pro@gmail.com'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            legal@www.ekinox.app{' '}
+            alexandrelecorre.pro@gmail.com{' '}
           </Link>
           within 30 days after first becoming subject to this Arbitration Agreement.
         </p>
@@ -261,10 +261,10 @@ export default function TermsOfService() {
         <p>
           Our Copyright Agent can be reached at:{' '}
           <Link
-            href='mailto:copyright@www.ekinox.app'
+            href='mailto:alexandrelecorre.pro@gmail.com'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            copyright@www.ekinox.app
+            alexandrelecorre.pro@gmail.com
           </Link>
         </p>
       </section>
@@ -274,10 +274,10 @@ export default function TermsOfService() {
         <p>
           If you have any questions about these Terms, please contact us at:{' '}
           <Link
-            href='mailto:legal@www.ekinox.app'
+            href='mailto:alexandrelecorre.pro@gmail.com'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            legal@www.ekinox.app
+            alexandrelecorre.pro@gmail.com
           </Link>
         </p>
       </section>
