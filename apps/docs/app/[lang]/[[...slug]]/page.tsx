@@ -106,7 +106,7 @@ export async function generateMetadata(props: {
   return {
     title: page.data.title,
     description:
-      page.data.description || 'Sim visual workflow builder for AI applications documentation',
+      page.data.description || 'Ekinox visual workflow builder for AI applications documentation',
     keywords: [
       'AI workflow builder',
       'visual workflow editor',
@@ -119,23 +119,23 @@ export async function generateMetadata(props: {
     ]
       .flat()
       .filter(Boolean),
-    authors: [{ name: 'Sim Team' }],
+    authors: [{ name: 'Ekinox Team' }],
     category: 'Developer Tools',
     openGraph: {
       title: page.data.title,
       description:
-        page.data.description || 'Sim visual workflow builder for AI applications documentation',
+        page.data.description || 'Ekinox visual workflow builder for AI applications documentation',
       url: fullUrl,
-      siteName: 'Sim Documentation',
+      siteName: 'Ekinox Documentation',
       type: 'article',
       locale: params.lang,
-      alternateLocale: ['en', 'fr', 'zh'].filter((lang) => lang !== params.lang),
+      alternateLocale: ['en', 'fr', 'es', 'de'].filter((lang) => lang !== params.lang),
     },
     twitter: {
       card: 'summary',
       title: page.data.title,
       description:
-        page.data.description || 'Sim visual workflow builder for AI applications documentation',
+        page.data.description || 'Ekinox visual workflow builder for AI applications documentation',
     },
     robots: {
       index: true,
@@ -154,7 +154,8 @@ export async function generateMetadata(props: {
       languages: {
         en: `${baseUrl}/en${page.url.replace(`/${params.lang}`, '')}`,
         fr: `${baseUrl}/fr${page.url.replace(`/${params.lang}`, '')}`,
-        zh: `${baseUrl}/zh${page.url.replace(`/${params.lang}`, '')}`,
+        es: `${baseUrl}/es${page.url.replace(`/${params.lang}`, '')}`,
+        de: `${baseUrl}/de${page.url.replace(`/${params.lang}`, '')}`,
       },
     },
   }

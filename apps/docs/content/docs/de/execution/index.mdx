@@ -6,7 +6,7 @@ import { Callout } from 'fumadocs-ui/components/callout'
 import { Card, Cards } from 'fumadocs-ui/components/card'
 import { Image } from '@/components/ui/image'
 
-Die Ausführungs-Engine von Sim bringt Ihre Workflows zum Leben, indem sie Blöcke in der richtigen Reihenfolge verarbeitet, den Datenfluss verwaltet und Fehler elegant behandelt, sodass Sie genau verstehen können, wie Workflows in Sim ausgeführt werden.
+Die Ausführungs-Engine von Ekinox bringt Ihre Workflows zum Leben, indem sie Blöcke in der richtigen Reihenfolge verarbeitet, den Datenfluss verwaltet und Fehler elegant behandelt, sodass Sie genau verstehen können, wie Workflows in Ekinox ausgeführt werden.
 
 <Callout type="info">
   Jede Workflow-Ausführung folgt einem deterministischen Pfad, der auf Ihren Blockverbindungen und Ihrer Logik basiert, um vorhersehbare und zuverlässige Ergebnisse zu gewährleisten.
@@ -23,11 +23,11 @@ Die Ausführungs-Engine von Sim bringt Ihre Workflows zum Leben, indem sie Blöc
   <Card title="Protokollierung" href="/execution/logging">
     Überwachen Sie Workflow-Ausführungen mit umfassender Protokollierung und Echtzeit-Sichtbarkeit
   </Card>
-  
+
   <Card title="Kostenberechnung" href="/execution/costs">
     Verstehen Sie, wie die Kosten für Workflow-Ausführungen berechnet und optimiert werden
   </Card>
-  
+
   <Card title="Externe API" href="/execution/api">
     Greifen Sie programmgesteuert über REST-API auf Ausführungsprotokolle zu und richten Sie Webhooks ein
   </Card>
@@ -64,7 +64,7 @@ Workflows können über mehrere Kanäle ausgeführt werden:
 
 ### Als API bereitstellen
 
-Wenn Sie einen Workflow als API bereitstellen, macht Sim Folgendes:
+Wenn Sie einen Workflow als API bereitstellen, macht Ekinox Folgendes:
 - Erstellt einen eindeutigen HTTP-Endpunkt: `https://www.ekinox.app/api/workflows/{workflowId}/execute`
 - Generiert einen API-Schlüssel zur Authentifizierung
 - Akzeptiert POST-Anfragen mit JSON-Payloads
@@ -105,31 +105,6 @@ Alle öffentlichen Einstiegspunkte—API, Chat, Zeitplan, Webhook und manuelle A
 </div>
 
 Das Deploy-Modal behält eine vollständige Versionshistorie bei—inspiziere jeden Snapshot, vergleiche ihn mit deinem Entwurf und führe Upgrades oder Rollbacks mit einem Klick durch, wenn du eine frühere Version wiederherstellen musst.
-
-## Programmatische Ausführung
-
-Führe Workflows aus deinen Anwendungen mit unseren offiziellen SDKs aus:
-
-```bash
-# TypeScript/JavaScript
-npm install simstudio-ts-sdk
-
-# Python
-pip install simstudio-sdk
-```
-
-```typescript
-// TypeScript Example
-import { SimStudioClient } from 'simstudio-ts-sdk';
-
-const client = new SimStudioClient({ 
-  apiKey: 'your-api-key' 
-});
-
-const result = await client.executeWorkflow('workflow-id', {
-  input: { message: 'Hello' }
-});
-```
 
 ## Best Practices
 

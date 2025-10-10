@@ -1,5 +1,5 @@
 {
-  "title": "Sim Documentation",
+  "title": "Ekinox Documentation",
   "pages": [
     "./introduction/index",
     "./getting-started/index",
@@ -17,9 +17,7 @@
     "execution",
     "---Advanced---",
     "permissions",
-    "yaml",
-    "---SDKs---",
-    "sdks"
+    "yaml"
   ],
   "defaultOpen": false
 }

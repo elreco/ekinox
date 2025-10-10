@@ -62,7 +62,7 @@ export default async function Layout({ children, params }: LayoutProps) {
                 <div className='flex items-center gap-3'>
                   <Image
                     src='/static/logo.png'
-                    alt='Sim'
+                    alt='Ekinox'
                     width={60}
                     height={24}
                     className='h-6 w-auto'

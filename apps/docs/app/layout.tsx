@@ -7,11 +7,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 export const metadata = {
   metadataBase: new URL('https://docs.ekinox.app'),
   title: {
-    default: 'Sim Documentation - Visual Workflow Builder for AI Applications',
+    default: 'Ekinox Documentation - Visual Workflow Builder for AI Applications',
     template: '%s',
   },
   description:
-    'Comprehensive documentation for Sim - the visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines by connecting blocks on a canvas—no coding required.',
+    'Comprehensive documentation for Ekinox - the visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines by connecting blocks on a canvas—no coding required.',
   keywords: [
     'AI workflow builder',
     'visual workflow editor',
@@ -24,7 +24,7 @@ export const metadata = {
     'workflow canvas',
     'AI development platform',
   ],
-  authors: [{ name: 'Sim Team', url: 'https://sim.ai' }],
+  authors: [{ name: 'Ekinox Team', url: 'https://www.ekinox.app' }],
   category: 'Developer Tools',
   classification: 'Developer Documentation',
   manifest: '/favicon/site.webmanifest',
@@ -39,24 +39,24 @@ export const metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Sim Docs',
+    title: 'Ekinox Docs',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['fr_FR', 'zh_CN'],
+    alternateLocale: ['fr_FR', 'es_ES', 'de_DE'],
     url: 'https://docs.ekinox.app',
-    siteName: 'Sim Documentation',
-    title: 'Sim Documentation - Visual Workflow Builder for AI Applications',
+    siteName: 'Ekinox Documentation',
+    title: 'Ekinox Documentation - Visual Workflow Builder for AI Applications',
     description:
-      'Comprehensive documentation for Sim - the visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines.',
+      'Comprehensive documentation for Ekinox - the visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines.',
   },
   twitter: {
     card: 'summary',
-    title: 'Sim Documentation - Visual Workflow Builder for AI Applications',
+    title: 'Ekinox Documentation - Visual Workflow Builder for AI Applications',
     description:
-      'Comprehensive documentation for Sim - the visual workflow builder for AI applications.',
-    creator: '@sim_ai',
+      'Comprehensive documentation for Ekinox - the visual workflow builder for AI applications.',
+    creator: '@ekinox',
   },
   robots: {
     index: true,

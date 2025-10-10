@@ -6,7 +6,7 @@ import { Callout } from 'fumadocs-ui/components/callout'
 import { Card, Cards } from 'fumadocs-ui/components/card'
 import { Image } from '@/components/ui/image'
 
-Sim's execution engine brings your workflows to life by processing blocks in the correct order, managing data flow, and handling errors gracefully, so you can understand exactly how workflows are executed in Sim.
+Ekinox's execution engine brings your workflows to life by processing blocks in the correct order, managing data flow, and handling errors gracefully, so you can understand exactly how workflows are executed in Ekinox.
 
 <Callout type="info">
   Every workflow execution follows a deterministic path based on your block connections and logic, ensuring predictable and reliable results.
@@ -23,11 +23,11 @@ Sim's execution engine brings your workflows to life by processing blocks in the
   <Card title="Logging" href="/execution/logging">
     Monitor workflow executions with comprehensive logging and real-time visibility
   </Card>
-  
+
   <Card title="Cost Calculation" href="/execution/costs">
     Understand how workflow execution costs are calculated and optimized
   </Card>
-  
+
   <Card title="External API" href="/execution/api">
     Access execution logs and set up webhooks programmatically via REST API
   </Card>
@@ -64,7 +64,7 @@ Workflows can be executed through multiple channels:
 
 ### Deploy as API
 
-When you deploy a workflow as an API, Sim:
+When you deploy a workflow as an API, Ekinox:
 - Creates a unique HTTP endpoint: `https://www.ekinox.app/api/workflows/{workflowId}/execute`
 - Generates an API key for authentication
 - Accepts POST requests with JSON payloads
@@ -104,31 +104,6 @@ All public entry points—API, Chat, Schedule, Webhook, and Manual runs—execut
 </div>
 
 The Deploy modal keeps a full version history—inspect any snapshot, compare it against your draft, and promote or roll back with one click when you need to restore a prior release.
-
-## Programmatic Execution
-
-Execute workflows from your applications using our official SDKs:
-
-```bash
-# TypeScript/JavaScript
-npm install simstudio-ts-sdk
-
-# Python
-pip install simstudio-sdk
-```
-
-```typescript
-// TypeScript Example
-import { SimStudioClient } from 'simstudio-ts-sdk';
-
-const client = new SimStudioClient({ 
-  apiKey: 'your-api-key' 
-});
-
-const result = await client.executeWorkflow('workflow-id', {
-  input: { message: 'Hello' }
-});
-```
 
 ## Best Practices
 

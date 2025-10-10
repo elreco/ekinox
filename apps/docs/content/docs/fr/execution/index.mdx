@@ -6,7 +6,7 @@ import { Callout } from 'fumadocs-ui/components/callout'
 import { Card, Cards } from 'fumadocs-ui/components/card'
 import { Image } from '@/components/ui/image'
 
-Le moteur d'exécution de Sim donne vie à vos flux de travail en traitant les blocs dans le bon ordre, en gérant le flux de données et en traitant les erreurs avec élégance, afin que vous puissiez comprendre exactement comment les flux de travail sont exécutés dans Sim.
+Le moteur d'exécution de Ekinox donne vie à vos flux de travail en traitant les blocs dans le bon ordre, en gérant le flux de données et en traitant les erreurs avec élégance, afin que vous puissiez comprendre exactement comment les flux de travail sont exécutés dans Ekinox.
 
 <Callout type="info">
   Chaque exécution de flux de travail suit un chemin déterministe basé sur vos connexions de blocs et votre logique, garantissant des résultats prévisibles et fiables.
@@ -23,11 +23,11 @@ Le moteur d'exécution de Sim donne vie à vos flux de travail en traitant les b
   <Card title="Journalisation" href="/execution/logging">
     Surveillez les exécutions de flux de travail avec une journalisation complète et une visibilité en temps réel
   </Card>
-  
+
   <Card title="Calcul des coûts" href="/execution/costs">
     Comprenez comment les coûts d'exécution des flux de travail sont calculés et optimisés
   </Card>
-  
+
   <Card title="API externe" href="/execution/api">
     Accédez aux journaux d'exécution et configurez des webhooks par programmation via l'API REST
   </Card>
@@ -64,7 +64,7 @@ Les workflows peuvent être exécutés via plusieurs canaux :
 
 ### Déploiement en tant qu'API
 
-Lorsque vous déployez un workflow en tant qu'API, Sim :
+Lorsque vous déployez un workflow en tant qu'API, Ekinox :
 - Crée un point de terminaison HTTP unique : `https://www.ekinox.app/api/workflows/{workflowId}/execute`
 - Génère une clé API pour l'authentification
 - Accepte les requêtes POST avec des charges utiles JSON
@@ -105,31 +105,6 @@ Tous les points d'entrée publics — API, Chat, Planification, Webhook et exéc
 </div>
 
 La fenêtre de déploiement conserve un historique complet des versions — inspectez n'importe quel instantané, comparez-le à votre brouillon, et promouvez ou revenez en arrière en un clic lorsque vous devez restaurer une version antérieure.
-
-## Exécution programmatique
-
-Exécutez des workflows depuis vos applications en utilisant nos SDK officiels :
-
-```bash
-# TypeScript/JavaScript
-npm install simstudio-ts-sdk
-
-# Python
-pip install simstudio-sdk
-```
-
-```typescript
-// TypeScript Example
-import { SimStudioClient } from 'simstudio-ts-sdk';
-
-const client = new SimStudioClient({ 
-  apiKey: 'your-api-key' 
-});
-
-const result = await client.executeWorkflow('workflow-id', {
-  input: { message: 'Hello' }
-});
-```
 
 ## Bonnes pratiques
 

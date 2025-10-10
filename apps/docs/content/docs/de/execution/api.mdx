@@ -8,7 +8,7 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs'
 import { CodeBlock } from 'fumadocs-ui/components/codeblock'
 import { Video } from '@/components/ui/video'
 
-Sim bietet eine umfassende externe API zum Abfragen von Workflow-Ausführungsprotokollen und zum Einrichten von Webhooks für Echtzeit-Benachrichtigungen, wenn Workflows abgeschlossen werden.
+Ekinox bietet eine umfassende externe API zum Abfragen von Workflow-Ausführungsprotokollen und zum Einrichten von Webhooks für Echtzeit-Benachrichtigungen, wenn Workflows abgeschlossen werden.
 
 ## Authentifizierung
 
@@ -19,7 +19,7 @@ curl -H "x-api-key: YOUR_API_KEY" \
   https://www.ekinox.app/api/v1/logs?workspaceId=YOUR_WORKSPACE_ID
 ```
 
-Sie können API-Schlüssel in Ihren Benutzereinstellungen im Sim-Dashboard generieren.
+Sie können API-Schlüssel in Ihren Benutzereinstellungen im Ekinox-Dashboard generieren.
 
 ## Logs-API
 
@@ -255,7 +255,7 @@ Rufen Sie Ausführungsdetails einschließlich des Workflow-Zustandsschnappschuss
 
 ## Webhook-Abonnements
 
-Erhalten Sie Echtzeitbenachrichtigungen, wenn Workflow-Ausführungen abgeschlossen werden. Webhooks werden über die Sim-Benutzeroberfläche im Workflow-Editor konfiguriert.
+Erhalten Sie Echtzeitbenachrichtigungen, wenn Workflow-Ausführungen abgeschlossen werden. Webhooks werden über die Ekinox-Benutzeroberfläche im Workflow-Editor konfiguriert.
 
 ### Konfiguration
 
@@ -278,7 +278,7 @@ Webhooks können für jeden Workflow über die Benutzeroberfläche des Workflow-
 
 ### Webhook-Nutzlast
 
-Wenn eine Workflow-Ausführung abgeschlossen ist, sendet Sim eine POST-Anfrage an Ihre Webhook-URL:
+Wenn eine Workflow-Ausführung abgeschlossen ist, sendet Ekinox eine POST-Anfrage an Ihre Webhook-URL:
 
 ```json
 {
@@ -339,7 +339,7 @@ Jede Webhook-Anfrage enthält diese Header:
 
 ### Signaturverifizierung
 
-Wenn Sie ein Webhook-Secret konfigurieren, überprüfen Sie die Signatur, um sicherzustellen, dass der Webhook von Sim stammt:
+Wenn Sie ein Webhook-Secret konfigurieren, überprüfen Sie die Signatur, um sicherzustellen, dass der Webhook von Ekinox stammt:
 
 <Tabs items={['Node.js', 'Python']}>
   <Tab value="Node.js">
@@ -428,7 +428,7 @@ Fehlgeschlagene Webhook-Zustellungen werden mit exponentiellem Backoff und Jitte
 
 1. **Polling-Strategie**: Verwenden Sie beim Abfragen von Logs die cursorbasierte Paginierung mit `order=asc` und `startDate`, um neue Logs effizient abzurufen.
 
-2. **Webhook-Sicherheit**: Konfigurieren Sie immer ein Webhook-Secret und überprüfen Sie Signaturen, um sicherzustellen, dass Anfragen von Sim stammen.
+2. **Webhook-Sicherheit**: Konfigurieren Sie immer ein Webhook-Secret und überprüfen Sie Signaturen, um sicherzustellen, dass Anfragen von Ekinox stammen.
 
 3. **Idempotenz**: Verwenden Sie den `Idempotency-Key`Header, um doppelte Webhook-Zustellungen zu erkennen und zu behandeln.
 

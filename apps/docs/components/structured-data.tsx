@@ -29,12 +29,12 @@ export function StructuredData({
     dateModified: dateModified || new Date().toISOString(),
     author: {
       '@type': 'Organization',
-      name: 'Sim Team',
+      name: 'Ekinox Team',
       url: baseUrl,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Sim',
+      name: 'Ekinox',
       url: baseUrl,
       logo: {
         '@type': 'ImageObject',
@@ -48,7 +48,7 @@ export function StructuredData({
     inLanguage: lang,
     isPartOf: {
       '@type': 'WebSite',
-      name: 'Sim Documentation',
+      name: 'Ekinox Documentation',
       url: baseUrl,
     },
     potentialAction: {
@@ -71,13 +71,13 @@ export function StructuredData({
   const websiteStructuredData = url === baseUrl && {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Sim Documentation',
+    name: 'Ekinox Documentation',
     url: baseUrl,
     description:
-      'Comprehensive documentation for Sim visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines.',
+      'Comprehensive documentation for Ekinox visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines.',
     publisher: {
       '@type': 'Organization',
-      name: 'Sim',
+      name: 'Ekinox',
       url: baseUrl,
     },
     potentialAction: {
@@ -100,7 +100,7 @@ export function StructuredData({
   const softwareStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Sim',
+    name: 'Ekinox',
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'Any',
     description:
@@ -108,7 +108,7 @@ export function StructuredData({
     url: baseUrl,
     author: {
       '@type': 'Organization',
-      name: 'Sim Team',
+      name: 'Ekinox Team',
     },
     offers: {
       '@type': 'Offer',
