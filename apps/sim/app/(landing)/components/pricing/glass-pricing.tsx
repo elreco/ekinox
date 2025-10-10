@@ -71,13 +71,7 @@ export default function GlassPricing() {
   const router = useRouter()
 
   return (
-    <section id="pricing" className="relative py-32 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-400/5 rounded-full blur-3xl" />
-      </div>
+    <section id="pricing" className="relative py-32 bg-slate-50 overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -87,17 +81,10 @@ export default function GlassPricing() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-blue-50 rounded-full border border-blue-200">
-            <Sparkles className="w-4 h-4" style={{ color: 'var(--brand-primary-hex)' }} />
-            <span className="font-medium text-sm" style={{ color: 'var(--brand-primary-hex)' }}>
-              Transparent Pricing
-            </span>
-          </div>
-
           <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Choose Your
             <br />
-            <span style={{ color: 'var(--brand-primary-hex)' }}>
+            <span style={{ color: 'var(--brand-accent-hex)' }}>
               Plan
             </span>
           </h2>
@@ -129,19 +116,19 @@ export default function GlassPricing() {
                 </div>
               )}
 
-              {/* Glass Card */}
-              <div className={`relative backdrop-blur-2xl bg-white/60 rounded-3xl p-8 border border-white/30 shadow-2xl ${tier.glow} transition-all duration-500 h-full`}>
-                {/* Gradient Glow */}
-                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${tier.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur-xl`} />
-
-                <div className="relative z-10">
+              {/* Simple Card */}
+              <div className={`bg-white rounded-2xl p-8 border ${tier.popular ? 'border-blue-300' : 'border-gray-200'} hover:border-gray-300 transition-all duration-300 h-full flex flex-col`}>
+                <div className="relative flex-1">
                   {/* Header */}
                   <div className="flex items-center justify-between mb-8">
-                    <div className={`p-3 rounded-2xl bg-gradient-to-r ${tier.color} shadow-lg`}>
-                      <tier.icon className="w-6 h-6 text-white" />
+                    <div className="p-3 rounded-lg border" style={{
+                      borderColor: 'var(--brand-accent-hex)',
+                      color: 'var(--brand-accent-hex)'
+                    }}>
+                      <tier.icon className="w-6 h-6" />
                     </div>
                     {tier.popular && (
-                      <div className="text-blue-600">
+                      <div style={{ color: 'var(--brand-accent-hex)' }}>
                         <Crown className="w-5 h-5" />
                       </div>
                     )}
@@ -176,7 +163,7 @@ export default function GlassPricing() {
                   </div>
 
                   {/* Features */}
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-3">
                     {tier.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-3">
                         <div className="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
@@ -186,38 +173,39 @@ export default function GlassPricing() {
                       </li>
                     ))}
                   </ul>
-
-                  {/* CTA Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => {
-                      if (tier.cta === 'Contact Sales') {
-                        window.location.href = 'mailto:sales@ekinox.app'
-                      } else {
-                        router.push('/signup')
-                      }
-                    }}
-                    className={`
-                      w-full py-4 px-6 rounded-2xl font-semibold text-sm transition-all duration-300
-                      ${tier.popular
-                        ? 'text-white shadow-lg hover:shadow-xl'
-                        : 'bg-white/80 text-gray-900 border border-gray-200 hover:bg-white hover:border-gray-300'
-                      }
-                    `}
-                    style={tier.popular ? {
-                      backgroundColor: 'var(--brand-primary-hex)',
-                    } : {}}
-                    onMouseEnter={tier.popular ? (e) => {
-                      e.currentTarget.style.backgroundColor = 'var(--brand-primary-hover-hex)'
-                    } : undefined}
-                    onMouseLeave={tier.popular ? (e) => {
-                      e.currentTarget.style.backgroundColor = 'var(--brand-primary-hex)'
-                    } : undefined}
-                  >
-                    {tier.cta}
-                  </motion.button>
                 </div>
+
+                {/* CTA Button - Now outside flex-1 to stick to bottom */}
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => {
+                    if (tier.cta === 'Contact Sales') {
+                      window.location.href = 'mailto:sales@ekinox.app'
+                    } else {
+                      router.push('/signup')
+                    }
+                  }}
+                  className={
+                    tier.popular
+                      ? 'mt-8 w-full py-4 px-6 rounded-lg font-semibold text-sm transition-all duration-300 border text-white'
+                      : 'mt-8 w-full py-4 px-6 rounded-lg font-semibold text-sm transition-all duration-300 border bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400'
+                  }
+                  style={tier.popular ? {
+                    backgroundColor: 'var(--brand-accent-hex)',
+                    borderColor: 'var(--brand-accent-hex)',
+                  } : {}}
+                  onMouseEnter={tier.popular ? (e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--brand-accent-hover-hex)'
+                    e.currentTarget.style.borderColor = 'var(--brand-accent-hover-hex)'
+                  } : undefined}
+                  onMouseLeave={tier.popular ? (e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--brand-accent-hex)'
+                    e.currentTarget.style.borderColor = 'var(--brand-accent-hex)'
+                  } : undefined}
+                >
+                  {tier.cta}
+                </motion.button>
               </div>
             </motion.div>
           ))}
@@ -233,7 +221,7 @@ export default function GlassPricing() {
           <p className="text-gray-500 text-sm">
             All plans include SSL encryption, automatic backups, and 99.9% uptime SLA.
             <br />
-            <span className="text-blue-600 font-medium">Start your 14-day free trial</span> • No credit card required
+            <span style={{ color: 'var(--brand-accent-hex)' }} className="font-medium">Start your 14-day free trial</span> - No credit card required
           </p>
         </motion.div>
       </div>

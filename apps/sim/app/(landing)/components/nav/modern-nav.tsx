@@ -48,8 +48,8 @@ export default function ModernNav() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'backdrop-blur-2xl bg-white/10 border-b border-white/20 shadow-2xl'
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200'
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -80,14 +80,14 @@ export default function ModernNav() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/80 hover:text-white transition-colors duration-200 font-medium"
+                    className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
                   >
                     {item.name}
                   </a>
                 ) : (
                   <a
                     href={item.href}
-                    className="text-white/80 hover:text-white transition-colors duration-200 font-medium"
+                    className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
                   >
                     {item.name}
                   </a>
@@ -100,22 +100,25 @@ export default function ModernNav() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="/login"
-              className="text-white/80 hover:text-white transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
             >
               Sign In
             </Link>
 
             <button
               onClick={() => router.push('/signup')}
-              className="px-6 py-3 rounded-xl text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="px-6 py-3 rounded-lg text-white font-semibold border transition-all duration-300"
               style={{
-                backgroundColor: 'var(--brand-primary-hex)',
+                backgroundColor: 'var(--brand-accent-hex)',
+                borderColor: 'var(--brand-accent-hex)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--brand-primary-hover-hex)'
+                e.currentTarget.style.backgroundColor = 'var(--brand-accent-hover-hex)'
+                e.currentTarget.style.borderColor = 'var(--brand-accent-hover-hex)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--brand-primary-hex)'
+                e.currentTarget.style.backgroundColor = 'var(--brand-accent-hex)'
+                e.currentTarget.style.borderColor = 'var(--brand-accent-hex)'
               }}
             >
               Get Started
@@ -126,7 +129,7 @@ export default function ModernNav() {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-white/80 hover:text-white transition-colors"
+              className="p-2 text-gray-700 hover:text-gray-900 transition-colors"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

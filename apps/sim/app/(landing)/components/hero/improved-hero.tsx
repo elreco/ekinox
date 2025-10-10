@@ -252,12 +252,7 @@ export default function ImprovedHero() {
   }, [])
 
   return (
-    <section className="relative pt-24 pb-16 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
-      {/* Subtle background effects */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-100 rounded-full blur-3xl" />
-      </div>
+    <section className="relative pt-24 pb-16 bg-white overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         {/* Header */}
@@ -269,7 +264,7 @@ export default function ImprovedHero() {
           <h1 className={`${soehne.className} text-5xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight`}>
             AI Workflows
             <br />
-            <span style={{ color: 'var(--brand-primary-hex)' }}>
+            <span style={{ color: 'var(--brand-accent-hex)' }}>
               Made Visual
             </span>
           </h1>
@@ -313,7 +308,7 @@ export default function ImprovedHero() {
             <label htmlFor="agent-description" className="sr-only">
               Describe the AI agent you want to build
             </label>
-            <div className="relative backdrop-blur-sm bg-white/70 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="relative bg-white rounded-2xl border border-gray-300 hover:border-gray-400 transition-all duration-300">
               <textarea
                 id="agent-description"
                 placeholder={
@@ -327,11 +322,12 @@ export default function ImprovedHero() {
               <button
                 type="button"
                 aria-label="Submit description"
-                className="absolute right-3 bottom-3 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-xl transition-all duration-200"
+                className="absolute right-3 bottom-3 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg border transition-all duration-200"
                 disabled={isEmpty}
                 onClick={handleSubmit}
                 style={{
-                  backgroundColor: isEmpty ? '#E5E5E5' : 'var(--brand-primary-hex)',
+                  backgroundColor: isEmpty ? '#F5F5F5' : 'var(--brand-accent-hex)',
+                  borderColor: isEmpty ? '#E5E5E5' : 'var(--brand-accent-hex)',
                   cursor: isEmpty ? 'not-allowed' : 'pointer',
                 }}
               >
@@ -349,7 +345,7 @@ export default function ImprovedHero() {
             transition={{ delay: 0.5 }}
             className="w-full max-w-[1308px] mx-auto"
           >
-            <div className="relative backdrop-blur-sm bg-white/40 rounded-3xl p-8 border border-white/30 shadow-xl">
+            <div className="relative bg-slate-50 rounded-2xl p-8 border border-gray-200">
               <LandingCanvas
                 nodes={rfNodes}
                 edges={rfEdges}
@@ -375,15 +371,18 @@ export default function ImprovedHero() {
         >
           <button
             onClick={() => router.push('/signup')}
-            className="px-8 py-4 rounded-2xl text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="px-8 py-4 rounded-lg text-white font-semibold border transition-all duration-300"
             style={{
-              backgroundColor: 'var(--brand-primary-hex)',
+              backgroundColor: 'var(--brand-accent-hex)',
+              borderColor: 'var(--brand-accent-hex)',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--brand-primary-hover-hex)'
+              e.currentTarget.style.backgroundColor = 'var(--brand-accent-hover-hex)'
+              e.currentTarget.style.borderColor = 'var(--brand-accent-hover-hex)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--brand-primary-hex)'
+              e.currentTarget.style.backgroundColor = 'var(--brand-accent-hex)'
+              e.currentTarget.style.borderColor = 'var(--brand-accent-hex)'
             }}
           >
             Start Building Free
@@ -391,7 +390,7 @@ export default function ImprovedHero() {
 
           <button
             onClick={() => router.push('/login')}
-            className="px-8 py-4 backdrop-blur-sm bg-white/60 rounded-2xl border border-gray-200 text-gray-700 font-semibold hover:bg-white/80 transition-all duration-300"
+            className="px-8 py-4 bg-white rounded-lg border border-gray-300 text-gray-700 font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
           >
             Sign In
           </button>

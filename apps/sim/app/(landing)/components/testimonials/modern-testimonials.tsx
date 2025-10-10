@@ -45,13 +45,7 @@ const COMPANY_LOGOS = [
 
 export default function ModernTestimonials() {
   return (
-    <section className="relative py-32 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl" />
-      </div>
+    <section className="relative py-32 bg-gray-900 overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -69,7 +63,7 @@ export default function ModernTestimonials() {
           <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
             Loved by Teams
             <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span style={{ color: 'var(--brand-accent-hex)' }}>
               Worldwide
             </span>
           </h2>
@@ -119,8 +113,8 @@ export default function ModernTestimonials() {
               whileHover={{ y: -5, scale: 1.02 }}
               className="group"
             >
-              {/* Glass Card */}
-              <div className="relative backdrop-blur-xl bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl hover:shadow-3xl hover:border-white/20 transition-all duration-300 h-full">
+              {/* Simple Card */}
+              <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-gray-600 transition-all duration-300 h-full">
                 {/* Quote Icon */}
                 <div className="absolute top-6 right-6 opacity-10">
                   <Quote className="w-8 h-8 text-white" />

@@ -52,12 +52,7 @@ export default function ModernIntegrations() {
   ]
 
   return (
-    <section id="integrations" className="relative py-24 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-100 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-100 rounded-full blur-3xl" />
-      </div>
+    <section id="integrations" className="relative py-24 bg-slate-50 overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -70,7 +65,7 @@ export default function ModernIntegrations() {
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Connect With
             <br />
-            <span style={{ color: 'var(--brand-primary-hex)' }}>
+            <span style={{ color: 'var(--brand-accent-hex)' }}>
               Your Favorite Tools
             </span>
           </h2>
@@ -92,20 +87,20 @@ export default function ModernIntegrations() {
             AI Models & Providers
           </motion.h3>
 
-          <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-8 border border-white/30 shadow-lg">
+          <div className="bg-white rounded-2xl p-8 border border-gray-200">
             <div className="flex items-center justify-center gap-8 flex-wrap">
               {modelProviderIcons.map((integration, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-white/40 transition-all cursor-pointer group"
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-gray-50 transition-all cursor-pointer border border-transparent hover:border-gray-200"
                 >
-                  <integration.icon className="w-8 h-8 text-gray-700 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium text-gray-600 group-hover:text-gray-900 transition-colors">
+                  <integration.icon className="w-8 h-8 text-gray-700 transition-transform" />
+                  <span className="text-sm font-medium text-gray-600">
                     {integration.label}
                   </span>
                 </motion.div>
@@ -125,20 +120,20 @@ export default function ModernIntegrations() {
             Communication & Productivity
           </motion.h3>
 
-          <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-8 border border-white/30 shadow-lg">
+          <div className="bg-white rounded-2xl p-8 border border-gray-200">
             <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6">
               {communicationIcons.map((integration, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-white/40 transition-all cursor-pointer group"
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-gray-50 transition-all cursor-pointer border border-transparent hover:border-gray-200"
                 >
-                  <integration.icon className="w-8 h-8 text-gray-700 group-hover:scale-110 transition-transform" />
-                  <span className="text-xs font-medium text-gray-600 group-hover:text-gray-900 transition-colors text-center">
+                  <integration.icon className="w-8 h-8 text-gray-700 transition-transform" />
+                  <span className="text-xs font-medium text-gray-600 text-center">
                     {integration.label}
                   </span>
                 </motion.div>
@@ -158,20 +153,20 @@ export default function ModernIntegrations() {
             Data & Storage
           </motion.h3>
 
-          <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-8 border border-white/30 shadow-lg">
+          <div className="bg-white rounded-2xl p-8 border border-gray-200">
             <div className="flex items-center justify-center gap-8 flex-wrap">
               {dataStorageIcons.map((integration, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="flex flex-col items-center gap-3 p-4 rounded-xl hover:bg-white/40 transition-all cursor-pointer group"
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-gray-50 transition-all cursor-pointer border border-transparent hover:border-gray-200"
                 >
-                  <integration.icon className="w-8 h-8 text-gray-700 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium text-gray-600 group-hover:text-gray-900 transition-colors">
+                  <integration.icon className="w-8 h-8 text-gray-700 transition-transform" />
+                  <span className="text-sm font-medium text-gray-600">
                     {integration.label}
                   </span>
                 </motion.div>
@@ -187,7 +182,7 @@ export default function ModernIntegrations() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-8 border border-white/30 shadow-lg max-w-2xl mx-auto">
+          <div className="bg-white rounded-2xl p-8 border border-gray-200 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Don't See Your Tool?
             </h3>
@@ -196,15 +191,18 @@ export default function ModernIntegrations() {
               or request a custom connector.
             </p>
             <button
-              className="px-6 py-3 rounded-xl text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="px-6 py-3 rounded-lg text-white font-semibold border transition-all duration-300"
               style={{
-                backgroundColor: 'var(--brand-primary-hex)',
+                backgroundColor: 'var(--brand-accent-hex)',
+                borderColor: 'var(--brand-accent-hex)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--brand-primary-hover-hex)'
+                e.currentTarget.style.backgroundColor = 'var(--brand-accent-hover-hex)'
+                e.currentTarget.style.borderColor = 'var(--brand-accent-hover-hex)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--brand-primary-hex)'
+                e.currentTarget.style.backgroundColor = 'var(--brand-accent-hex)'
+                e.currentTarget.style.borderColor = 'var(--brand-accent-hex)'
               }}
             >
               Request Integration
