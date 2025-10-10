@@ -16,10 +16,9 @@ interface ChatHeaderProps {
       primaryColor?: string
     }
   } | null
-  starCount: string
 }
 
-export function ChatHeader({ chatConfig, starCount }: ChatHeaderProps) {
+export function ChatHeader({ chatConfig }: ChatHeaderProps) {
   const brand = useBrandConfig()
   const primaryColor = chatConfig?.customizations?.primaryColor || 'var(--brand-primary-hex)'
   const customImage = chatConfig?.customizations?.imageUrl || chatConfig?.customizations?.logoUrl
@@ -48,20 +47,6 @@ export function ChatHeader({ chatConfig, starCount }: ChatHeaderProps) {
 
       {!brand.logoUrl && (
         <div className='flex items-center gap-[16px]'>
-          <a
-            href='https://docs.ekinox.app'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='flex items-center gap-2 text-[16px] text-muted-foreground transition-colors hover:text-foreground'
-            aria-label={`GitHub repository - ${starCount} stars`}
-          >
-            <GithubIcon className='h-[16px] w-[16px]' aria-hidden='true' />
-            <span className={`${inter.className}`} aria-live='polite'>
-              {starCount}
-            </span>
-          </a>
-          {/* Only show Ekinox logo if no custom branding is set */}
-
           <Link
             href='https://www.ekinox.app'
             target='_blank'

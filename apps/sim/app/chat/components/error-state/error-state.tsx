@@ -10,10 +10,9 @@ import { soehne } from '@/app/fonts/soehne/soehne'
 
 interface ChatErrorStateProps {
   error: string
-  starCount: string
 }
 
-export function ChatErrorState({ error, starCount }: ChatErrorStateProps) {
+export function ChatErrorState({ error }: ChatErrorStateProps) {
   const router = useRouter()
   const [buttonClass, setButtonClass] = useState('auth-button-gradient')
   const brandConfig = useBrandConfig()

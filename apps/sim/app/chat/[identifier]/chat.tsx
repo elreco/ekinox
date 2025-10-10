@@ -4,7 +4,6 @@ import { type RefObject, useCallback, useEffect, useRef, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { createLogger } from '@/lib/logs/console/logger'
 import { noop } from '@/lib/utils'
-import { getFormattedGitHubStars } from '@/app/(landing)/actions/github'
 import {
   ChatErrorState,
   ChatHeader,
@@ -100,7 +99,6 @@ export default function ChatClient({ identifier }: { identifier: string }) {
   const [error, setError] = useState<string | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const messagesContainerRef = useRef<HTMLDivElement>(null)
-  const [starCount, setStarCount] = useState('3.4k')
   const [conversationId, setConversationId] = useState('')
 
   const [showScrollButton, setShowScrollButton] = useState(false)
@@ -244,13 +242,6 @@ export default function ChatClient({ identifier }: { identifier: string }) {
     fetchChatConfig()
     setConversationId(uuidv4())
 
-    getFormattedGitHubStars()
-      .then((formattedStars) => {
-        setStarCount(formattedStars)
-      })
-      .catch((err) => {
-        logger.error('Failed to fetch GitHub stars:', err)
-      })
   }, [identifier])
 
   const refreshChat = () => {
@@ -420,7 +411,7 @@ export default function ChatClient({ identifier }: { identifier: string }) {
 
   // If error, show error message using the extracted component
   if (error) {
-    return <ChatErrorState error={error} starCount={starCount} />
+    return <ChatErrorState error={error} />
   }
 
   // If authentication is required, use the extracted components
@@ -481,7 +472,7 @@ export default function ChatClient({ identifier }: { identifier: string }) {
   return (
     <div className='fixed inset-0 z-[100] flex flex-col bg-background text-foreground'>
       {/* Header component */}
-      <ChatHeader chatConfig={chatConfig} starCount={starCount} />
+      <ChatHeader chatConfig={chatConfig} />
 
       {/* Message Container component */}
       <ChatMessageContainer

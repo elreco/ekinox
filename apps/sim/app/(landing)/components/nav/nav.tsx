@@ -9,7 +9,6 @@ import { GithubIcon } from '@/components/icons'
 import { useBrandConfig } from '@/lib/branding/branding'
 import { isHosted } from '@/lib/environment'
 import { createLogger } from '@/lib/logs/console/logger'
-import { getFormattedGitHubStars } from '@/app/(landing)/actions/github'
 import { soehne } from '@/app/fonts/soehne/soehne'
 
 const logger = createLogger('nav')
@@ -20,29 +19,11 @@ interface NavProps {
 }
 
 export default function Nav({ hideAuthButtons = false, variant = 'landing' }: NavProps = {}) {
-  const [githubStars, setGithubStars] = useState('16.3k')
   const [isHovered, setIsHovered] = useState(false)
   const [isLoginHovered, setIsLoginHovered] = useState(false)
   const router = useRouter()
   const brand = useBrandConfig()
 
-  useEffect(() => {
-    if (variant !== 'landing') return
-
-    const timeoutId = setTimeout(() => {
-      const fetchStars = async () => {
-        try {
-          const stars = await getFormattedGitHubStars()
-          setGithubStars(stars)
-        } catch (error) {
-          logger.warn('Error fetching GitHub stars:', error)
-        }
-      }
-      fetchStars()
-    }, 2000)
-
-    return () => clearTimeout(timeoutId)
-  }, [variant])
 
   const handleLoginClick = useCallback(
     (e: React.MouseEvent) => {
