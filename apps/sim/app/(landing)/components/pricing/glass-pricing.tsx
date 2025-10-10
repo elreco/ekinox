@@ -7,14 +7,14 @@ import { useRouter } from 'next/navigation'
 
 const PRICING_TIERS = [
   {
-    name: 'Starter',
+    name: 'Free',
     price: 'Free',
     period: '',
     description: 'Perfect for exploring AI automation',
     icon: Star,
     features: [
-      '10 workflows per month',
-      '100 AI operations',
+      '$5 AI credits included',
+      '10 workflows/minute',
       'Basic integrations',
       'Community support',
       '7 days of logs'
@@ -25,40 +25,60 @@ const PRICING_TIERS = [
     glow: 'group-hover:shadow-slate-500/25'
   },
   {
-    name: 'Professional',
-    price: '29',
+    name: 'Pro',
+    price: '30',
     period: '/month',
-    description: 'Ideal for growing businesses and professionals',
+    description: 'Ideal for professionals and growing teams',
     icon: Zap,
     features: [
+      '$20 AI credits included',
       'Unlimited workflows',
-      '1000 AI operations/month',
       'All integrations',
+      'Copilot AI assistant',
       'Priority support',
       '30 days of logs',
-      'Advanced analytics',
-      'Custom webhooks'
+      'Advanced analytics'
     ],
-    cta: 'Start Pro Trial',
+    cta: 'Start Pro',
     popular: true,
     color: 'from-blue-600 to-purple-600',
     glow: 'group-hover:shadow-blue-500/25'
   },
   {
+    name: 'Team',
+    price: '100',
+    period: '/month',
+    description: 'Collaboration and team management',
+    icon: Users,
+    features: [
+      '$60 AI credits included',
+      'Everything in Pro',
+      'Real-time collaboration',
+      'Team management',
+      'SSO & SAML',
+      '90 days of logs',
+      '10 workspaces'
+    ],
+    cta: 'Start Team',
+    popular: false,
+    color: 'from-indigo-600 to-blue-600',
+    glow: 'group-hover:shadow-indigo-500/25'
+  },
+  {
     name: 'Enterprise',
-    price: '199',
+    price: '500',
     period: '/month',
     description: 'Advanced features for large organizations',
     icon: Crown,
     features: [
-      'Everything in Pro',
-      '10,000+ AI operations',
-      'SSO & SAML',
-      'Dedicated support',
+      '$300 AI credits included',
+      'Everything in Team',
+      'Unlimited workspaces',
+      'Dedicated support 24/7',
       'Unlimited logs retention',
-      'White-label options',
       'Custom SLA',
-      'On-premise deployment'
+      'On-premise deployment',
+      'Custom integrations'
     ],
     cta: 'Contact Sales',
     popular: false,
@@ -96,7 +116,7 @@ export default function GlassPricing() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-6">
           {PRICING_TIERS.map((tier, index) => (
             <motion.div
               key={index}

@@ -5,14 +5,14 @@
 /**
  * Fallback free credits (in dollars) when env var is not set
  */
-export const DEFAULT_FREE_CREDITS = 10
+export const DEFAULT_FREE_CREDITS = 5
 
 /**
  * Default per-user minimum limits (in dollars) for paid plans when env vars are absent
  */
 export const DEFAULT_PRO_TIER_COST_LIMIT = 20
-export const DEFAULT_TEAM_TIER_COST_LIMIT = 40
-export const DEFAULT_ENTERPRISE_TIER_COST_LIMIT = 200
+export const DEFAULT_TEAM_TIER_COST_LIMIT = 60
+export const DEFAULT_ENTERPRISE_TIER_COST_LIMIT = 300
 
 /**
  * Base charge applied to every workflow execution
