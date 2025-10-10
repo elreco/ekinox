@@ -322,7 +322,7 @@ export default function MinimalistHero() {
   }, [activeWorkflowIndex, isMobile])
 
   return (
-    <section className="relative min-h-[140vh] bg-white overflow-hidden">
+    <section className="relative min-h-[100vh] bg-white overflow-hidden">
       {/* Stylized background pattern - Hero section only */}
       <svg
         aria-hidden='true'
@@ -387,7 +387,7 @@ export default function MinimalistHero() {
 
       <motion.div
         style={{ y }}
-        className="relative z-10 flex flex-col items-center justify-center min-h-[140vh] max-w-7xl mx-auto px-6 pt-24"
+        className="relative z-10 flex flex-col items-center justify-center min-h-[100vh] max-w-7xl mx-auto px-6 pt-24 pb-16"
       >
         {/* Main Content Container */}
         <div className="text-center space-y-4 w-full">
@@ -465,7 +465,7 @@ export default function MinimalistHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
             className="w-full max-w-3xl mx-auto"
-            style={{ marginBottom: '12rem' }}
+            style={{ marginBottom: '4rem' }}
           >
             <div className="relative bg-white rounded-2xl border border-gray-300 hover:border-gray-400 transition-all duration-300 focus-within:border-gray-500">
               <label htmlFor="agent-description" className="sr-only">
@@ -582,7 +582,7 @@ export default function MinimalistHero() {
         )}
 
         {/* CTA & Stats Section - Separate container */}
-        <div className="text-center space-y-16 w-full">
+        <div className="text-center space-y-8 w-full">
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -622,7 +622,7 @@ export default function MinimalistHero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 border-t border-gray-200 max-w-2xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-gray-200 max-w-2xl mx-auto"
           >
             {[
               { number: '100+', label: 'AI Integrations' },

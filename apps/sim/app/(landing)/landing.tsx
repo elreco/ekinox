@@ -35,6 +35,14 @@ const GlassPricing = dynamic(() => import('@/app/(landing)/components/pricing/gl
   ),
 })
 
+const DemoSection = dynamic(() => import('@/app/(landing)/components/demo-section/demo-section'), {
+  loading: () => (
+    <div className="h-[600px] bg-slate-50 flex items-center justify-center">
+      <div className="animate-pulse bg-white rounded-2xl p-8 w-96 h-64 border border-gray-200" />
+    </div>
+  ),
+})
+
 const ModernTestimonials = dynamic(() => import('@/app/(landing)/components/testimonials/modern-testimonials'), {
   loading: () => (
     <div className="h-[600px] bg-gray-900 flex items-center justify-center">
@@ -77,6 +85,17 @@ export default function Landing() {
           }
         >
           <MinimalistHero />
+        </Suspense>
+
+        {/* Demo Section */}
+        <Suspense
+          fallback={
+            <div className="h-[600px] bg-slate-50 flex items-center justify-center">
+              <div className="animate-pulse bg-white rounded-2xl p-8 w-96 h-64 border border-gray-200" />
+            </div>
+          }
+        >
+          <DemoSection />
         </Suspense>
 
         {/* Features Section */}
