@@ -2,23 +2,23 @@ import type { Metadata } from 'next'
 import Landing from '@/app/(landing)/landing'
 
 export const metadata: Metadata = {
-  title: 'Ekinox - AI Agent Workflow Builder | Open Source Platform',
+  title: 'Ekinox - Visual AI Workflow Builder | Automate Without Code',
   description:
-    'Open-source AI agent workflow builder used by 30,000+ developers. Build and deploy agentic workflows with visual drag-and-drop interface. Connect 100+ apps. SOC2 and HIPAA compliant. Used by startups to Fortune 500 companies.',
+    'Build intelligent AI agents visually with Ekinox. Create powerful workflows without coding using our intuitive drag-and-drop platform. Connect 100+ integrations, automate complex processes, and scale your business intelligence effortlessly.',
   keywords:
-    'AI agent workflow builder, agentic workflows, open source AI, visual workflow builder, AI automation, LLM workflows, AI agents, workflow automation, no-code AI, SOC2 compliant, HIPAA compliant, enterprise AI',
-  authors: [{ name: 'Ekinox Studio' }],
-  creator: 'Ekinox Studio',
-  publisher: 'Ekinox Studio',
+    'visual AI workflow builder, no-code automation, AI agent creation, intelligent workflows, business automation, visual programming, AI integration platform, automated processes, workflow automation, visual AI builder',
+  authors: [{ name: 'Ekinox Team' }],
+  creator: 'Ekinox Team',
+  publisher: 'Ekinox',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'Ekinox - AI Agent Workflow Builder | Open Source',
+    title: 'Ekinox - Visual AI Automation Platform',
     description:
-      'Open-source platform used by 30,000+ developers. Build and deploy agentic workflows with drag-and-drop interface. SOC2 & HIPAA compliant. Connect 100+ apps.',
+      'Create intelligent AI workflows without code. Visual drag-and-drop builder trusted by thousands of businesses. Connect 100+ integrations, automate processes, scale effortlessly.',
     type: 'website',
     url: 'https://www.ekinox.app',
     siteName: 'Ekinox',
@@ -41,11 +41,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@simdotai',
-    creator: '@simdotai',
-    title: 'Ekinox - AI Agent Workflow Builder | Open Source',
+    site: '@ekinox',
+    creator: '@ekinox',
+    title: 'Ekinox - Visual AI Automation Platform',
     description:
-      'Open-source platform for agentic workflows. 30,000+ developers. Visual builder. 100+ integrations. SOC2 & HIPAA compliant.',
+      'Visual AI workflow builder for intelligent automation. No-code platform trusted by businesses. 100+ integrations. Enterprise-grade security.',
     images: {
       url: '/social/twitter-image.png',
       alt: 'Ekinox - Visual AI Workflow Builder',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
       'email automation, slack bots, discord moderation, data analysis, customer support, content generation',
     'llm:integrations':
       'OpenAI, Anthropic, Google AI, Slack, Gmail, Discord, Notion, Airtable, Supabase',
-    'llm:pricing': 'free tier available, pro $20/month, team $40/month, enterprise custom',
+    'llm:pricing': 'free tier available, pro €29/month, enterprise €199/month, custom solutions',
   },
 }
 

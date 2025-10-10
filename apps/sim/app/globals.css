@@ -2,6 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ekinox Glass Morphism Effects */
+@layer utilities {
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl;
+  }
+
+  .glass-card-light {
+    @apply backdrop-blur-xl bg-white/60 border border-white/30 shadow-xl;
+  }
+
+  .glass-button {
+    @apply backdrop-blur-sm bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300;
+  }
+
+  .gradient-glow {
+    background:
+      radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(139, 69, 244, 0.1) 0%, transparent 50%);
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glass-reflection {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+/* Custom scrollbar for glass effect */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
 /* ==========================================================================
    WORKFLOW COMPONENT Z-INDEX FIXES
    ========================================================================== */

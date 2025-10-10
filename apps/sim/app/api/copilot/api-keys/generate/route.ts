@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
     })
 
     if (!res.ok) {
+      console.error(res)
       return NextResponse.json(
         { error: 'Failed to generate copilot API key' },
         { status: res.status || 500 }
@@ -44,6 +45,7 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     )
   } catch (error) {
+    console.error(error)
     return NextResponse.json({ error: 'Failed to generate copilot API key' }, { status: 500 })
   }
 }

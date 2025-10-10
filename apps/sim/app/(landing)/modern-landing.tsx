@@ -1,9 +1,11 @@
+'use client'
+
 import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import { StructuredData } from '@/app/(landing)/components'
 
-// Import improved components with glass morphism
-const ImprovedHero = dynamic(() => import('@/app/(landing)/components/hero/improved-hero'), {
+// Import new modern components
+const NewHero = dynamic(() => import('@/app/(landing)/components/hero/new-hero'), {
   loading: () => (
     <div className="h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 flex items-center justify-center">
       <div className="animate-pulse backdrop-blur-xl bg-white/5 rounded-3xl p-12 w-96 h-64" />
@@ -15,14 +17,6 @@ const ModernFeatures = dynamic(() => import('@/app/(landing)/components/features
   loading: () => (
     <div className="h-[800px] bg-gradient-to-b from-slate-50 to-white flex items-center justify-center">
       <div className="animate-pulse backdrop-blur-xl bg-white/60 rounded-3xl p-8 w-96 h-48" />
-    </div>
-  ),
-})
-
-const ModernIntegrations = dynamic(() => import('@/app/(landing)/components/integrations/modern-integrations'), {
-  loading: () => (
-    <div className="h-[600px] bg-gradient-to-br from-white via-blue-50 to-purple-50 flex items-center justify-center">
-      <div className="animate-pulse backdrop-blur-xl bg-white/60 rounded-3xl p-8 w-80 h-64" />
     </div>
   ),
 })
@@ -49,6 +43,7 @@ const ModernNav = dynamic(() => import('@/app/(landing)/components/nav/modern-na
   ),
 })
 
+// Modern Footer with Glass Effect
 const ModernFooter = dynamic(() => import('@/app/(landing)/components/footer/modern-footer'), {
   loading: () => (
     <div className="h-40 bg-slate-900 flex items-center justify-center">
@@ -57,7 +52,7 @@ const ModernFooter = dynamic(() => import('@/app/(landing)/components/footer/mod
   ),
 })
 
-export default function Landing() {
+export default function ModernLanding() {
   return (
     <>
       <StructuredData />
@@ -71,12 +66,12 @@ export default function Landing() {
         {/* Hero Section */}
         <Suspense
           fallback={
-            <div className="h-[600px] bg-gradient-to-b from-slate-50 to-white flex items-center justify-center">
-              <div className="animate-pulse bg-white/60 rounded-2xl p-8 w-96 h-48" />
+            <div className="h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 flex items-center justify-center">
+              <div className="animate-pulse backdrop-blur-xl bg-white/5 rounded-3xl p-12 w-96 h-64" />
             </div>
           }
         >
-          <ImprovedHero />
+          <NewHero />
         </Suspense>
 
         {/* Features Section */}
@@ -88,17 +83,6 @@ export default function Landing() {
           }
         >
           <ModernFeatures />
-        </Suspense>
-
-        {/* Integrations Section */}
-        <Suspense
-          fallback={
-            <div className="h-[600px] bg-gradient-to-br from-white via-blue-50 to-purple-50 flex items-center justify-center">
-              <div className="animate-pulse backdrop-blur-xl bg-white/60 rounded-3xl p-8 w-80 h-64" />
-            </div>
-          }
-        >
-          <ModernIntegrations />
         </Suspense>
 
         {/* Pricing Section */}
