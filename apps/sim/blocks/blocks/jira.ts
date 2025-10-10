@@ -32,7 +32,7 @@ export const JiraBlock: BlockConfig<JiraResponse> = {
       type: 'short-input',
       layout: 'full',
       required: true,
-      placeholder: 'Enter Jira domain (e.g., simstudio.atlassian.net)',
+      placeholder: 'Enter Jira domain (e.g., ekinox.atlassian.net)',
     },
     {
       id: 'credential',

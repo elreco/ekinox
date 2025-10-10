@@ -81,8 +81,8 @@ export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metad
       title: defaultTitle,
       description: summaryFull,
       images: [brand.logoUrl || '/social/twitter.png'],
-      creator: '@simstudioai',
-      site: '@simstudioai',
+      creator: '@ekinoxapp',
+      site: '@ekinoxapp',
     },
     manifest: '/manifest.webmanifest',
     icons: {

@@ -21,10 +21,7 @@ export default function StructuredData() {
         },
         image: { '@id': 'https://www.ekinox.app/#logo' },
         sameAs: [
-          'https://x.com/simdotai',
           'https://docs.ekinox.app',
-          'https://www.linkedin.com/company/simstudioai/',
-          'https://discord.gg/Hr4UWYEcTT',
         ],
         contactPoint: {
           '@type': 'ContactPoint',

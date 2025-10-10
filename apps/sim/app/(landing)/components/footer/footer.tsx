@@ -123,33 +123,6 @@ export default function Footer({ fullWidth = false }: FooterProps) {
             {/* Social links */}
             <div className='flex items-center gap-[12px]'>
               <a
-                href='https://discord.gg/Hr4UWYEcTT'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center text-[16px] text-muted-foreground transition-colors hover:text-foreground'
-                aria-label='Discord'
-              >
-                <DiscordIcon className='h-[20px] w-[20px]' aria-hidden='true' />
-              </a>
-              <a
-                href='https://x.com/simdotai'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center text-[16px] text-muted-foreground transition-colors hover:text-foreground'
-                aria-label='X (Twitter)'
-              >
-                <XIcon className='h-[18px] w-[18px]' aria-hidden='true' />
-              </a>
-              <a
-                href='https://www.linkedin.com/company/simstudioai/'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center text-[16px] text-muted-foreground transition-colors hover:text-foreground'
-                aria-label='LinkedIn'
-              >
-                <LinkedInIcon className='h-[18px] w-[18px]' aria-hidden='true' />
-              </a>
-              <a
                 href='https://docs.ekinox.app'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -158,34 +131,6 @@ export default function Footer({ fullWidth = false }: FooterProps) {
               >
                 <GithubIcon className='h-[20px] w-[20px]' aria-hidden='true' />
               </a>
-            </div>
-
-            {/* Compliance badges */}
-            <div className='mt-[6px] flex items-center gap-[12px]'>
-              {/* SOC2 badge */}
-              <Link
-                href='https://trust.delve.co/sim-studio'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <Image
-                  src='/footer/soc2.png'
-                  alt='SOC2 Compliant'
-                  width={54}
-                  height={54}
-                  className='object-contain'
-                  loading='lazy'
-                  quality={75}
-                />
-              </Link>
-              {/* HIPAA badge placeholder - add when available */}
-              <Link
-                href='https://trust.delve.co/sim-studio'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <HIPAABadgeIcon className='h-[54px] w-[54px]' />
-              </Link>
             </div>
           </div>
 
