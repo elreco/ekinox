@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { AlertCircle, CheckCircle2, Mail, RotateCcw, ShieldX, UserPlus, Users2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { LoadingAgent } from '@/components/ui/loading-agent'
+import { LoadingEkinox } from '@/components/ui/loading-ekinox'
 import { useBrandConfig } from '@/lib/branding/branding'
 import { inter } from '@/app/fonts/inter'
 import { soehne } from '@/app/fonts/soehne/soehne'
@@ -96,7 +96,7 @@ export function InviteStatusCard({
           </p>
         </div>
         <div className='flex w-full items-center justify-center py-8'>
-          <LoadingAgent size='lg' />
+          <LoadingEkinox size='lg' />
         </div>
 
         <div
@@ -156,7 +156,7 @@ export function InviteStatusCard({
             >
               {action.loading ? (
                 <>
-                  <LoadingAgent size='sm' />
+                  <LoadingEkinox size='sm' />
                   {action.label}...
                 </>
               ) : (

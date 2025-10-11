@@ -378,6 +378,26 @@ export default function LoginPage({
   return (
     <>
       <div className='space-y-1 text-center'>
+        <div className="flex items-center justify-center mb-4">
+          <svg
+            width={48}
+            height={34}
+            viewBox='0 0 48 34'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <g id="logogram">
+              <path
+                d="M15.4992 0H36.5808L21.0816 22.9729H0L15.4992 0Z"
+                fill="#0066CC"
+              />
+              <path
+                d="M16.4224 25.102L10.4192 34H32.5008L48 11.0271H31.7024L22.2064 25.102H16.4224Z"
+                fill="#00407F"
+              />
+            </g>
+          </svg>
+        </div>
         <h1 className={`${soehne.className} font-medium text-[32px] text-black tracking-tight`}>
           Sign in
         </h1>

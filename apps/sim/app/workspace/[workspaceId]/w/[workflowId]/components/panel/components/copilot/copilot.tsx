@@ -3,7 +3,7 @@
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import { ArrowDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { LoadingAgent } from '@/components/ui/loading-agent'
+import { LoadingEkinox } from '@/components/ui/loading-ekinox'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { createLogger } from '@/lib/logs/console/logger'
 import {
@@ -364,7 +364,7 @@ export const Copilot = forwardRef<CopilotRef, CopilotProps>(({ panelWidth }, ref
         {!isInitialized ? (
           <div className='flex h-full w-full items-center justify-center'>
             <div className='flex flex-col items-center gap-3'>
-              <LoadingAgent size='md' />
+              <LoadingEkinox size='md' />
               <p className='text-muted-foreground text-sm'>Loading chat history...</p>
             </div>
           </div>

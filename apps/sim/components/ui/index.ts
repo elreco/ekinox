@@ -86,6 +86,7 @@ export { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from './inpu
 export { OTPInputForm } from './input-otp-form'
 export { Label } from './label'
 export { LoadingAgent } from './loading-agent'
+export { LoadingEkinox } from './loading-ekinox'
 export { Notice } from './notice'
 export { Popover, PopoverContent, PopoverTrigger } from './popover'
 export { Progress } from './progress'
