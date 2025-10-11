@@ -4,91 +4,101 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Check, Star, Zap, Users, Building2, Sparkles, Crown } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import { brandConfig } from '@/lib/brand/config'
+import {
+  getFreeTierLimit,
+  getProTierLimit,
+  getTeamTierLimitPerSeat,
+  getEnterpriseTierLimitPerSeat
+} from '@/lib/billing/subscriptions/utils'
 
-const PRICING_TIERS = [
-  {
-    name: 'Free',
-    price: 'Free',
-    period: '',
-    description: 'Perfect for exploring AI automation',
-    icon: Star,
-    features: [
-      '$5 AI credits included',
-      '10 workflows/minute',
-      'Basic integrations',
-      'Community support',
-      '7 days of logs'
-    ],
-    cta: 'Start Free',
-    popular: false,
-    color: 'from-slate-600 to-gray-700',
-    glow: 'group-hover:shadow-slate-500/25'
-  },
-  {
-    name: 'Pro',
-    price: '30',
-    period: '/month',
-    description: 'Ideal for professionals and growing teams',
-    icon: Zap,
-    features: [
-      '$20 AI credits included',
-      'Unlimited workflows',
-      'All integrations',
-      'Copilot AI assistant',
-      'Priority support',
-      '30 days of logs',
-      'Advanced analytics'
-    ],
-    cta: 'Start Pro',
-    popular: true,
-    color: 'from-blue-600 to-purple-600',
-    glow: 'group-hover:shadow-blue-500/25'
-  },
-  {
-    name: 'Team',
-    price: '100',
-    period: '/month',
-    description: 'Collaboration and team management',
-    icon: Users,
-    features: [
-      '$60 AI credits included',
-      'Everything in Pro',
-      'Real-time collaboration',
-      'Team management',
-      'SSO & SAML',
-      '90 days of logs',
-      '10 workspaces'
-    ],
-    cta: 'Start Team',
-    popular: false,
-    color: 'from-indigo-600 to-blue-600',
-    glow: 'group-hover:shadow-indigo-500/25'
-  },
-  {
-    name: 'Enterprise',
-    price: '500',
-    period: '/month',
-    description: 'Advanced features for large organizations',
-    icon: Crown,
-    features: [
-      '$300 AI credits included',
-      'Everything in Team',
-      'Unlimited workspaces',
-      'Dedicated support 24/7',
-      'Unlimited logs retention',
-      'Custom SLA',
-      'On-premise deployment',
-      'Custom integrations'
-    ],
-    cta: 'Contact Sales',
-    popular: false,
-    color: 'from-purple-600 to-pink-600',
-    glow: 'group-hover:shadow-purple-500/25'
-  }
-]
+function getPricingTiers() {
+  return [
+    {
+      name: 'Free',
+      price: 'Free',
+      period: '',
+      description: 'Perfect for exploring AI automation',
+      icon: Star,
+      features: [
+        `$${getFreeTierLimit()} AI credits included`,
+        '10 workflows/minute',
+        'Basic integrations',
+        'Community support',
+        '7 days of logs'
+      ],
+      cta: 'Start Free',
+      popular: false,
+      color: 'from-slate-600 to-gray-700',
+      glow: 'group-hover:shadow-slate-500/25'
+    },
+    {
+      name: 'Pro',
+      price: '30',
+      period: '/month',
+      description: 'Ideal for professionals and growing teams',
+      icon: Zap,
+      features: [
+        `$${getProTierLimit()} AI credits included`,
+        'Unlimited workflows',
+        'All integrations',
+        'Copilot AI assistant',
+        'Priority support',
+        '30 days of logs',
+        'Advanced analytics'
+      ],
+      cta: 'Start Pro',
+      popular: true,
+      color: 'from-blue-600 to-purple-600',
+      glow: 'group-hover:shadow-blue-500/25'
+    },
+    {
+      name: 'Team',
+      price: '100',
+      period: '/month',
+      description: 'Collaboration and team management',
+      icon: Users,
+      features: [
+        `$${getTeamTierLimitPerSeat()} AI credits included`,
+        'Everything in Pro',
+        'Real-time collaboration',
+        'Team management',
+        'SSO & SAML',
+        '90 days of logs',
+        '10 workspaces'
+      ],
+      cta: 'Start Team',
+      popular: false,
+      color: 'from-indigo-600 to-blue-600',
+      glow: 'group-hover:shadow-indigo-500/25'
+    },
+    {
+      name: 'Enterprise',
+      price: '500',
+      period: '/month',
+      description: 'Advanced features for large organizations',
+      icon: Crown,
+      features: [
+        `$${getEnterpriseTierLimitPerSeat()} AI credits included`,
+        'Everything in Team',
+        'Unlimited workspaces',
+        'Dedicated support 24/7',
+        'Unlimited logs retention',
+        'Custom SLA',
+        'On-premise deployment',
+        'Custom integrations'
+      ],
+      cta: 'Contact Sales',
+      popular: false,
+      color: 'from-purple-600 to-pink-600',
+      glow: 'group-hover:shadow-purple-500/25'
+    }
+  ]
+}
 
 export default function GlassPricing() {
   const router = useRouter()
+  const PRICING_TIERS = getPricingTiers()
 
   return (
     <section id="pricing" className="relative py-32 bg-slate-50 overflow-hidden">
@@ -201,7 +211,7 @@ export default function GlassPricing() {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
                     if (tier.cta === 'Contact Sales') {
-                      window.location.href = 'mailto:alexandrelecorre.pro@gmail.com'
+                      window.location.href = `mailto:${brandConfig.supportEmail}`
                     } else {
                       router.push('/signup')
                     }

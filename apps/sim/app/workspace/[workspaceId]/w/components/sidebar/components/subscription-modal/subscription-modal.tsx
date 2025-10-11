@@ -69,7 +69,7 @@ export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps
   )
 
   const handleContactUs = () => {
-    window.open('mailto:alexandrelecorre.pro@gmail.com', '_blank')
+    window.location.href = `mailto:${brandConfig.supportEmail}`
   }
 
   // Define all 4 plans

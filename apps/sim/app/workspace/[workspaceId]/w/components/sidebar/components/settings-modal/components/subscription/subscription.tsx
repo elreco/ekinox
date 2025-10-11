@@ -23,10 +23,11 @@ import {
 import { useOrganizationStore } from '@/stores/organization'
 import { useGeneralStore } from '@/stores/settings/general/store'
 import { useSubscriptionStore } from '@/stores/subscription/store'
+import { brandConfig } from '@/lib/brand/config'
 
 const CONSTANTS = {
   UPGRADE_ERROR_TIMEOUT: 3000, // 3 seconds
-  TYPEFORM_ENTERPRISE_URL: 'mailto:alexandrelecorre.pro@gmail.com',
+  TYPEFORM_ENTERPRISE_URL: `mailto:${brandConfig.supportEmail}`,
   PRO_PRICE: '$30',
   TEAM_PRICE: '$100',
   INITIAL_TEAM_SEATS: 1,

@@ -43,6 +43,14 @@ const DemoSection = dynamic(() => import('@/app/(landing)/components/demo-sectio
   ),
 })
 
+const InteractiveDemo = dynamic(() => import('@/app/(landing)/components/interactive-demo/interactive-demo'), {
+  loading: () => (
+    <div className="h-[600px] bg-white flex items-center justify-center">
+      <div className="animate-pulse bg-slate-50 rounded-2xl p-8 w-96 h-64 border border-gray-200" />
+    </div>
+  ),
+})
+
 const ModernTestimonials = dynamic(() => import('@/app/(landing)/components/testimonials/modern-testimonials'), {
   loading: () => (
     <div className="h-[600px] bg-gray-900 flex items-center justify-center">
@@ -96,6 +104,17 @@ export default function Landing() {
           }
         >
           <DemoSection />
+        </Suspense>
+
+        {/* Interactive Demo Section */}
+        <Suspense
+          fallback={
+            <div className="h-[600px] bg-white flex items-center justify-center">
+              <div className="animate-pulse bg-slate-50 rounded-2xl p-8 w-96 h-64 border border-gray-200" />
+            </div>
+          }
+        >
+          <InteractiveDemo />
         </Suspense>
 
         {/* Features Section */}

@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Zap, ArrowRight, Plus, Sparkles } from 'lucide-react'
+import { brandConfig } from '@/lib/brand/config'
 
 // Import the actual integration icons
 import * as Icons from '@/components/icons'
@@ -176,6 +177,7 @@ export default function ModernIntegrations() {
               or request a custom connector.
             </p>
             <button
+              onClick={() => window.location.href = `mailto:${brandConfig.requestIntegrationEmail}`}
               className="px-6 py-3 rounded-lg text-white font-semibold border transition-all duration-300"
               style={{
                 backgroundColor: 'var(--brand-accent-hex)',

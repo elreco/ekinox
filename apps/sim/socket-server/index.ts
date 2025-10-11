@@ -85,10 +85,15 @@ logger.info('Starting Socket.IO server...', {
   hasAuth: !!env.BETTER_AUTH_SECRET,
 })
 
-httpServer.listen(PORT, '0.0.0.0', () => {
-  logger.info(`Socket.IO server running on port ${PORT}`)
-  logger.info(`🏥 Health check available at: http://localhost:${PORT}/health`)
-})
+try {
+  httpServer.listen(PORT, '0.0.0.0', () => {
+    logger.info(`✅ Socket.IO server running on port ${PORT}`)
+    logger.info(`🏥 Health check available at: http://localhost:${PORT}/health`)
+  })
+} catch (error) {
+  logger.error('❌ Failed to start server:', error)
+  process.exit(1)
+}
 
 httpServer.on('error', (error) => {
   logger.error('❌ Server failed to start:', error)

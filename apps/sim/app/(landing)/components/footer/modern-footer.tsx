@@ -13,6 +13,7 @@ import {
   Heart
 } from 'lucide-react'
 import Link from 'next/link'
+import { brandConfig } from '@/lib/brand/config'
 
 const FOOTER_LINKS = [
   {
@@ -32,7 +33,7 @@ const FOOTER_LINKS = [
   {
     title: 'Company',
     links: [
-      { name: 'Contact', href: `mailto:alexandrelecorre.pro@gmail.com` }
+      { name: 'Contact', href: `mailto:${brandConfig.supportEmail}` }
     ]
   }
 ]
@@ -60,7 +61,7 @@ export default function ModernFooter() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <img
-                    src="/logo/426-240/primary/primary.svg"
+                    src="/logo/reverse/text/medium.png"
                     alt="Ekinox"
                     className="h-12 w-auto"
                   />

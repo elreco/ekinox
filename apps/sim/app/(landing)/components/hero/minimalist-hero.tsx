@@ -322,12 +322,12 @@ export default function MinimalistHero() {
   }, [activeWorkflowIndex, isMobile])
 
   return (
-    <section className="relative min-h-[100vh] bg-white overflow-hidden">
+    <section className="relative min-h-screen bg-white overflow-hidden pt-24 pb-16">
       {/* Stylized background pattern - Hero section only */}
       <svg
         aria-hidden='true'
         className='pointer-events-none absolute top-0 left-0 w-full opacity-40'
-        style={{ zIndex: 1, height: '100vh' }}
+        style={{ zIndex: 1, height: '100%' }}
         viewBox='0 0 1880 960'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
@@ -387,16 +387,16 @@ export default function MinimalistHero() {
 
       <motion.div
         style={{ y }}
-        className="relative z-10 flex flex-col items-center justify-center min-h-[100vh] max-w-7xl mx-auto px-6 pt-24 pb-16"
+        className="relative z-10 flex flex-col items-center justify-between min-h-[calc(100vh-6rem)] max-w-7xl mx-auto px-6"
       >
         {/* Main Content Container */}
-        <div className="text-center space-y-4 w-full">
+        <div className="text-center space-y-4 w-full pt-12">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8 mb-16"
+            className="space-y-8 mb-8"
           >
             {/* Badge */}
             <motion.div
@@ -409,7 +409,7 @@ export default function MinimalistHero() {
               Visual AI Automation Platform
             </motion.div>
 
-            <h1 className={`${soehne.className} text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-[0.9] tracking-tight`}>
+            <h1 className={`${soehne.className} text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[0.9] tracking-tight`}>
               Build AI Workflows
               <br />
               <span style={{ color: 'var(--brand-accent-hex)' }} className="relative">
@@ -425,7 +425,7 @@ export default function MinimalistHero() {
               </span>
             </h1>
 
-            <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl xl:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Create powerful AI automation without writing code. Connect your favorite tools,
               design intelligent workflows, and deploy them in minutes.
             </p>
@@ -436,7 +436,7 @@ export default function MinimalistHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="flex items-center justify-center gap-3 flex-wrap max-w-4xl mx-auto"
+            className="flex items-center justify-center gap-3 flex-wrap max-w-4xl mx-auto mb-8"
             onMouseEnter={() => setIsUserHovering(true)}
             onMouseLeave={() => setIsUserHovering(false)}
           >
@@ -465,7 +465,6 @@ export default function MinimalistHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
             className="w-full max-w-3xl mx-auto"
-            style={{ marginBottom: '4rem' }}
           >
             <div className="relative bg-white rounded-2xl border border-gray-300 hover:border-gray-400 transition-all duration-300 focus-within:border-gray-500">
               <label htmlFor="agent-description" className="sr-only">
@@ -502,87 +501,9 @@ export default function MinimalistHero() {
           </motion.div>
         </div>
 
-        {/* Interactive Canvas Previews - Desktop only */}
-        {!isMobile && (
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
-            className="w-full max-w-7xl mx-auto mb-32"
-          >
-            {/* Header for previews */}
-            <div className="text-center mb-16">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                See Ekinox in Action
-              </h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Explore real workflow examples that showcase the power of visual AI automation
-              </p>
-            </div>
-
-            {/* Navigation tabs */}
-            <div className="flex items-center justify-center gap-1 mb-12">
-              {WORKFLOW_EXAMPLES.map((workflow, index) => (
-                <button
-                  key={index}
-                  onClick={() => {
-                    setActiveWorkflowIndex(index)
-                    // Fill textarea with relevant template when clicking
-                    const templates = {
-                      0: SERVICE_TEMPLATES.gmail,
-                      1: SERVICE_TEMPLATES.airtable,
-                      2: SERVICE_TEMPLATES.notion,
-                    }
-                    const template = templates[index as keyof typeof templates]
-                    if (template) {
-                      setTextValue(template)
-                      LandingPromptStorage.store(template)
-                    }
-                  }}
-                  className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 border ${
-                    index === activeWorkflowIndex
-                      ? 'text-white border-transparent'
-                      : 'text-gray-600 border-gray-200 hover:border-gray-300 hover:text-gray-900'
-                  }`}
-                  style={index === activeWorkflowIndex ? {
-                    backgroundColor: 'var(--brand-accent-hex)',
-                  } : {}}
-                >
-                  {workflow.name}
-                </button>
-              ))}
-            </div>
-
-            {/* Active Workflow Canvas */}
-            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-              {/* Canvas Header */}
-              <div className="px-6 py-4 border-b border-gray-100 bg-slate-50">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-sm font-medium text-gray-900">
-                      {WORKFLOW_EXAMPLES[activeWorkflowIndex].name}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Real Interactive Canvas */}
-              <div className="p-8 bg-gradient-to-br from-slate-50 to-white min-h-[500px]">
-                <LandingCanvas
-                  nodes={rfNodes}
-                  edges={rfEdges}
-                  groupBox={null}
-                  worldWidth={worldWidth}
-                  viewportApiRef={viewportApiRef}
-                />
-              </div>
-            </div>
-          </motion.div>
-        )}
 
         {/* CTA & Stats Section - Separate container */}
-        <div className="text-center space-y-8 w-full">
+        <div className="text-center space-y-8 w-full mt-16">
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
