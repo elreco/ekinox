@@ -9,8 +9,8 @@ export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metad
   const brand = getBrandConfig()
 
   const defaultTitle = brand.name
-  const summaryFull = `Ekinox is a visual AI agent workflow builder. Create and deploy AI agents without code using our intuitive drag-and-drop interface. Thousands of developers trust Ekinox to build and deploy AI agent workflows. Ekinox lets you integrate with 100+ apps to streamline workflows with AI agents. Built with enterprise-level security and compliance.`
-  const summaryShort = `Ekinox is a visual AI agent workflow builder.`
+  const summaryFull = `Ekinox is a professional AI agent workflow builder. Create and deploy intelligent workflows without code using our intuitive drag-and-drop interface. Build powerful AI automation with 100+ integrations. Enterprise-grade security with SOC2 and HIPAA compliance.`
+  const summaryShort = `Professional AI workflow builder for intelligent automation.`
 
   return {
     title: {
@@ -132,7 +132,7 @@ export function generateStructuredData() {
     '@type': 'SoftwareApplication',
     name: 'Ekinox',
     description:
-      'Ekinox is a visual AI agent workflow builder. Create and deploy AI agents without code using our intuitive drag-and-drop interface. Thousands of developers trust Ekinox to build and deploy AI agent workflows. Ekinox lets you integrate with 100+ apps to streamline workflows with AI agents. Built with enterprise-level security and compliance.',
+      'Ekinox is a professional AI agent workflow builder. Create and deploy intelligent workflows without code using our intuitive drag-and-drop interface. Build powerful AI automation with 100+ integrations. Enterprise-grade security with SOC2 and HIPAA compliance.',
     url: 'https://www.ekinox.app',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web Browser',

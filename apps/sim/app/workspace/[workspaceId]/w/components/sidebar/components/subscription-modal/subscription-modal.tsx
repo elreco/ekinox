@@ -28,6 +28,7 @@ import { useSubscriptionUpgrade } from '@/lib/subscription/upgrade'
 import { cn } from '@/lib/utils'
 import { useOrganizationStore } from '@/stores/organization'
 import { useSubscriptionStore } from '@/stores/subscription/store'
+import { brandConfig } from '@/lib/brand/config'
 
 const logger = createLogger('SubscriptionModal')
 

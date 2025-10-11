@@ -3,7 +3,6 @@ import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ekinox.app'
 
-  // Static pages
   const staticPages = [
     {
       url: baseUrl,
@@ -24,31 +23,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/features`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/integrations`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/pricing`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/changelog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/terms`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.5,
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.5,
+      priority: 0.3,
     },
   ]
 
-  // Blog posts and content pages
-  const blogPages = [
-    {
-      url: `${baseUrl}/building/openai-vs-n8n-vs-sim`,
-      lastModified: new Date('2025-10-06'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-  ]
-
-  // You can add dynamic pages here by fetching from database
-  // const dynamicPages = await fetchDynamicPages()
-
-  return [...staticPages, ...blogPages]
+  return staticPages
 }

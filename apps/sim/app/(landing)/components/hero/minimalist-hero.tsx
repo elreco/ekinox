@@ -566,9 +566,9 @@ export default function MinimalistHero() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-gray-200 max-w-2xl mx-auto"
           >
             {[
-              { number: '100+', label: 'AI Integrations' },
-              { number: '50k+', label: 'Workflows Created' },
-              { number: '< 5min', label: 'Setup Time' },
+              { number: '100+', label: 'Integrations' },
+              { number: 'SOC2', label: 'Certified' },
+              { number: '24/7', label: 'Support' },
             ].map((stat, index) => (
               <motion.div
                 key={index}

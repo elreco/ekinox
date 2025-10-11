@@ -8,7 +8,7 @@ export default function StructuredData() {
         name: 'Ekinox',
         alternateName: 'Ekinox Studio',
         description:
-          'Open-source AI agent workflow builder used by developers at trail-blazing startups to Fortune 500 companies',
+          'Visual AI agent workflow builder trusted by businesses from startups to Fortune 500 companies',
         url: 'https://www.ekinox.app',
         logo: {
           '@type': 'ImageObject',
@@ -35,7 +35,7 @@ export default function StructuredData() {
         url: 'https://www.ekinox.app',
         name: 'Ekinox - AI Agent Workflow Builder',
         description:
-          'Open-source AI agent workflow builder. 30,000+ developers build and deploy agentic workflows. SOC2 and HIPAA compliant.',
+          'Visual AI agent workflow builder. Build and deploy intelligent workflows with drag-and-drop simplicity. Enterprise-grade security and compliance.',
         publisher: {
           '@id': 'https://www.ekinox.app/#organization',
         },
@@ -95,7 +95,7 @@ export default function StructuredData() {
         '@id': 'https://www.ekinox.app/#software',
         name: 'Ekinox - AI Agent Workflow Builder',
         description:
-          'Open-source AI agent workflow builder used by 30,000+ developers. Build agentic workflows with visual drag-and-drop interface. SOC2 and HIPAA compliant. Integrate with 100+ apps.',
+          'Professional AI agent workflow builder for businesses and teams. Build intelligent workflows with visual drag-and-drop interface. Enterprise-grade security with SOC2 and HIPAA compliance. Integrate with 100+ apps.',
         applicationCategory: 'DeveloperApplication',
         applicationSubCategory: 'AI Development Tools',
         operatingSystem: 'Web, Windows, macOS, Linux',
@@ -159,13 +159,6 @@ export default function StructuredData() {
             },
           },
         ],
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.8',
-          reviewCount: '150',
-          bestRating: '5',
-          worstRating: '1',
-        },
         featureList: [
           'Visual workflow builder',
           'Drag-and-drop interface',
@@ -195,7 +188,7 @@ export default function StructuredData() {
             name: 'What is Ekinox?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Ekinox is an open-source AI agent workflow builder used by 30,000+ developers at trail-blazing startups to Fortune 500 companies. It provides a visual drag-and-drop interface for building and deploying agentic workflows. Ekinox is SOC2 and HIPAA compliant.',
+              text: 'Ekinox is a professional AI agent workflow builder trusted by businesses from startups to Fortune 500 companies. It provides a visual drag-and-drop interface for building and deploying intelligent workflows. Ekinox is SOC2 and HIPAA compliant with enterprise-grade security.',
             },
           },
           {

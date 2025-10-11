@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: brand.name === 'Ekinox' ? 'Ekinox - AI Agent Workflow Builder' : brand.name,
     short_name: brand.name,
     description:
-      'Open-source AI agent workflow builder. 30,000+ developers build and deploy agentic workflows on Ekinox. Visual drag-and-drop interface for creating AI automations. SOC2 and HIPAA compliant.',
+      'Professional AI agent workflow builder. Build and deploy intelligent workflows with visual drag-and-drop interface. Enterprise-grade AI automation platform. SOC2 and HIPAA compliant.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
