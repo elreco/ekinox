@@ -54,14 +54,13 @@ export function ChatHeader({ chatConfig }: ChatHeaderProps) {
             aria-label='Ekinox home'
           >
             <Image
-              src='/logo/b&w/text/small.png'
-              alt='Ekinox - Workflows for LLMs'
-              width={29.869884}
-              height={14.5656}
-              className='h-[14.5656px] w-auto pb-[1px]'
+              src='/logo-ekinox.svg'
+              alt='Ekinox - AI Workflow Platform'
+              width={120}
+              height={28}
+              className='h-7 w-auto'
               priority
               loading='eager'
-              quality={100}
             />
           </Link>
         </div>

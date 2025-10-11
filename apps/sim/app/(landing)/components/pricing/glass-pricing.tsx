@@ -179,7 +179,7 @@ export default function GlassPricing() {
                         <span className="text-4xl font-bold text-gray-900">Free</span>
                       ) : (
                         <>
-                          <span className="text-sm text-gray-500">€</span>
+                          <span className="text-sm text-gray-500">$</span>
                           <span className="text-4xl font-bold text-gray-900">{tier.price}</span>
                           <span className="text-gray-500">{tier.period}</span>
                         </>
