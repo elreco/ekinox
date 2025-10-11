@@ -1,6 +1,6 @@
 import { db } from '@sim/db'
 import { member, organization, subscription, user, userStats } from '@sim/db/schema'
-import { and, eq } from 'drizzle-orm'
+import { and, eq, inArray } from 'drizzle-orm'
 import { getPlanPricing } from '@/lib/billing/core/billing'
 import { getFreeTierLimit } from '@/lib/billing/subscriptions/utils'
 import { createLogger } from '@/lib/logs/console/logger'
@@ -16,7 +16,12 @@ async function getOrganizationSubscription(organizationId: string) {
     const orgSubs = await db
       .select()
       .from(subscription)
-      .where(and(eq(subscription.referenceId, organizationId), eq(subscription.status, 'active')))
+      .where(
+        and(
+          eq(subscription.referenceId, organizationId),
+          inArray(subscription.status, ['active', 'trialing'])
+        )
+      )
       .limit(1)
 
     return orgSubs.length > 0 ? orgSubs[0] : null

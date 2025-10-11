@@ -13,7 +13,7 @@ import {
   oneTimeToken,
   organization,
 } from 'better-auth/plugins'
-import { and, eq } from 'drizzle-orm'
+import { and, eq, inArray } from 'drizzle-orm'
 import { headers } from 'next/headers'
 import Stripe from 'stripe'
 import {
@@ -1375,7 +1375,7 @@ export const auth = betterAuth({
                 .where(
                   and(
                     eq(schema.subscription.referenceId, organization.id),
-                    eq(schema.subscription.status, 'active')
+                    inArray(schema.subscription.status, ['active', 'trialing'])
                   )
                 )
 

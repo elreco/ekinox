@@ -54,7 +54,7 @@ export function checkTeamPlan(subscription: any): boolean {
  * @returns The per-user minimum limit in dollars
  */
 export function getPerUserMinimumLimit(subscription: any): number {
-  if (!subscription || subscription.status !== 'active') {
+  if (!subscription || (subscription.status !== 'active' && subscription.status !== 'trialing')) {
     return getFreeTierLimit()
   }
 
@@ -80,7 +80,7 @@ export function getPerUserMinimumLimit(subscription: any): number {
  * @returns Whether the user can edit their usage limits
  */
 export function canEditUsageLimit(subscription: any): boolean {
-  if (!subscription || subscription.status !== 'active') {
+  if (!subscription || (subscription.status !== 'active' && subscription.status !== 'trialing')) {
     return false // Free plan users cannot edit limits
   }
 

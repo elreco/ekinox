@@ -433,7 +433,7 @@ export async function syncUsageLimitsFromSubscription(userId: string): Promise<v
     ? Number.parseFloat(currentStats.currentUsageLimit)
     : 0
 
-  if (!subscription || subscription.status !== 'active') {
+  if (!subscription || (subscription.status !== 'active' && subscription.status !== 'trialing')) {
     // Downgraded to free
     await db
       .update(userStats)

@@ -30,7 +30,12 @@ export async function getHighestPrioritySubscription(userId: string) {
     const personalSubs = await db
       .select()
       .from(subscription)
-      .where(and(eq(subscription.referenceId, userId), eq(subscription.status, 'active')))
+      .where(
+        and(
+          eq(subscription.referenceId, userId),
+          inArray(subscription.status, ['active', 'trialing'])
+        )
+      )
 
     // Get organization memberships
     const memberships = await db
@@ -46,7 +51,12 @@ export async function getHighestPrioritySubscription(userId: string) {
       orgSubs = await db
         .select()
         .from(subscription)
-        .where(and(inArray(subscription.referenceId, orgIds), eq(subscription.status, 'active')))
+        .where(
+          and(
+            inArray(subscription.referenceId, orgIds),
+            inArray(subscription.status, ['active', 'trialing'])
+          )
+        )
     }
 
     const allSubs = [...personalSubs, ...orgSubs]
