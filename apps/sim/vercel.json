@@ -1,0 +1,17 @@
+{
+  "crons": [
+    {
+      "path": "/api/webhooks/poll/gmail",
+      "schedule": "* * * * *"
+    },
+    {
+      "path": "/api/webhooks/poll/outlook",
+      "schedule": "* * * * *"
+    },
+    {
+      "path": "/api/schedules/execute",
+      "schedule": "* * * * *"
+    }
+  ]
+}
+
