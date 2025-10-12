@@ -947,6 +947,38 @@ export const auth = betterAuth({
           authentication: 'basic',
           prompt: 'consent',
           redirectURI: `${env.NEXT_PUBLIC_APP_URL}/api/auth/oauth2/callback/airtable`,
+          getUserInfo: async (tokens) => {
+            try {
+              const response = await fetch('https://api.airtable.com/v0/meta/whoami', {
+                headers: {
+                  Authorization: `Bearer ${tokens.accessToken}`,
+                },
+              })
+
+              if (!response.ok) {
+                logger.error('Failed to fetch Airtable user info', {
+                  status: response.status,
+                  statusText: response.statusText,
+                })
+                throw new Error(`Failed to fetch Airtable user info: ${response.statusText}`)
+              }
+
+              const profile = await response.json()
+              const now = new Date()
+
+              return {
+                id: profile.id,
+                name: profile.email?.split('@')[0] || 'Airtable User',
+                email: profile.email,
+                emailVerified: true,
+                createdAt: now,
+                updatedAt: now,
+              }
+            } catch (error) {
+              logger.error('Error in Airtable getUserInfo', { error })
+              throw error
+            }
+          },
         },
 
         // Notion provider
