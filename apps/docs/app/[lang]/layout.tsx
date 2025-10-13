@@ -13,6 +13,9 @@ import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({
   subsets: ['latin'],
+  display: 'swap',
+  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+  variable: '--font-inter',
 })
 
 const { provider } = defineI18nUI(i18n, {
