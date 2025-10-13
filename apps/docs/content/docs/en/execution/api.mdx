@@ -491,7 +491,7 @@ import crypto from 'crypto';
 const app = express();
 app.use(express.json());
 
-app.post('/sim-webhook', (req, res) => {
+app.post('/ekinox-webhook', (req, res) => {
   // Verify signature
   const signature = req.headers['sim-signature'];
   const body = JSON.stringify(req.body);

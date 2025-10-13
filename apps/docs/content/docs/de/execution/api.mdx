@@ -351,12 +351,12 @@ Wenn Sie ein Webhook-Secret konfigurieren, überprüfen Sie die Signatur, um sic
       const [timestampPart, signaturePart] = signature.split(',');
       const timestamp = timestampPart.replace('t=', '');
       const expectedSignature = signaturePart.replace('v1=', '');
-      
+
       const signatureBase = `${timestamp}.${body}`;
       const hmac = crypto.createHmac('sha256', secret);
       hmac.update(signatureBase);
       const computedSignature = hmac.digest('hex');
-      
+
       return computedSignature === expectedSignature;
     }
 
@@ -364,11 +364,11 @@ Wenn Sie ein Webhook-Secret konfigurieren, überprüfen Sie die Signatur, um sic
     app.post('/webhook', (req, res) => {
       const signature = req.headers['sim-signature'];
       const body = JSON.stringify(req.body);
-      
+
       if (!verifyWebhookSignature(body, signature, process.env.WEBHOOK_SECRET)) {
         return res.status(401).send('Invalid signature');
       }
-      
+
       // Process the webhook...
     });
     ```
@@ -385,14 +385,14 @@ Wenn Sie ein Webhook-Secret konfigurieren, überprüfen Sie die Signatur, um sic
         timestamp_part, signature_part = signature.split(',')
         timestamp = timestamp_part.replace('t=', '')
         expected_signature = signature_part.replace('v1=', '')
-        
+
         signature_base = f"{timestamp}.{body}"
         computed_signature = hmac.new(
             secret.encode(),
             signature_base.encode(),
             hashlib.sha256
         ).hexdigest()
-        
+
         return hmac.compare_digest(computed_signature, expected_signature)
 
     # In your webhook handler
@@ -400,10 +400,10 @@ Wenn Sie ein Webhook-Secret konfigurieren, überprüfen Sie die Signatur, um sic
     def webhook():
         signature = request.headers.get('sim-signature')
         body = json.dumps(request.json)
-        
+
         if not verify_webhook_signature(body, signature, os.environ['WEBHOOK_SECRET']):
             return 'Invalid signature', 401
-        
+
         # Process the webhook...
     ```
 
@@ -464,11 +464,11 @@ async function pollLogs() {
     order: 'asc',
     limit: '100'
   });
-  
+
   if (cursor) {
     params.append('cursor', cursor);
   }
-  
+
   const response = await fetch(
     `https://www.ekinox.app/api/v1/logs?${params}`,
     {
@@ -477,15 +477,15 @@ async function pollLogs() {
       }
     }
   );
-  
+
   if (response.ok) {
     const data = await response.json();
-    
+
     // Process new logs
     for (const log of data.data) {
       console.log(`New execution: ${log.executionId}`);
     }
-    
+
     // Update cursor for next poll
     if (data.nextCursor) {
       cursor = data.nextCursor;
@@ -506,30 +506,30 @@ import crypto from 'crypto';
 const app = express();
 app.use(express.json());
 
-app.post('/sim-webhook', (req, res) => {
+app.post('/ekinox-webhook', (req, res) => {
   // Verify signature
   const signature = req.headers['sim-signature'];
   const body = JSON.stringify(req.body);
-  
+
   if (!verifyWebhookSignature(body, signature, process.env.WEBHOOK_SECRET)) {
     return res.status(401).send('Invalid signature');
   }
-  
+
   // Check timestamp to prevent replay attacks
   const timestamp = parseInt(req.headers['sim-timestamp']);
   const fiveMinutesAgo = Date.now() - (5 * 60 * 1000);
-  
+
   if (timestamp < fiveMinutesAgo) {
     return res.status(401).send('Timestamp too old');
   }
-  
+
   // Process the webhook
   const event = req.body;
-  
+
   switch (event.type) {
     case 'workflow.execution.completed':
       const { workflowId, executionId, status, cost } = event.data;
-      
+
       if (status === 'error') {
         console.error(`Workflow ${workflowId} failed: ${executionId}`);
         // Handle error...
@@ -540,7 +540,7 @@ app.post('/sim-webhook', (req, res) => {
       }
       break;
   }
-  
+
   // Return 200 to acknowledge receipt
   res.status(200).send('OK');
 });
