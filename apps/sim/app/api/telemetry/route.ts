@@ -95,7 +95,7 @@ async function forwardToCollector(data: any): Promise<boolean> {
     const safeAttrs = createSafeAttributes(data)
 
     const serviceAttrs = [
-      { key: 'service.name', value: { stringValue: 'sim-studio' } },
+      { key: 'service.name', value: { stringValue: 'ekinox-studio' } },
       {
         key: 'service.version',
         value: { stringValue: '0.1.0' },

@@ -11,7 +11,7 @@ const logger = createLogger('OtelInstrumentation')
 
 const DEFAULT_TELEMETRY_CONFIG = {
   endpoint: env.TELEMETRY_ENDPOINT || 'https://telemetry.simstudio.ai/v1/traces',
-  serviceName: 'sim-studio',
+  serviceName: 'ekinox-studio',
   serviceVersion: '0.1.0',
   serverSide: { enabled: true },
   batchSettings: {

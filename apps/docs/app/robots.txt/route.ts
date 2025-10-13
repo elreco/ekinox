@@ -3,7 +3,7 @@ export const revalidate = false
 export async function GET() {
   const baseUrl = 'https://docs.ekinox.app'
 
-  const robotsTxt = `# Robots.txt for Sim Documentation
+  const robotsTxt = `# Robots.txt for Ekinox Documentation
 # Generated on ${new Date().toISOString()}
 
 User-agent: *

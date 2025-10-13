@@ -35,7 +35,7 @@ const config = {
    * Service name used to identify this instance
    * You can change this
    */
-  serviceName: 'sim-studio',
+  serviceName: 'ekinox-studio',
 
   /**
    * Version of the service, defaults to the app version

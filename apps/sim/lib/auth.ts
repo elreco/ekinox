@@ -325,7 +325,7 @@ export const auth = betterAuth({
               const profileResponse = await fetch('https://api.github.com/user', {
                 headers: {
                   Authorization: `Bearer ${tokens.accessToken}`,
-                  'User-Agent': 'sim-studio',
+                  'User-Agent': 'ekinox-studio',
                 },
               })
 
@@ -343,7 +343,7 @@ export const auth = betterAuth({
                 const emailsResponse = await fetch('https://api.github.com/user/emails', {
                   headers: {
                     Authorization: `Bearer ${tokens.accessToken}`,
-                    'User-Agent': 'sim-studio',
+                    'User-Agent': 'ekinox-studio',
                   },
                 })
 
@@ -1019,7 +1019,7 @@ export const auth = betterAuth({
               const response = await fetch('https://oauth.reddit.com/api/v1/me', {
                 headers: {
                   Authorization: `Bearer ${tokens.accessToken}`,
-                  'User-Agent': 'sim-studio/1.0',
+                  'User-Agent': 'ekinox-studio/1.0',
                 },
               })
 

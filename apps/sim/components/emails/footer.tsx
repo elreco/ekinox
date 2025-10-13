@@ -67,7 +67,7 @@ export const EmailFooter = ({
                 {isHosted && (
                   <>
                     <br />
-                    Sim, 80 Langton St, San Francisco, CA 94133, USA
+                    Ekinox, 80 Langton St, San Francisco, CA 94133, USA
                   </>
                 )}
               </Text>

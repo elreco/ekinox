@@ -859,7 +859,7 @@ export async function POST(req: NextRequest) {
                 // Fallback: estimate tokens from content if usage not provided
                 const estimatedInputTokens = Math.ceil(message.length / 4)
                 const estimatedOutputTokens = Math.ceil(assistantContent.length / 4)
-                logger.warn(`[${tracker.requestId}] No usage tokens from sim.ai, estimating from content`, {
+                logger.warn(`[${tracker.requestId}] No usage tokens from ekinox.app, estimating from content`, {
                   estimatedInputTokens,
                   estimatedOutputTokens,
                 })

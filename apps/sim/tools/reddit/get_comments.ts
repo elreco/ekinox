@@ -65,7 +65,7 @@ export const getCommentsTool: ToolConfig<RedditCommentsParams, RedditCommentsRes
 
       return {
         Authorization: `Bearer ${params.accessToken}`,
-        'User-Agent': 'sim-studio/1.0 (https://docs.ekinox.app)',
+        'User-Agent': 'ekinox-studio/1.0 (https://docs.ekinox.app)',
         Accept: 'application/json',
       }
     },

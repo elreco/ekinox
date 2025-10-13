@@ -85,7 +85,7 @@ if (typeof window !== 'undefined') {
   }
 
   if (telemetryEnabled) {
-    performance.mark('sim-studio-init')
+    performance.mark('ekinox-studio-init')
 
     let telemetryConfig
     try {
@@ -97,8 +97,8 @@ if (typeof window !== 'undefined') {
     }
 
     window.addEventListener('load', () => {
-      performance.mark('sim-studio-loaded')
-      performance.measure('page-load', 'sim-studio-init', 'sim-studio-loaded')
+      performance.mark('ekinox-studio-loaded')
+      performance.measure('page-load', 'ekinox-studio-init', 'ekinox-studio-loaded')
 
       if (typeof PerformanceObserver !== 'undefined') {
         const lcpObserver = new PerformanceObserver((list) => {

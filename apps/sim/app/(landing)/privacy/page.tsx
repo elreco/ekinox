@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
         <p className='mb-4'>For the purposes of this Privacy Policy:</p>
         <ul className='mb-4 list-disc space-y-2 pl-6'>
           <li>
-            <strong>Application</strong> or <strong>Service</strong> means the Sim web or mobile
+            <strong>Application</strong> or <strong>Service</strong> means the Ekinox web or mobile
             application or related services.
           </li>
           <li>
@@ -158,7 +158,7 @@ export default function PrivacyPolicy() {
           <li>Name and email address</li>
           <li>Phone number and mailing address</li>
           <li>Profile picture, settings, and preferences</li>
-          <li>Content you upload (e.g., documents, files) within Sim</li>
+          <li>Content you upload (e.g., documents, files) within Ekinox</li>
           <li>Any data you explicitly input or connect, including via Google integrations</li>
         </ul>
 
@@ -250,7 +250,7 @@ export default function PrivacyPolicy() {
           </li>
         </ul>
         <p className='mt-4'>
-          <strong>Importantly:</strong> any Google Data used within Sim is used only for features
+          <strong>Importantly:</strong> any Google Data used within Ekinox is used only for features
           tied to that specific user (user-facing features), and <strong>never</strong> for
           generalized AI/ML training or shared model improvement across users.
         </p>
@@ -398,7 +398,7 @@ export default function PrivacyPolicy() {
         </p>
         <ul className='mb-4 list-disc space-y-2 pl-6'>
           <li>
-            Sim does not use, transfer, or allow Google Data to be used to train, improve, or
+            Ekinox does not use, transfer, or allow Google Data to be used to train, improve, or
             develop generalized or non-personalized AI/ML models.
           </li>
           <li>
@@ -604,10 +604,10 @@ export default function PrivacyPolicy() {
           or "share" under CCPA/CPRA. You have the right to opt-out of such data sharing. To
           exercise this right, contact us at{' '}
           <Link
-            href='mailto:privacy@sim.ai'
+            href='mailto:alexandrelecorre.pro@gmail.com'
             className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
           >
-            privacy@sim.ai
+            alexandrelecorre.pro@gmail.com
           </Link>
           .
         </p>
@@ -765,13 +765,13 @@ export default function PrivacyPolicy() {
           <li>
             Email:{' '}
             <Link
-              href='mailto:privacy@sim.ai'
+              href='mailto:alexandrelecorre.pro@gmail.com'
               className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
             >
-              privacy@sim.ai
+              alexandrelecorre.pro@gmail.com
             </Link>
           </li>
-          <li>Mailing Address: Sim, 80 Langton St, San Francisco, CA 94133, USA</li>
+          <li>Mailing Address: Ekinox, 80 Langton St, San Francisco, CA 94133, USA</li>
         </ul>
         <p>We will respond to your request within a reasonable timeframe.</p>
       </section>

@@ -50,7 +50,7 @@ The model breakdown shows:
 <Tabs items={['Hosted Models', 'Bring Your Own API Key']}>
   <Tab>
     **Hosted Models** - Ekinox provides API keys with a 2.5x pricing multiplier:
-    
+
     | Model | Base Price (Input/Output) | Hosted Price (Input/Output) |
     |-------|---------------------------|----------------------------|
     | GPT-4o | $2.50 / $10.00 | $6.25 / $25.00 |
@@ -59,13 +59,13 @@ The model breakdown shows:
     | o3 | $2.00 / $8.00 | $5.00 / $20.00 |
     | Claude 3.5 Sonnet | $3.00 / $15.00 | $7.50 / $37.50 |
     | Claude Opus 4.0 | $15.00 / $75.00 | $37.50 / $187.50 |
-    
+
     *The 2.5x multiplier covers infrastructure and API management costs.*
   </Tab>
-  
+
   <Tab>
     **Your Own API Keys** - Use any model at base pricing:
-    
+
     | Provider | Models | Input / Output |
     |----------|---------|----------------|
     | Google | Gemini 2.5 | $0.15 / $0.60 |
@@ -74,7 +74,7 @@ The model breakdown shows:
     | Groq | Llama 4 Scout | $0.40 / $0.60 |
     | Cerebras | Llama 3.3 70B | $0.94 / $0.94 |
     | Ollama | Local models | Free |
-    
+
     *Pay providers directly with no markup*
   </Tab>
 </Tabs>
@@ -89,19 +89,19 @@ The model breakdown shows:
   <Accordion title="Model Selection">
     Choose models based on task complexity. Simple tasks can use GPT-4.1-nano ($0.10/$0.40) while complex reasoning might need o1 or Claude Opus.
   </Accordion>
-  
+
   <Accordion title="Prompt Engineering">
     Well-structured, concise prompts reduce token usage without sacrificing quality.
   </Accordion>
-  
+
   <Accordion title="Local Models">
     Use Ollama for non-critical tasks to eliminate API costs entirely.
   </Accordion>
-  
+
   <Accordion title="Caching and Reuse">
     Store frequently used results in variables or files to avoid repeated AI model calls.
   </Accordion>
-  
+
   <Accordion title="Batch Processing">
     Process multiple items in a single AI request rather than making individual calls.
   </Accordion>
@@ -168,7 +168,7 @@ Different subscription plans have different usage limits:
 
 ## Billing Model
 
-Sim uses a **base subscription + overage** billing model:
+Ekinox uses a **base subscription + overage** billing model:
 
 ### How It Works
 
@@ -189,7 +189,7 @@ Sim uses a **base subscription + overage** billing model:
 
 ### Threshold Billing
 
-When unbilled overage reaches $50, Sim automatically bills the full unbilled amount.
+When unbilled overage reaches $50, Ekinox automatically bills the full unbilled amount.
 
 **Example:**
 - Day 10: $70 overage → Bill $70 immediately
