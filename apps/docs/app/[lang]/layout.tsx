@@ -40,7 +40,7 @@ export default async function Layout({ children, params }: LayoutProps) {
   return (
     <html lang={lang} className={inter.className} suppressHydrationWarning>
       <body className='flex min-h-screen flex-col'>
-        <RootProvider i18n={provider(lang)}>
+        <RootProvider i18n={provider(lang)} search={{ enabled: true }}>
           <DocsLayout
             tree={source.pageTree[lang]}
             nav={{
