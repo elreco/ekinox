@@ -52,3 +52,5 @@ For questions and support, contact us at help@www.ekinox.app
 ---
 
 <p align="center">Made with ❤️ by the Ekinox Team</p>
+
+fly deploy --config fly.socket.toml --dockerfile Dockerfile.socket

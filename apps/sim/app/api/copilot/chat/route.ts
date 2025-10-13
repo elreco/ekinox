@@ -12,6 +12,7 @@ import {
   createUnauthorizedResponse,
 } from '@/lib/copilot/auth'
 import { getCopilotModel } from '@/lib/copilot/config'
+import { AGENT_MODE_SYSTEM_PROMPT } from '@/lib/copilot/prompts'
 import type { CopilotProviderConfig } from '@/lib/copilot/types'
 import { env } from '@/lib/env'
 import { createLogger } from '@/lib/logs/console/logger'
@@ -376,6 +377,7 @@ export async function POST(req: NextRequest) {
       mode: mode,
       messageId: userMessageIdToUse,
       version: SIM_AGENT_VERSION,
+      systemPrompt: AGENT_MODE_SYSTEM_PROMPT,
       ...(providerConfig ? { provider: providerConfig } : {}),
       ...(effectiveConversationId ? { conversationId: effectiveConversationId } : {}),
       ...(typeof prefetch === 'boolean' ? { prefetch: prefetch } : {}),
