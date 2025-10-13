@@ -12,7 +12,6 @@ import {
   validateChatAuth,
 } from '@/app/api/chat/utils'
 import { createErrorResponse, createSuccessResponse } from '@/app/api/workflows/utils'
-import { hasExceededCostLimit } from '@/lib/billing/core/subscription'
 
 const logger = createLogger('ChatIdentifierAPI')
 
@@ -76,15 +75,6 @@ export async function POST(
       )
     }
 
-    // Check if user has exceeded their Ekinox usage quota
-    const hasExceededEkinoxQuota = await hasExceededCostLimit(deployment.userId)
-    if (hasExceededEkinoxQuota) {
-      logger.warn(`[${requestId}] User ${deployment.userId} has exceeded Ekinox usage quota`)
-      return addCorsHeaders(
-        createErrorResponse('Usage quota exceeded. Please upgrade your plan to continue chatting.', 402),
-        request
-      )
-    }
 
     // Use the already parsed body
     const { input, password, email, conversationId, files } = parsedBody

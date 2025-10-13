@@ -17,6 +17,7 @@ import type { CopilotProviderConfig } from '@/lib/copilot/types'
 import { env } from '@/lib/env'
 import { getCostMultiplier } from '@/lib/environment'
 import { createLogger } from '@/lib/logs/console/logger'
+import { hasExceededCostLimit } from '@/lib/billing/core/subscription'
 import { SIM_AGENT_API_URL_DEFAULT, SIM_AGENT_VERSION } from '@/lib/sim-agent/constants'
 import { generateChatTitle } from '@/lib/sim-agent/utils'
 import { createFileContent, isSupportedFileType } from '@/lib/uploads/file-utils'
@@ -172,6 +173,13 @@ export async function POST(req: NextRequest) {
     }
 
     const authenticatedUserId = session.user.id
+
+    // Check if user has exceeded their Ekinox usage quota
+    const hasExceededEkinoxQuota = await hasExceededCostLimit(authenticatedUserId)
+    if (hasExceededEkinoxQuota) {
+      logger.warn(`[${tracker.requestId}] User ${authenticatedUserId} has exceeded Ekinox usage quota`)
+      return NextResponse.json({ error: 'Usage quota exceeded. Please upgrade your plan to continue chatting.' }, { status: 402 })
+    }
 
     const body = await req.json()
     const {

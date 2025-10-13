@@ -391,7 +391,7 @@ export default function PrivacyPolicy() {
         </h2>
         <h3 className='mb-2 font-medium text-xl'>Affirmative Statement & Compliance</h3>
         <p className='mb-4'>
-          Sim’s use, storage, processing, and transfer of Google Data (raw or derived) strictly
+          Ekinox's use, storage, processing, and transfer of Google Data (raw or derived) strictly
           adheres to the Google API Services User Data Policy, including the Limited Use
           requirements, and to the Google Workspace API user data policy (when applicable). We
           explicitly affirm that:
