@@ -52,6 +52,7 @@ import type {
 import { useWorkflowDiffStore } from '@/stores/workflow-diff/store'
 import { useSubBlockStore } from '@/stores/workflows/subblock/store'
 import { useWorkflowStore } from '@/stores/workflows/workflow/store'
+import { useSubscriptionStore } from '@/stores/subscription/store'
 
 const logger = createLogger('CopilotStore')
 
@@ -2094,6 +2095,13 @@ export const useCopilotStore = create<CopilotStore>()(
               body: JSON.stringify({ chatId: currentChat.id, messages: dbMessages }),
             })
           } catch {}
+        }
+
+        // Refresh subscription store to update cost display in real-time
+        try {
+          useSubscriptionStore.getState().refresh()
+        } catch (error) {
+          logger.debug('Failed to refresh subscription store (non-blocking)', { error })
         }
 
         // Post copilot_stats record (input/output tokens can be null for now)

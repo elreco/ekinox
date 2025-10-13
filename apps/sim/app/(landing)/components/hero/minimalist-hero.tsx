@@ -567,7 +567,7 @@ export default function MinimalistHero() {
           >
             {[
               { number: '100+', label: 'Integrations' },
-              { number: 'SOC2', label: 'Certified' },
+              { number: '5min', label: 'Setup Time' },
               { number: '24/7', label: 'Support' },
             ].map((stat, index) => (
               <motion.div

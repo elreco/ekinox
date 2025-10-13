@@ -329,7 +329,7 @@ export default function InteractiveDemo() {
           </div>
 
           {/* Canvas */}
-          <div className="h-[400px] bg-gradient-to-br from-gray-50 to-white">
+          <div className="h-[500px] bg-gradient-to-br from-gray-50 to-white">
             <LandingCanvas
               nodes={rfNodes}
               edges={rfEdges}
