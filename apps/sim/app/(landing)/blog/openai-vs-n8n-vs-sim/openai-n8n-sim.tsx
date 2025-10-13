@@ -80,8 +80,8 @@ export default function OpenAiN8nSim() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Building',
-        item: `${baseUrl}/building`,
+        name: 'Blog',
+        item: `${baseUrl}/blog`,
       },
       {
         '@type': 'ListItem',
@@ -149,7 +149,7 @@ export default function OpenAiN8nSim() {
                 >
                   <Avatar className='size-6'>
                     <AvatarImage
-                      src='/building/openai-vs-n8n-vs-sim/emir-karabeg.png'
+                      src='/blog/openai-vs-n8n-vs-sim/emir-karabeg.png'
                       alt='Emir Karabeg'
                     />
                     <AvatarFallback>EK</AvatarFallback>
@@ -195,7 +195,7 @@ export default function OpenAiN8nSim() {
                 >
                   <Avatar className='size-6'>
                     <AvatarImage
-                      src='/building/openai-vs-n8n-vs-sim/emir-karabeg.png'
+                      src='/blog/openai-vs-n8n-vs-sim/emir-karabeg.png'
                       alt='Emir Karabeg'
                     />
                     <AvatarFallback>EK</AvatarFallback>
@@ -253,7 +253,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/building/openai-vs-n8n-vs-sim/openai.png'
+                  src='/blog/openai-vs-n8n-vs-sim/openai.png'
                   alt='OpenAI AgentKit workflow interface'
                   width={800}
                   height={450}
@@ -288,7 +288,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/building/openai-vs-n8n-vs-sim/widgets.png'
+                  src='/blog/openai-vs-n8n-vs-sim/widgets.png'
                   alt='OpenAI AgentKit custom widgets interface'
                   width={800}
                   height={450}
@@ -371,7 +371,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/building/openai-vs-n8n-vs-sim/n8n.png'
+                  src='/blog/openai-vs-n8n-vs-sim/n8n.png'
                   alt='n8n workflow automation interface'
                   width={800}
                   height={450}

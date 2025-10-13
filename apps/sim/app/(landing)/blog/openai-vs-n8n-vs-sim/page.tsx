@@ -106,7 +106,7 @@ export const metadata: Metadata = {
     ],
     images: [
       {
-        url: `${baseUrl}/building/openai-vs-n8n-vs-sim/workflow.png`,
+        url: `${baseUrl}/blog/openai-vs-n8n-vs-sim/workflow.png`,
         width: 1200,
         height: 630,
         alt: 'Ekinox AI agent workflow builder interface comparison',
