@@ -74,7 +74,7 @@ export const gmailSendTool: ToolConfig<GmailSendParams, GmailToolResponse> = {
         emailHeaders.push(`Bcc: ${params.bcc}`)
       }
 
-      emailHeaders.push(`Subject: ${params.subject}`, '', params.body)
+      emailHeaders.push(`Subject: =?UTF-8?B?${Buffer.from(params.subject, 'utf-8').toString('base64')}?=`, '', params.body)
       const email = emailHeaders.join('\n')
 
       return {
