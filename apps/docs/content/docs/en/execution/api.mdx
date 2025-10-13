@@ -320,10 +320,10 @@ When a workflow execution completes, Ekinox sends a POST request to your webhook
 
 Each webhook request includes these headers:
 
-- `sim-event`: Event type (always `workflow.execution.completed`)
-- `sim-timestamp`: Unix timestamp in milliseconds
-- `sim-delivery-id`: Unique delivery ID for idempotency
-- `sim-signature`: HMAC-SHA256 signature for verification (if secret configured)
+- `ekinox-event`: Event type (always `workflow.execution.completed`)
+- `ekinox-timestamp`: Unix timestamp in milliseconds
+- `ekinox-delivery-id`: Unique delivery ID for idempotency
+- `ekinox-signature`: HMAC-SHA256 signature for verification (if secret configured)
 - `Idempotency-Key`: Same as delivery ID for duplicate detection
 
 ### Signature Verification
@@ -350,7 +350,7 @@ If you configure a webhook secret, verify the signature to ensure the webhook is
 
     // In your webhook handler
     app.post('/webhook', (req, res) => {
-      const signature = req.headers['sim-signature'];
+      const signature = req.headers['ekinox-signature'];
       const body = JSON.stringify(req.body);
 
       if (!verifyWebhookSignature(body, signature, process.env.WEBHOOK_SECRET)) {
@@ -384,7 +384,7 @@ If you configure a webhook secret, verify the signature to ensure the webhook is
     # In your webhook handler
     @app.route('/webhook', methods=['POST'])
     def webhook():
-        signature = request.headers.get('sim-signature')
+        signature = request.headers.get('ekinox-signature')
         body = json.dumps(request.json)
 
         if not verify_webhook_signature(body, signature, os.environ['WEBHOOK_SECRET']):
@@ -493,7 +493,7 @@ app.use(express.json());
 
 app.post('/ekinox-webhook', (req, res) => {
   // Verify signature
-  const signature = req.headers['sim-signature'];
+  const signature = req.headers['ekinox-signature'];
   const body = JSON.stringify(req.body);
 
   if (!verifyWebhookSignature(body, signature, process.env.WEBHOOK_SECRET)) {
@@ -501,7 +501,7 @@ app.post('/ekinox-webhook', (req, res) => {
   }
 
   // Check timestamp to prevent replay attacks
-  const timestamp = parseInt(req.headers['sim-timestamp']);
+  const timestamp = parseInt(req.headers['ekinox-timestamp']);
   const fiveMinutesAgo = Date.now() - (5 * 60 * 1000);
 
   if (timestamp < fiveMinutesAgo) {
