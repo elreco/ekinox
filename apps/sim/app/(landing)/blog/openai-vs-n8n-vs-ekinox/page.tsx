@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import OpenAiN8nSim from './openai-n8n-sim'
+import OpenAiN8nEkinox from './openai-n8n-ekinox'
 
 const baseUrl = 'https://www.ekinox.app'
-const canonicalUrl = `${baseUrl}/building/openai-vs-n8n-vs-sim`
+const canonicalUrl = `${baseUrl}/blog/openai-vs-n8n-vs-ekinox`
 
 export const metadata: Metadata = {
   title: 'OpenAI AgentKit vs n8n vs Ekinox: AI Agent Workflow Builder Comparison | Ekinox',
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
     'intelligent chunking',
     'context-aware search',
   ],
-  authors: [{ name: 'Emir Karabeg', url: 'https://x.com/karabegemir' }],
-  creator: 'Emir Karabeg',
+  authors: [{ name: 'Alexandre Le Corre', url: 'https://x.com/karabegemir' }],
+  creator: 'Alexandre Le Corre',
   publisher: 'Ekinox',
   robots: {
     index: true,
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2025-10-06T00:00:00.000Z',
     modifiedTime: '2025-10-06T00:00:00.000Z',
-    authors: ['Emir Karabeg'],
+    authors: ['Alexandre Le Corre'],
     section: 'Technology',
     tags: [
       'AI Agents',
@@ -106,7 +106,7 @@ export const metadata: Metadata = {
     ],
     images: [
       {
-        url: `${baseUrl}/blog/openai-vs-n8n-vs-sim/workflow.png`,
+        url: `${baseUrl}/blog/openai-vs-n8n-vs-ekinox/workflow.png`,
         width: 1200,
         height: 630,
         alt: 'Ekinox AI agent workflow builder interface comparison',
@@ -118,14 +118,14 @@ export const metadata: Metadata = {
     title: 'OpenAI AgentKit vs n8n vs Ekinox: AI Agent Workflow Builder Comparison',
     description:
       'Compare OpenAI AgentKit, n8n, and Ekinox for building AI agent workflows. Explore key differences in capabilities, integrations, and which platform fits your production needs.',
-    images: ['/building/openai-vs-n8n-vs-sim/workflow.png'],
+    images: ['/blog/openai-vs-n8n-vs-ekinox/workflow.png'],
     creator: '@karabegemir',
-    site: '@simai',
+    site: '@ekinox',
   },
   other: {
     'article:published_time': '2025-10-06T00:00:00.000Z',
     'article:modified_time': '2025-10-06T00:00:00.000Z',
-    'article:author': 'Emir Karabeg',
+    'article:author': 'Alexandre Le Corre',
     'article:section': 'Technology',
   },
 }
@@ -135,5 +135,5 @@ export const metadata: Metadata = {
  * Optimized for SEO with structured data, canonical URLs, and comprehensive metadata.
  */
 export default function Page() {
-  return <OpenAiN8nSim />
+  return <OpenAiN8nEkinox />
 }

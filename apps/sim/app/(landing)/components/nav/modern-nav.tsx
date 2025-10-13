@@ -10,20 +10,27 @@ import { useRouter } from 'next/navigation'
 const NAV_ITEMS = [
   {
     name: 'Features',
-    href: '#features'
+    href: '#features',
+    anchor: true
   },
   {
     name: 'Integrations',
-    href: '#integrations'
+    href: '#integrations',
+    anchor: true
   },
   {
     name: 'Pricing',
-    href: '#pricing'
+    href: '#pricing',
+    anchor: true
   },
   {
     name: 'Docs',
     href: 'https://docs.ekinox.app',
     external: true
+  },
+  {
+    name: 'Blog',
+    href: '/blog'
   }
 ]
 
@@ -32,6 +39,22 @@ export default function ModernNav() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+
+  const handleNavClick = (item: any) => {
+    if (item.anchor) {
+      // Si on est sur une page autre que l'accueil, rediriger vers l'accueil avec l'ancre
+      if (window.location.pathname !== '/') {
+        router.push(`/${item.href}`)
+      } else {
+        // Si on est déjà sur l'accueil, juste scroller vers l'ancre
+        const element = document.querySelector(item.href)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+    }
+    setIsMobileMenuOpen(false)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,13 +107,20 @@ export default function ModernNav() {
                   >
                     {item.name}
                   </a>
+                ) : item.anchor ? (
+                  <button
+                    onClick={() => handleNavClick(item)}
+                    className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
+                  >
+                    {item.name}
+                  </button>
                 ) : (
-                  <a
+                  <Link
                     href={item.href}
                     className="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
@@ -158,14 +188,21 @@ export default function ModernNav() {
                       >
                         {item.name}
                       </a>
+                    ) : item.anchor ? (
+                      <button
+                        onClick={() => handleNavClick(item)}
+                        className="block w-full text-left px-6 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200"
+                      >
+                        {item.name}
+                      </button>
                     ) : (
-                      <a
+                      <Link
                         href={item.href}
                         className="block px-6 py-3 text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     )}
                   </div>
                 ))}

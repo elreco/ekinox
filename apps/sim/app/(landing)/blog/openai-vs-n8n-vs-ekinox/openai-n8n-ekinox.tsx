@@ -7,9 +7,9 @@ import { soehne } from '@/app/fonts/soehne/soehne'
  * Layout inspired by Anthropic's engineering blog posts.
  * Includes structured data (JSON-LD) for enhanced SEO and LLM discoverability.
  */
-export default function OpenAiN8nSim() {
+export default function OpenAiN8nEkinox() {
   const baseUrl = 'https://www.ekinox.app'
-  const articleUrl = `${baseUrl}/building/openai-vs-n8n-vs-sim`
+  const articleUrl = `${baseUrl}/blog/openai-vs-n8n-vs-ekinox`
 
   const articleStructuredData = {
     '@context': 'https://schema.org',
@@ -17,21 +17,21 @@ export default function OpenAiN8nSim() {
     headline: 'OpenAI AgentKit vs n8n vs Ekinox: AI Agent Workflow Builder Comparison',
     description:
       'Compare OpenAI AgentKit, n8n, and Ekinox for building AI agent workflows. Explore key differences in capabilities, integrations, collaboration, and which platform best fits your production AI agent needs.',
-    image: `${baseUrl}/building/openai-vs-n8n-vs-sim/workflow.png`,
+    image: `${baseUrl}/blog/openai-vs-n8n-vs-ekinox/workflow.png`,
     datePublished: '2025-10-06T00:00:00.000Z',
     dateModified: '2025-10-06T00:00:00.000Z',
     author: {
       '@type': 'Person',
-      name: 'Emir Karabeg',
-      url: 'https://x.com/karabegemir',
-      sameAs: ['https://x.com/karabegemir'],
+      name: 'Alexandre Le Corre',
+      url: 'https://linkedin.com/in/alexandre-le-corre',
+      sameAs: ['https://linkedin.com/in/alexandre-le-corre'],
     },
     publisher: {
       '@type': 'Organization',
       name: 'Ekinox',
       logo: {
         '@type': 'ImageObject',
-        url: `${baseUrl}/logo/sim-logo.png`,
+        url: `${baseUrl}/logo/ekinox-logo.png`,
       },
       url: baseUrl,
     },
@@ -120,7 +120,7 @@ export default function OpenAiN8nSim() {
             <div className='h-[180px] w-full flex-shrink-0 sm:h-[200px] md:h-auto md:w-[300px]'>
               <div className='relative h-full w-full overflow-hidden rounded-lg md:aspect-[5/4]'>
                 <Image
-                  src='/building/openai-vs-n8n-vs-sim/workflow.png'
+                  src='/blog/openai-vs-n8n-vs-ekinox/workflow.png'
                   alt='Ekinox AI agent workflow builder interface'
                   width={300}
                   height={240}
@@ -141,22 +141,22 @@ export default function OpenAiN8nSim() {
               </h1>
               <div className='mt-4 hidden items-center justify-end gap-2 sm:flex'>
                 <a
-                  href='https://x.com/karabegemir'
+                  href='https://linkedin.com/in/alexandre-le-corre'
                   target='_blank'
                   rel='noopener noreferrer author'
-                  aria-label='@karabegemir on X'
+                  aria-label='@alexandre-le-corre on LinkedIn'
                   className='block'
                 >
                   <Avatar className='size-6'>
                     <AvatarImage
-                      src='/blog/openai-vs-n8n-vs-sim/emir-karabeg.png'
-                      alt='Emir Karabeg'
+                      src='/blog/openai-vs-n8n-vs-ekinox/alexandre-le-corre.png'
+                      alt='Alexandre Le Corre'
                     />
                     <AvatarFallback>EK</AvatarFallback>
                   </Avatar>
                 </a>
                 <a
-                  href='https://x.com/karabegemir'
+                  href='https://linkedin.com/in/alexandre-le-corre'
                   target='_blank'
                   rel='noopener noreferrer author'
                   className='text-[14px] text-gray-600 leading-[1.5] hover:text-gray-900 sm:text-[16px]'
@@ -164,7 +164,7 @@ export default function OpenAiN8nSim() {
                   itemScope
                   itemType='https://schema.org/Person'
                 >
-                  <span itemProp='name'>Emir Karabeg</span>
+                  <span itemProp='name'>Alexandre Le Corre</span>
                 </a>
               </div>
             </div>
@@ -187,27 +187,27 @@ export default function OpenAiN8nSim() {
               <meta itemProp='dateModified' content='2025-10-06T00:00:00.000Z' />
               <div className='flex items-center gap-2 sm:hidden'>
                 <a
-                  href='https://x.com/karabegemir'
+                  href='https://linkedin.com/in/alexandre-le-corre'
                   target='_blank'
                   rel='noopener noreferrer author'
-                  aria-label='@karabegemir on X'
+                  aria-label='@alexandre-le-corre on LinkedIn'
                   className='block'
                 >
                   <Avatar className='size-6'>
                     <AvatarImage
-                      src='/blog/openai-vs-n8n-vs-sim/emir-karabeg.png'
-                      alt='Emir Karabeg'
+                      src='/blog/openai-vs-n8n-vs-ekinox/alexandre-le-corre.png'
+                      alt='Alexandre Le Corre'
                     />
-                    <AvatarFallback>EK</AvatarFallback>
+                    <AvatarFallback>ALC</AvatarFallback>
                   </Avatar>
                 </a>
                 <a
-                  href='https://x.com/karabegemir'
+                  href='https://linkedin.com/in/alexandre-le-corre'
                   target='_blank'
                   rel='noopener noreferrer author'
                   className='text-[14px] text-gray-600 leading-[1.5] hover:text-gray-900'
                 >
-                  Emir Karabeg
+                  Alexandre Le Corre
                 </a>
               </div>
             </div>
@@ -253,7 +253,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/blog/openai-vs-n8n-vs-sim/openai.png'
+                  src='/blog/openai-vs-n8n-vs-ekinox/openai.png'
                   alt='OpenAI AgentKit workflow interface'
                   width={800}
                   height={450}
@@ -288,7 +288,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/blog/openai-vs-n8n-vs-sim/widgets.png'
+                  src='/blog/openai-vs-n8n-vs-ekinox/widgets.png'
                   alt='OpenAI AgentKit custom widgets interface'
                   width={800}
                   height={450}
@@ -371,7 +371,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/blog/openai-vs-n8n-vs-sim/n8n.png'
+                  src='/blog/openai-vs-n8n-vs-ekinox/n8n.png'
                   alt='n8n workflow automation interface'
                   width={800}
                   height={450}
@@ -435,7 +435,7 @@ export default function OpenAiN8nSim() {
                 <li className='mb-2'>Traditional workflow automation and service integration</li>
                 <li className='mb-2'>Data synchronization between business tools</li>
                 <li className='mb-2'>Event-driven automation workflows</li>
-                <li className='mb-2'>Simple AI-enhanced automations</li>
+                <li className='mb-2'>Ekinoxple AI-enhanced automations</li>
               </ul>
 
               <h3 className='mt-6 mb-3 font-medium text-[22px] leading-tight'>
@@ -489,7 +489,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/building/openai-vs-n8n-vs-sim/sim.png'
+                  src='/blog/openai-vs-n8n-vs-ekinox/ekinox.png'
                   alt='Ekinox visual workflow builder with AI agent blocks'
                   width={800}
                   height={450}
@@ -515,7 +515,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/building/openai-vs-n8n-vs-sim/copilot.png'
+                  src='/blog/openai-vs-n8n-vs-ekinox/copilot.png'
                   alt='Ekinox AI Copilot assisting with workflow development'
                   width={800}
                   height={450}
@@ -540,7 +540,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/building/openai-vs-n8n-vs-sim/templates.png'
+                  src='/blog/openai-vs-n8n-vs-ekinox/templates.png'
                   alt='Ekinox workflow templates gallery'
                   width={800}
                   height={450}
@@ -575,7 +575,7 @@ export default function OpenAiN8nSim() {
                 Real-Time Team Collaboration
               </h4>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Ekinox enables multiple team members to work simultaneously on the same workflow with
+                Ekinox enables multiple team members to work ekinoxultaneously on the same workflow with
                 real-time editing, commenting, and comprehensive permissions management. This makes
                 it ideal for teams building complex agent systems together.
               </p>
@@ -594,7 +594,7 @@ export default function OpenAiN8nSim() {
                 Intelligent Knowledge Base with Vector Search
               </h4>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Ekinox's native knowledge base goes far beyond simple document storage. Powered by
+                Ekinox's native knowledge base goes far beyond ekinoxple document storage. Powered by
                 pgvector, it provides semantic search that understands meaning and context, not just
                 keywords. Upload documents in multiple formats (PDF, Word, Excel, Markdown, and
                 more), and Ekinox automatically processes them with intelligent chunking, generates
@@ -621,7 +621,7 @@ export default function OpenAiN8nSim() {
 
               <figure className='my-8 overflow-hidden rounded-lg'>
                 <Image
-                  src='/building/openai-vs-n8n-vs-sim/logs.png'
+                  src='/blog/openai-vs-n8n-vs-ekinox/logs.png'
                   alt='Ekinox execution logs and monitoring dashboard'
                   width={800}
                   height={450}
@@ -647,7 +647,7 @@ export default function OpenAiN8nSim() {
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
                 Ekinox offers both cloud-hosted and self-hosted deployment options. Organizations can
                 run Ekinox on their own infrastructure for complete control, or use the managed cloud
-                service for simplicity. The platform is SOC2 and HIPAA compliant, ensuring
+                service for ekinoxplicity. The platform is SOC2 and HIPAA compliant, ensuring
                 enterprise-level security.
               </p>
 
