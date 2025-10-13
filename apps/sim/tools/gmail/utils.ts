@@ -105,7 +105,7 @@ export function processMessageForSummary(message: GmailMessage): any {
 export function extractMessageBody(payload: any): string {
   // If the payload has a body with data, decode it
   if (payload.body?.data) {
-    return Buffer.from(payload.body.data, 'base64').toString()
+    return Buffer.from(payload.body.data, 'base64').toString('utf-8')
   }
 
   // If there are no parts, return empty string
@@ -116,13 +116,13 @@ export function extractMessageBody(payload: any): string {
   // First try to find a text/plain part
   const textPart = payload.parts.find((part: any) => part.mimeType === 'text/plain')
   if (textPart?.body?.data) {
-    return Buffer.from(textPart.body.data, 'base64').toString()
+    return Buffer.from(textPart.body.data, 'base64').toString('utf-8')
   }
 
   // If no text/plain, try to find text/html
   const htmlPart = payload.parts.find((part: any) => part.mimeType === 'text/html')
   if (htmlPart?.body?.data) {
-    return Buffer.from(htmlPart.body.data, 'base64').toString()
+    return Buffer.from(htmlPart.body.data, 'base64').toString('utf-8')
   }
 
   // If we have multipart/alternative or other complex types, recursively check parts

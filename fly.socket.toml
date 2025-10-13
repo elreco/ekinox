@@ -1,7 +1,8 @@
 app = "ekinox-socket-server"
-primary_region = "sea"
+primary_region = "sjc"
 
 [build]
+  dockerfile = "Dockerfile.socket"
 
 [http_service]
   internal_port = 3002
