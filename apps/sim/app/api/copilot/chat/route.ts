@@ -15,6 +15,7 @@ import { getCopilotModel } from '@/lib/copilot/config'
 import { AGENT_MODE_SYSTEM_PROMPT } from '@/lib/copilot/prompts'
 import type { CopilotProviderConfig } from '@/lib/copilot/types'
 import { env } from '@/lib/env'
+import { getCostMultiplier } from '@/lib/environment'
 import { createLogger } from '@/lib/logs/console/logger'
 import { SIM_AGENT_API_URL_DEFAULT, SIM_AGENT_VERSION } from '@/lib/sim-agent/constants'
 import { generateChatTitle } from '@/lib/sim-agent/utils'
@@ -25,6 +26,72 @@ import { downloadFile, getStorageProvider } from '@/lib/uploads/storage-client'
 const logger = createLogger('CopilotChatAPI')
 
 const SIM_AGENT_API_URL = env.SIM_AGENT_API_URL || SIM_AGENT_API_URL_DEFAULT
+
+async function updateCopilotCost(
+  userId: string,
+  model: string,
+  inputTokens: number,
+  outputTokens: number
+): Promise<void> {
+  try {
+    if (!env.INTERNAL_API_SECRET) {
+      logger.warn('INTERNAL_API_SECRET not configured, skipping cost update')
+      return
+    }
+
+    const multiplier = getCostMultiplier()
+
+    logger.info('Attempting to update Copilot cost', {
+      userId,
+      model,
+      inputTokens,
+      outputTokens,
+      multiplier,
+    })
+
+    const response = await fetch(`${env.BETTER_AUTH_URL}/api/billing/update-cost`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': env.INTERNAL_API_SECRET,
+      },
+      body: JSON.stringify({
+        userId,
+        input: inputTokens,
+        output: outputTokens,
+        model,
+        inputMultiplier: multiplier,
+        outputMultiplier: multiplier,
+      }),
+    })
+
+    if (!response.ok) {
+      const error = await response.text().catch(() => 'Unknown error')
+      logger.error('Failed to update Copilot cost', {
+        userId,
+        model,
+        inputTokens,
+        outputTokens,
+        error,
+      })
+    } else {
+      const result = await response.json()
+      logger.info('Copilot cost updated successfully', {
+        userId,
+        model,
+        inputTokens,
+        outputTokens,
+        cost: result.data?.cost,
+      })
+    }
+  } catch (error) {
+    logger.error('Error updating Copilot cost', {
+      userId,
+      model,
+      error: error instanceof Error ? error.message : String(error),
+    })
+  }
+}
 
 const FileAttachmentSchema = z.object({
   id: z.string(),
@@ -454,6 +521,8 @@ export async function POST(req: NextRequest) {
           const completedToolExecutionIds = new Set<string>()
           let lastDoneResponseId: string | undefined
           let lastSafeDoneResponseId: string | undefined
+          // Track token usage
+          let usageTokens: { input?: number; output?: number; model?: string } | undefined
 
           // Send chatId as first event
           if (actualChatId) {
@@ -595,6 +664,16 @@ export async function POST(req: NextRequest) {
                           if (!hasToolInProgress) {
                             lastSafeDoneResponseId = responseIdFromDone
                           }
+                        }
+                        // Capture usage tokens if provided
+                        if (event.data?.usage || event.usage) {
+                          const usage = event.data?.usage || event.usage
+                          usageTokens = {
+                            input: usage.prompt_tokens || usage.input_tokens || usage.input,
+                            output: usage.completion_tokens || usage.output_tokens || usage.output,
+                            model: event.data?.model || event.model,
+                          }
+                          logger.info(`[${tracker.requestId}] Captured usage tokens from done event`, usageTokens)
                         }
                         break
 
@@ -764,6 +843,35 @@ export async function POST(req: NextRequest) {
                 savedAssistantMessage: assistantContent.trim().length > 0,
                 updatedConversationId: responseId || null,
               })
+
+              // Update Copilot cost in user_stats
+              if (usageTokens?.input && usageTokens?.output) {
+                const modelToUse = usageTokens.model || model || 'claude-3-7-sonnet-latest'
+                await updateCopilotCost(
+                  authenticatedUserId,
+                  modelToUse,
+                  usageTokens.input,
+                  usageTokens.output
+                ).catch((error) => {
+                  logger.error(`[${tracker.requestId}] Failed to update Copilot cost (non-blocking)`, error)
+                })
+              } else {
+                // Fallback: estimate tokens from content if usage not provided
+                const estimatedInputTokens = Math.ceil(message.length / 4)
+                const estimatedOutputTokens = Math.ceil(assistantContent.length / 4)
+                logger.warn(`[${tracker.requestId}] No usage tokens from sim.ai, estimating from content`, {
+                  estimatedInputTokens,
+                  estimatedOutputTokens,
+                })
+                await updateCopilotCost(
+                  authenticatedUserId,
+                  model || 'claude-3-7-sonnet-latest',
+                  estimatedInputTokens,
+                  estimatedOutputTokens
+                ).catch((error) => {
+                  logger.error(`[${tracker.requestId}] Failed to update estimated Copilot cost`, error)
+                })
+              }
             }
           } catch (error) {
             logger.error(`[${tracker.requestId}] Error processing stream:`, error)
@@ -872,6 +980,35 @@ export async function POST(req: NextRequest) {
           updatedAt: new Date(),
         })
         .where(eq(copilotChats.id, actualChatId!))
+
+      // Update Copilot cost in user_stats
+      if (responseData.tokens) {
+        const tokens = responseData.tokens
+        await updateCopilotCost(
+          authenticatedUserId,
+          responseData.model || model || 'claude-3-7-sonnet-latest',
+          tokens.prompt_tokens || tokens.input_tokens || tokens.input || 0,
+          tokens.completion_tokens || tokens.output_tokens || tokens.output || 0
+        ).catch((error) => {
+          logger.error(`[${tracker.requestId}] Failed to update Copilot cost (non-blocking)`, error)
+        })
+      } else {
+        // Fallback: estimate tokens from content
+        const estimatedInputTokens = Math.ceil(message.length / 4)
+        const estimatedOutputTokens = Math.ceil((responseData.content?.length || 0) / 4)
+        logger.warn(`[${tracker.requestId}] No tokens in non-streaming response, estimating`, {
+          estimatedInputTokens,
+          estimatedOutputTokens,
+        })
+        await updateCopilotCost(
+          authenticatedUserId,
+          responseData.model || model || 'claude-3-7-sonnet-latest',
+          estimatedInputTokens,
+          estimatedOutputTokens
+        ).catch((error) => {
+          logger.error(`[${tracker.requestId}] Failed to update estimated Copilot cost`, error)
+        })
+      }
     }
 
     logger.info(`[${tracker.requestId}] Returning non-streaming response`, {

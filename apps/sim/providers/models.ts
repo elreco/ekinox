@@ -416,6 +416,42 @@ export const PROVIDER_DEFINITIONS: Record<string, ProviderDefinition> = {
           computerUse: true,
         },
       },
+      {
+        id: 'claude-4.5-sonnet',
+        pricing: {
+          input: 3.0,
+          cachedInput: 1.5,
+          output: 15.0,
+          updatedAt: '2025-10-13',
+        },
+        capabilities: {
+          temperature: { min: 0, max: 1 },
+        },
+      },
+      {
+        id: 'claude-4-sonnet',
+        pricing: {
+          input: 3.0,
+          cachedInput: 1.5,
+          output: 15.0,
+          updatedAt: '2025-10-13',
+        },
+        capabilities: {
+          temperature: { min: 0, max: 1 },
+        },
+      },
+      {
+        id: 'claude-4.1-opus',
+        pricing: {
+          input: 15.0,
+          cachedInput: 7.5,
+          output: 75.0,
+          updatedAt: '2025-10-13',
+        },
+        capabilities: {
+          temperature: { min: 0, max: 1 },
+        },
+      },
     ],
   },
   google: {
