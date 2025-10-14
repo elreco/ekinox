@@ -8,11 +8,22 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   other: {
-    'msapplication-TileColor': '#000000',
-    'theme-color': '#000000',
+    'msapplication-TileColor': '#ffffff',
+    'theme-color': '#ffffff',
   },
 }
 
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <div
+      className="min-h-screen bg-white"
+      style={{
+        '--background': '0 0% 100%',
+        '--foreground': '0 0% 3.9%',
+        background: 'white'
+      } as React.CSSProperties}
+    >
+      {children}
+    </div>
+  )
 }
