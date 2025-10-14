@@ -224,13 +224,13 @@ const nextConfig: NextConfig = {
     if (isHosted) {
       redirects.push(
         {
-          source: '/((?!api|_next|_vercel|favicon|static|.*\\..*).*)',
+          source: '/((?!api|_next|_vercel|favicon|static|ingest|.*\\..*).*)',
           destination: 'https://www.ekinox.app/$1',
           permanent: true,
           has: [{ type: 'host' as const, value: 'simstudio.ai' }],
         },
         {
-          source: '/((?!api|_next|_vercel|favicon|static|.*\\..*).*)',
+          source: '/((?!api|_next|_vercel|favicon|static|ingest|.*\\..*).*)',
           destination: 'https://www.ekinox.app/$1',
           permanent: true,
           has: [{ type: 'host' as const, value: 'www.simstudio.ai' }],
