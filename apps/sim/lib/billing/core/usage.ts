@@ -150,7 +150,7 @@ export async function getUserUsageLimitInfo(userId: string): Promise<UsageLimitI
       // Free/Pro: Use individual limits
       currentLimit = stats.currentUsageLimit
         ? Number.parseFloat(stats.currentUsageLimit)
-        : getFreeTierLimit()
+      : getPerUserMinimumLimit(subscription)
       minimumLimit = getPerUserMinimumLimit(subscription)
       canEdit = canEditUsageLimit(subscription)
     } else {

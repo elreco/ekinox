@@ -62,7 +62,7 @@ const pricingTiers: PricingTier[] = [
   {
     name: 'PRO',
     tier: 'Pro',
-    price: '$20/mo',
+    price: '$30/mo',
     features: PRO_PLAN_FEATURES,
     ctaText: 'Get Started',
     featured: true,
@@ -70,7 +70,7 @@ const pricingTiers: PricingTier[] = [
   {
     name: 'TEAM',
     tier: 'Team',
-    price: '$40/mo',
+    price: '$100/mo',
     features: TEAM_PLAN_FEATURES,
     ctaText: 'Get Started',
   },
