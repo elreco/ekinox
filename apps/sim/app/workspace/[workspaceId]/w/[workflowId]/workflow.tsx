@@ -20,6 +20,7 @@ import { DiffControls } from '@/app/workspace/[workspaceId]/w/[workflowId]/compo
 import { ErrorBoundary } from '@/app/workspace/[workspaceId]/w/[workflowId]/components/error/index'
 import { FloatingControls } from '@/app/workspace/[workspaceId]/w/[workflowId]/components/floating-controls/floating-controls'
 import { Panel } from '@/app/workspace/[workspaceId]/w/[workflowId]/components/panel/panel'
+import { LoadingEkinox } from '@/components/ui/loading-ekinox'
 import { SubflowNodeComponent } from '@/app/workspace/[workspaceId]/w/[workflowId]/components/subflows/subflow-node'
 import { TrainingControls } from '@/app/workspace/[workspaceId]/w/[workflowId]/components/training-controls/training-controls'
 import { TriggerList } from '@/app/workspace/[workspaceId]/w/[workflowId]/components/trigger-list/trigger-list'
@@ -1139,11 +1140,19 @@ const WorkflowContent = React.memo(() => {
     // 1. We have an active workflow that matches the URL
     // 2. The workflow exists in the registry
     // 3. Workflows are not currently loading
+    // 4. Blocks have been loaded (if the workflow has blocks in registry, they must be in local state too)
+    const workflowInRegistry = workflows[currentId]
+    const hasBlocksInRegistry = workflowInRegistry && Object.keys(workflowInRegistry.blocks || {}).length > 0
+    const hasBlocksInState = Object.keys(blocks).length > 0
+
     const shouldBeReady =
-      activeWorkflowId === currentId && Boolean(workflows[currentId]) && !isLoading
+      activeWorkflowId === currentId &&
+      Boolean(workflowInRegistry) &&
+      !isLoading &&
+      (!hasBlocksInRegistry || hasBlocksInState)
 
     setIsWorkflowReady(shouldBeReady)
-  }, [activeWorkflowId, params.workflowId, workflows, isLoading])
+  }, [activeWorkflowId, params.workflowId, workflows, isLoading, blocks])
 
   // Handle navigation and validation
   useEffect(() => {
@@ -1928,13 +1937,16 @@ const WorkflowContent = React.memo(() => {
             <Panel />
           </div>
           <ControlBar hasValidationErrors={nestedSubflowErrors.size > 0} />
-          <div className='workflow-container h-full'>
+          <div className='workflow-container h-full relative'>
             <Background
               color='hsl(var(--workflow-dots))'
               size={4}
               gap={40}
               style={{ backgroundColor: 'hsl(var(--workflow-background))' }}
             />
+            <div className='absolute inset-0 flex items-center justify-center'>
+              <LoadingEkinox size='lg' />
+            </div>
           </div>
         </div>
       </div>
