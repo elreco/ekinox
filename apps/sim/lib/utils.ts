@@ -10,6 +10,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+export function getAssetUrl(filename: string) {
+  const cdnBaseUrl = process.env.NEXT_PUBLIC_BLOB_BASE_URL
+  if (cdnBaseUrl) {
+    return `${cdnBaseUrl}/${filename}`
+  }
+  return `/${filename}`
+}
+
 function getEncryptionKey(): Buffer {
   const key = env.ENCRYPTION_KEY
   if (!key || key.length !== 64) {

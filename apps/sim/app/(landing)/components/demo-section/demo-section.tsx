@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Play, Zap } from 'lucide-react'
+import { Video } from '@/app/(landing)/components/ui/video'
 
 type DemoTab = 'video' | 'gif'
 
@@ -149,12 +150,14 @@ export default function DemoSection() {
                   className="w-full h-full"
                 >
                   {activeTab === 'video' ? (
-                    <iframe
-                      src="https://www.youtube.com/embed/QvanD2KLEKI?rel=0&modestbranding=1"
-                      title="Ekinox AI Workflow Demo - Recipe Agent with Email Automation"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
+                    <Video
+                      src="demo.mp4"
+                      className="w-full h-full object-cover"
+                      autoPlay={true}
+                      loop={true}
+                      muted={true}
+                      controls={false}
+                      enableLightbox={true}
                     />
                   ) : (
                     <>

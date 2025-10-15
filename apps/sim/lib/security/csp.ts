@@ -70,7 +70,7 @@ export const buildTimeCSPDirectives: CSPDirectives = {
     ...getHostnameFromUrl(env.NEXT_PUBLIC_BRAND_FAVICON_URL),
   ],
 
-  'media-src': ["'self'", 'blob:'],
+  'media-src': ["'self'", 'blob:', 'https://*.vercel-storage.com'],
 
   'font-src': ["'self'", 'https://fonts.gstatic.com'],
 
@@ -152,7 +152,7 @@ export function generateRuntimeCSP(): string {
     script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://apis.google.com;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     img-src 'self' data: blob: https://*.googleusercontent.com https://*.google.com https://*.atlassian.com https://cdn.discordapp.com https://*.githubusercontent.com ${brandLogoDomain} ${brandFaviconDomain};
-    media-src 'self' blob:;
+    media-src 'self' blob: https://*.vercel-storage.com;
     font-src 'self' https://fonts.gstatic.com;
     connect-src 'self' ${appUrl} ${ollamaUrl} ${socketUrl} ${socketWsUrl} https://api.browser-use.com https://api.exa.ai https://api.firecrawl.dev https://*.googleapis.com https://*.amazonaws.com https://*.s3.amazonaws.com https://*.blob.core.windows.net https://api.github.com https://github.com/* https://*.atlassian.com https://*.supabase.co ${dynamicDomainsStr};
     frame-src https://drive.google.com https://docs.google.com https://*.google.com;
