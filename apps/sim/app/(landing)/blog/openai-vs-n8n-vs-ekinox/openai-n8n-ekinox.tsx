@@ -465,7 +465,7 @@ export default function OpenAiN8nEkinox() {
                 What is Ekinox?
               </h2>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
-                Ekinox is a platform specifically designed for
+                Ekinox is a fully open-source platform (Apache 2.0 license) specifically designed for
                 AI agent development. Unlike platforms that added AI capabilities as an
                 afterthought, Ekinox was created from the ground up to address the unique challenges of
                 building, testing, and deploying production-ready AI agents.
@@ -732,7 +732,7 @@ export default function OpenAiN8nEkinox() {
               </p>
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
                 <strong>Limitations:</strong> No SDK for programmatic workflow building, fair-use
-                licensing, 14-day trial limitation, and AI agent
+                licensing (not fully open source), 14-day trial limitation, and AI agent
                 capabilities are newer and less mature compared to its traditional automation
                 features.
               </p>
