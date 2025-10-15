@@ -1,15 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Play, Zap } from 'lucide-react'
-
-type DemoTab = 'video' | 'gif'
 
 export default function DemoSection() {
-  const [activeTab, setActiveTab] = useState<DemoTab>('video')
-
   return (
     <section className="relative py-24 bg-gradient-to-br from-slate-50 to-white overflow-hidden">
       {/* Background decoration */}
@@ -60,52 +55,9 @@ export default function DemoSection() {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {activeTab === 'video'
-              ? 'Watch a complete workflow build from start to finish. See how to create an AI recipe agent with automated email delivery in just 1 minute.'
-              : 'Watch how easy it is to build powerful AI workflows with our visual interface. No coding required, just drag, connect, and deploy.'
-            }
+            Watch how easy it is to build powerful AI workflows with our visual interface.
+            No coding required, just drag, connect, and deploy.
           </p>
-        </motion.div>
-
-        {/* Demo Tabs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-8"
-        >
-          <div className="inline-flex items-center gap-2 p-1.5 bg-white rounded-xl shadow-md border border-gray-200">
-            <button
-              onClick={() => setActiveTab('video')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                activeTab === 'video'
-                  ? 'text-white shadow-lg'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-              style={{
-                backgroundColor: activeTab === 'video' ? 'var(--brand-accent-hex)' : 'transparent',
-              }}
-            >
-              <Play className="w-4 h-4" />
-              <span>Full Walkthrough</span>
-              <span className="text-xs opacity-75">(1 min)</span>
-            </button>
-            <button
-              onClick={() => setActiveTab('gif')}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                activeTab === 'gif'
-                  ? 'text-white shadow-lg'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-              style={{
-                backgroundColor: activeTab === 'gif' ? 'var(--brand-accent-hex)' : 'transparent',
-              }}
-            >
-              <Zap className="w-4 h-4" />
-              <span>Quick Demo</span>
-            </button>
-          </div>
         </motion.div>
 
         {/* Demo Container */}
@@ -137,39 +89,20 @@ export default function DemoSection() {
               </div>
             </div>
 
-            {/* Demo Content - Video or GIF */}
+            {/* Demo GIF Container */}
             <div className="relative bg-gradient-to-br from-gray-50 to-white">
               <div className="aspect-video relative overflow-hidden">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-full h-full"
-                >
-                  {activeTab === 'video' ? (
-                    <iframe
-                      src="https://www.youtube.com/embed/QvanD2KLEKI?rel=0&modestbranding=1"
-                      title="Ekinox AI Workflow Demo - Recipe Agent with Email Automation"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  ) : (
-                    <>
-                      <Image
-                        src="/static/demo.gif"
-                        alt="Ekinox platform demo showing visual AI workflow creation"
-                        fill
-                        className="object-cover"
-                        priority
-                        unoptimized
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none" />
-                    </>
-                  )}
-                </motion.div>
+                <Image
+                  src="/static/demo.gif"
+                  alt="Ekinox platform demo showing visual AI workflow creation"
+                  fill
+                  className="object-cover"
+                  priority
+                  unoptimized
+                />
+
+                {/* Overlay gradient for smooth edges */}
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
 
@@ -177,33 +110,14 @@ export default function DemoSection() {
             <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  {activeTab === 'video' ? (
-                    <>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-purple-400" />
-                        <span className="text-sm text-gray-600">Recipe AI Agent</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-green-400" />
-                        <span className="text-sm text-gray-600">Gmail Integration</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-blue-400" />
-                        <span className="text-sm text-gray-600">Live Deployment</span>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-blue-400" />
-                        <span className="text-sm text-gray-600">Building workflow...</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-green-400" />
-                        <span className="text-sm text-gray-600">AI processing</span>
-                      </div>
-                    </>
-                  )}
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-blue-400" />
+                    <span className="text-sm text-gray-600">Building workflow...</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-green-400" />
+                    <span className="text-sm text-gray-600">AI processing</span>
+                  </div>
                 </div>
               </div>
             </div>
