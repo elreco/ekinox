@@ -39,7 +39,8 @@ describe('Tools Registry', () => {
     expect(tools.function_execute).toBeDefined()
 
     // Check for some integrations
-    expect(tools.gmail_read).toBeDefined()
+    // DISABLED: gmail_read requires CASA certification
+    // expect(tools.gmail_read).toBeDefined()
     expect(tools.gmail_send).toBeDefined()
     expect(tools.google_drive_list).toBeDefined()
     expect(tools.serper_search).toBeDefined()
@@ -51,10 +52,16 @@ describe('Tools Registry', () => {
     expect(httpTool?.id).toBe('http_request')
     expect(httpTool?.name).toBe('HTTP Request')
 
-    const gmailTool = getTool('gmail_read')
-    expect(gmailTool).toBeDefined()
-    expect(gmailTool?.id).toBe('gmail_read')
-    expect(gmailTool?.name).toBe('Gmail Read')
+    // DISABLED: gmail_read requires CASA certification
+    // const gmailTool = getTool('gmail_read')
+    // expect(gmailTool).toBeDefined()
+    // expect(gmailTool?.id).toBe('gmail_read')
+    // expect(gmailTool?.name).toBe('Gmail Read')
+
+    const gmailSendTool = getTool('gmail_send')
+    expect(gmailSendTool).toBeDefined()
+    expect(gmailSendTool?.id).toBe('gmail_send')
+    expect(gmailSendTool?.name).toBe('Gmail Send')
   })
 
   it.concurrent('getTool should return undefined for non-existent tool', () => {

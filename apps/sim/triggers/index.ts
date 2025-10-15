@@ -3,7 +3,6 @@
 import { airtableWebhookTrigger } from './airtable'
 import { genericWebhookTrigger } from './generic'
 import { githubWebhookTrigger } from './github'
-import { gmailPollingTrigger } from './gmail'
 import { googleFormsWebhookTrigger } from './googleforms/webhook'
 import {
   microsoftTeamsChatSubscriptionTrigger,
@@ -22,7 +21,6 @@ export const TRIGGER_REGISTRY: TriggerRegistry = {
   airtable_webhook: airtableWebhookTrigger,
   generic_webhook: genericWebhookTrigger,
   github_webhook: githubWebhookTrigger,
-  gmail_poller: gmailPollingTrigger,
   microsoftteams_webhook: microsoftTeamsWebhookTrigger,
   microsoftteams_chat_subscription: microsoftTeamsChatSubscriptionTrigger,
   outlook_poller: outlookPollingTrigger,

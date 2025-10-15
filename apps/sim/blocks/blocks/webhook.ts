@@ -18,7 +18,6 @@ import { AuthMode } from '@/blocks/types'
 const getWebhookProviderIcon = (provider: string) => {
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     slack: SlackIcon,
-    gmail: GmailIcon,
     outlook: OutlookIcon,
     airtable: AirtableIcon,
     telegram: TelegramIcon,
@@ -52,7 +51,6 @@ export const WebhookBlock: BlockConfig = {
       layout: 'full',
       options: [
         'slack',
-        'gmail',
         'outlook',
         'airtable',
         'telegram',
@@ -65,7 +63,6 @@ export const WebhookBlock: BlockConfig = {
       ].map((provider) => {
         const providerLabels = {
           slack: 'Slack',
-          gmail: 'Gmail',
           outlook: 'Outlook',
           airtable: 'Airtable',
           telegram: 'Telegram',
@@ -86,20 +83,22 @@ export const WebhookBlock: BlockConfig = {
       }),
       value: () => 'generic',
     },
-    {
-      id: 'gmailCredential',
-      title: 'Gmail Account',
-      type: 'oauth-input',
-      layout: 'full',
-      provider: 'google-email',
-      serviceId: 'gmail',
-      requiredScopes: [
-        'https://www.googleapis.com/auth/gmail.labels',
-      ],
-      placeholder: 'Select Gmail account',
-      condition: { field: 'webhookProvider', value: 'gmail' },
-      required: true,
-    },
+    // DISABLED: Gmail webhook requires CASA-restricted scopes (gmail.readonly/gmail.modify)
+    // {
+    //   id: 'gmailCredential',
+    //   title: 'Gmail Account',
+    //   type: 'oauth-input',
+    //   layout: 'full',
+    //   provider: 'google-email',
+    //   serviceId: 'gmail',
+    //   requiredScopes: [
+    //     'https://www.googleapis.com/auth/gmail.readonly',
+    //     'https://www.googleapis.com/auth/gmail.labels',
+    //   ],
+    //   placeholder: 'Select Gmail account',
+    //   condition: { field: 'webhookProvider', value: 'gmail' },
+    //   required: true,
+    // },
     {
       id: 'outlookCredential',
       title: 'Microsoft Account',

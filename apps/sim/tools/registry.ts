@@ -32,7 +32,7 @@ import {
   githubPrTool,
   githubRepoInfoTool,
 } from '@/tools/github'
-import { gmailDraftTool, gmailReadTool, gmailSearchTool, gmailSendTool } from '@/tools/gmail'
+import { gmailDraftTool, gmailSendTool } from '@/tools/gmail'
 import { searchTool as googleSearchTool } from '@/tools/google'
 import {
   googleCalendarCreateTool,
@@ -268,8 +268,6 @@ export const tools: Record<string, ToolConfig> = {
   notion_search: notionSearchTool,
   notion_create_database: notionCreateDatabaseTool,
   gmail_send: gmailSendTool,
-  gmail_read: gmailReadTool,
-  gmail_search: gmailSearchTool,
   gmail_draft: gmailDraftTool,
   whatsapp_send_message: whatsappSendMessageTool,
   x_write: xWriteTool,
