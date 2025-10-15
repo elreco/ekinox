@@ -94,7 +94,7 @@ ${message}
     }
 
     const emailResult = await sendEmail({
-      to: [`help@${env.EMAIL_DOMAIN || getEmailDomain()}`],
+      to: [`alexandrelecorre.pro@${env.EMAIL_DOMAIN || getEmailDomain()}`],
       subject: `[${type.toUpperCase()}] ${subject}`,
       text: emailText,
       from: getFromEmailAddress(),
@@ -128,7 +128,7 @@ ${message}
         subject: `Your ${type} request has been received: ${subject}`,
         html: confirmationHtml,
         from: getFromEmailAddress(),
-        replyTo: `help@${env.EMAIL_DOMAIN || getEmailDomain()}`,
+        replyTo: `alexandrelecorre.pro@${env.EMAIL_DOMAIN || getEmailDomain()}`,
         emailType: 'transactional',
       })
     } catch (err) {
