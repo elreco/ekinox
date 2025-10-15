@@ -279,9 +279,9 @@ export default function WorkflowsPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/70 via-gray-800/60 to-gray-900/70"></div>
       </div>
 
-      <main className="pt-20 relative z-10">
+      <main className="relative z-10">
 
-        <section className="relative z-10 px-6 md:px-10 lg:px-16 xl:px-24 py-24 md:py-32 overflow-hidden">
+        <section className="relative z-10 px-6 md:px-10 lg:px-16 xl:px-24 py-24 md:pt-44 md:pb-32 overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
