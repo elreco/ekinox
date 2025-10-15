@@ -270,17 +270,17 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
     overscroll-behavior-x: none;
     overscroll-behavior-y: none;
     min-height: 100vh;
-    /* Prevent layout shifts when scrollbar appears/disappears */
     scrollbar-gutter: stable;
-    /* Improve animation performance */
-    text-rendering: optimizeSpeed;
-    /* Optimize rendering for animations and transitions */
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
   }
 
   /* Prevent Flash of Unstyled Content (FOUC) on landing pages */

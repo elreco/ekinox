@@ -10,6 +10,7 @@ import '@/app/globals.css'
 import { SessionProvider } from '@/lib/session/session-context'
 import { ThemeProvider } from '@/app/theme-provider'
 import { ZoomPrevention } from '@/app/zoom-prevention'
+import { inter } from '@/app/fonts/inter'
 
 const logger = createLogger('RootLayout')
 
@@ -88,7 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <PublicEnvScript />
       </head>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning className={inter.variable}>
         <PostHogProvider>
           <ThemeProvider>
             <SessionProvider>
