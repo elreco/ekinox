@@ -39,6 +39,7 @@ const FOOTER_LINKS = [
 ]
 
 const SOCIAL_LINKS = [
+  { icon: Twitter, href: 'https://x.com/ekinoxapp', name: 'Twitter' },
   { icon: Linkedin, href: 'https://linkedin.com/in/alexandre-le-corre', name: 'LinkedIn' },
 ]
 

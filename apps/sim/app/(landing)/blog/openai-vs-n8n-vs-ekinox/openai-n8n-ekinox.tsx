@@ -24,7 +24,7 @@ export default function OpenAiN8nEkinox() {
       '@type': 'Person',
       name: 'Alexandre Le Corre',
       url: 'https://linkedin.com/in/alexandre-le-corre',
-      sameAs: ['https://linkedin.com/in/alexandre-le-corre'],
+      sameAs: ['https://linkedin.com/in/alexandre-le-corre', 'https://x.com/ekinoxapp'],
     },
     publisher: {
       '@type': 'Organization',

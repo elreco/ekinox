@@ -120,7 +120,7 @@ export const metadata: Metadata = {
       'Compare OpenAI AgentKit, n8n, and Ekinox for building AI agent workflows. Explore key differences in capabilities, integrations, and which platform fits your production needs.',
     images: ['/blog/openai-vs-n8n-vs-ekinox/workflow.png'],
     creator: '@karabegemir',
-    site: '@ekinox',
+    site: '@ekinoxapp',
   },
   other: {
     'article:published_time': '2025-10-06T00:00:00.000Z',

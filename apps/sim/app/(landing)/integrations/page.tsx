@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: 'Ekinox Integrations - 100+ Apps',
     description:
       'Connect with Slack, Gmail, OpenAI, Notion, and 100+ apps. Pre-built connectors for automation.',
+    site: '@ekinoxapp',
   },
   alternates: {
     canonical: 'https://www.ekinox.app/integrations',

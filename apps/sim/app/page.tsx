@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@ekinox',
-    creator: '@ekinox',
+    site: '@ekinoxapp',
+    creator: '@ekinoxapp',
     title: 'Ekinox - Visual AI Automation Platform',
     description:
       'Visual AI workflow builder for intelligent automation. No-code platform trusted by businesses. 100+ integrations. Enterprise-grade security.',

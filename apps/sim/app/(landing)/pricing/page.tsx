@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: 'Ekinox Pricing - Free to Enterprise',
     description:
       'Free plan available. Pro €30/mo, Team €100/mo, Enterprise €500/mo. Start your 14-day free trial.',
+    site: '@ekinoxapp',
   },
   alternates: {
     canonical: 'https://www.ekinox.app/pricing',

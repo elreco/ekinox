@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: 'Ekinox Features - AI Workflow Platform',
     description:
       'Visual canvas, intelligent automation, enterprise security. Build AI workflows without code.',
+    site: '@ekinoxapp',
   },
   alternates: {
     canonical: 'https://www.ekinox.app/features',

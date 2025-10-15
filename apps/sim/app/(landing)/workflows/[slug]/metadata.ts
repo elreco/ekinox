@@ -93,6 +93,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: 'summary_large_image',
       title: `${workflow.title} | Ekinox`,
       description: workflow.description,
+      site: '@ekinoxapp',
     },
   }
 }
