@@ -1140,15 +1140,19 @@ const WorkflowContent = React.memo(() => {
     // 1. We have an active workflow that matches the URL
     // 2. The workflow exists in the registry
     // 3. Workflows are not currently loading
+    // 4. Blocks have been loaded (if the workflow has blocks in registry, they must be in local state too)
     const workflowInRegistry = workflows[currentId]
+    const hasBlocksInRegistry = workflowInRegistry && Object.keys(workflowInRegistry.blocks || {}).length > 0
+    const hasBlocksInState = Object.keys(blocks).length > 0
 
     const shouldBeReady =
       activeWorkflowId === currentId &&
       Boolean(workflowInRegistry) &&
-      !isLoading
+      !isLoading &&
+      (!hasBlocksInRegistry || hasBlocksInState)
 
     setIsWorkflowReady(shouldBeReady)
-  }, [activeWorkflowId, params.workflowId, workflows, isLoading])
+  }, [activeWorkflowId, params.workflowId, workflows, isLoading, blocks])
 
   // Handle navigation and validation
   useEffect(() => {
