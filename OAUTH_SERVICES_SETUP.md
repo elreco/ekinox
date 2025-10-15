@@ -79,7 +79,6 @@ NEXT_PUBLIC_GOOGLE_PROJECT_NUMBER=123456789
    https://www.googleapis.com/auth/userinfo.email
    https://www.googleapis.com/auth/userinfo.profile
    https://www.googleapis.com/auth/gmail.send
-   https://www.googleapis.com/auth/gmail.modify
    https://www.googleapis.com/auth/gmail.labels
    https://www.googleapis.com/auth/calendar
    https://www.googleapis.com/auth/drive.file
@@ -88,7 +87,7 @@ NEXT_PUBLIC_GOOGLE_PROJECT_NUMBER=123456789
 **💡 Pourquoi 7 URIs différents ?** Chaque service Google (Gmail, Calendar, Drive, Docs, Sheets, Forms, Vault) utilise son propre callback pour plus de sécurité et de granularité dans les permissions.
 
 **Services supportés avec ces scopes :**
-- **Gmail** : Envoi, modification, gestion des labels
+- **Gmail** : Envoi, gestion des labels
 - **Calendar** : Lecture/écriture des événements
 - **Drive/Docs/Sheets** : Accès aux fichiers créés par l'app
 

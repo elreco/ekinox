@@ -94,7 +94,6 @@ export const WebhookBlock: BlockConfig = {
       provider: 'google-email',
       serviceId: 'gmail',
       requiredScopes: [
-        'https://www.googleapis.com/auth/gmail.modify',
         'https://www.googleapis.com/auth/gmail.labels',
       ],
       placeholder: 'Select Gmail account',

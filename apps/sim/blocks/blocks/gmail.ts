@@ -40,8 +40,6 @@ export const GmailBlock: BlockConfig<GmailToolResponse> = {
       serviceId: 'gmail',
       requiredScopes: [
         'https://www.googleapis.com/auth/gmail.send',
-        'https://www.googleapis.com/auth/gmail.modify',
-        'https://www.googleapis.com/auth/gmail.readonly',
         'https://www.googleapis.com/auth/gmail.labels',
       ],
       placeholder: 'Select Gmail account',
@@ -106,7 +104,6 @@ export const GmailBlock: BlockConfig<GmailToolResponse> = {
       provider: 'google-email',
       serviceId: 'gmail',
       requiredScopes: [
-        'https://www.googleapis.com/auth/gmail.readonly',
         'https://www.googleapis.com/auth/gmail.labels',
       ],
       placeholder: 'Select Gmail label/folder',
