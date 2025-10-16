@@ -12,6 +12,7 @@ import ReactFlow, {
   useReactFlow,
 } from 'reactflow'
 import 'reactflow/dist/style.css'
+import { LoadingEkinox } from '@/components/ui/loading-ekinox'
 import { createLogger } from '@/lib/logs/console/logger'
 import { TriggerUtils } from '@/lib/workflows/triggers'
 import { useUserPermissionsContext } from '@/app/workspace/[workspaceId]/providers/workspace-permissions-provider'
@@ -1922,7 +1923,9 @@ const WorkflowContent = React.memo(() => {
   }, [collaborativeSetSubblockValue])
 
   // Show skeleton UI while loading until the workflow store is hydrated and nodes are ready
-  const showSkeletonUI = !isWorkflowReady || isLoading || !isRehydrated
+  // Special case: if workflow is ready, not loading, and empty, consider it rehydrated
+  const isEffectivelyRehydrated = isRehydrated || (isWorkflowReady && !isLoading && isWorkflowEmpty)
+  const showSkeletonUI = !isWorkflowReady || isLoading || !isEffectivelyRehydrated
 
   if (showSkeletonUI) {
     return (
@@ -1932,13 +1935,16 @@ const WorkflowContent = React.memo(() => {
             <Panel />
           </div>
           <ControlBar hasValidationErrors={nestedSubflowErrors.size > 0} />
-          <div className='workflow-container h-full'>
+          <div className='workflow-container flex h-full items-center justify-center'>
             <Background
               color='hsl(var(--workflow-dots))'
               size={4}
               gap={40}
               style={{ backgroundColor: 'hsl(var(--workflow-background))' }}
             />
+            <div className='z-10'>
+              <LoadingEkinox size='lg' />
+            </div>
           </div>
         </div>
       </div>
@@ -2026,7 +2032,7 @@ const WorkflowContent = React.memo(() => {
         />
 
         {/* Trigger list for empty workflows - only show after workflow has loaded and hydrated */}
-        {isWorkflowReady && !isLoading && isRehydrated && isWorkflowEmpty && effectivePermissions.canEdit && (
+        {isWorkflowReady && !isLoading && isEffectivelyRehydrated && isWorkflowEmpty && effectivePermissions.canEdit && (
           <TriggerList onSelect={handleTriggerSelect} />
         )}
       </div>
