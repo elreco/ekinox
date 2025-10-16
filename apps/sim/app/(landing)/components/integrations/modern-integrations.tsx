@@ -18,6 +18,7 @@ const modelProviderIcons = [
   { icon: Icons.HuggingFaceIcon, label: 'HuggingFace' },
   { icon: Icons.OllamaIcon, label: 'Ollama' },
   { icon: Icons.ElevenLabsIcon, label: 'ElevenLabs' },
+  { icon: Icons.V0Icon, label: 'v0' },
 ]
 
 // Communication and productivity tools

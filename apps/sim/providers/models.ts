@@ -19,6 +19,7 @@ import {
   OllamaIcon,
   OpenAIIcon,
   OpenRouterIcon,
+  V0Icon,
   xAIIcon,
 } from '@/components/icons'
 
@@ -65,6 +66,53 @@ export interface ProviderDefinition {
  * Comprehensive provider definitions, single source of truth
  */
 export const PROVIDER_DEFINITIONS: Record<string, ProviderDefinition> = {
+  v0: {
+    id: 'v0',
+    name: 'v0',
+    description: 'v0 by Vercel - AI models for modern web development',
+    defaultModel: 'v0-1.5-md',
+    modelPatterns: [/^v0-/],
+    icon: V0Icon,
+    capabilities: {
+      temperature: { min: 0, max: 2 },
+      toolUsageControl: true,
+    },
+    models: [
+      {
+        id: 'v0-1.5-md',
+        pricing: {
+          input: 2.5,
+          output: 10.0,
+          updatedAt: '2025-10-16',
+        },
+        capabilities: {
+          temperature: { min: 0, max: 2 },
+        },
+      },
+      {
+        id: 'v0-1.5-lg',
+        pricing: {
+          input: 5.0,
+          output: 15.0,
+          updatedAt: '2025-10-16',
+        },
+        capabilities: {
+          temperature: { min: 0, max: 2 },
+        },
+      },
+      {
+        id: 'v0-1.0-md',
+        pricing: {
+          input: 2.0,
+          output: 8.0,
+          updatedAt: '2025-10-16',
+        },
+        capabilities: {
+          temperature: { min: 0, max: 2 },
+        },
+      },
+    ],
+  },
   openrouter: {
     id: 'openrouter',
     name: 'OpenRouter',

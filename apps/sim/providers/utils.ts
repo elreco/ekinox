@@ -29,6 +29,7 @@ import { ollamaProvider } from '@/providers/ollama'
 import { openaiProvider } from '@/providers/openai'
 import { openRouterProvider } from '@/providers/openrouter'
 import type { ProviderConfig, ProviderId, ProviderToolConfig } from '@/providers/types'
+import { v0Provider } from '@/providers/v0'
 import { xAIProvider } from '@/providers/xai'
 import { useCustomToolsStore } from '@/stores/custom-tools/store'
 import { useProvidersStore } from '@/stores/providers/store'
@@ -104,6 +105,11 @@ export const providers: Record<
     ...ollamaProvider,
     models: getProviderModelsFromDefinitions('ollama'),
     modelPatterns: PROVIDER_DEFINITIONS.ollama.modelPatterns,
+  },
+  v0: {
+    ...v0Provider,
+    models: getProviderModelsFromDefinitions('v0'),
+    modelPatterns: PROVIDER_DEFINITIONS.v0.modelPatterns,
   },
 }
 

@@ -14,6 +14,7 @@ const modelProviderIcons = [
   { icon: Icons.OllamaIcon, label: 'Ollama' },
   { icon: Icons.DeepseekIcon, label: 'Deepseek' },
   { icon: Icons.ElevenLabsIcon, label: 'ElevenLabs' },
+  { icon: Icons.V0Icon, label: 'v0' },
 ]
 
 // Communication and productivity tools
