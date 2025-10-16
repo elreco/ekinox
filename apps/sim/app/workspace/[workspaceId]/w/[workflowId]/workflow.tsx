@@ -39,6 +39,7 @@ import {
   updateNodeParent as updateNodeParentUtil,
 } from '@/app/workspace/[workspaceId]/w/[workflowId]/utils'
 import { getBlock } from '@/blocks'
+import { useSocket } from '@/contexts/socket-context'
 import { useCollaborativeWorkflow } from '@/hooks/use-collaborative-workflow'
 import { useStreamCleanup } from '@/hooks/use-stream-cleanup'
 import { useWorkspacePermissions } from '@/hooks/use-workspace-permissions'
@@ -120,6 +121,9 @@ const WorkflowContent = React.memo(() => {
 
   // Use the clean abstraction for current workflow state
   const currentWorkflow = useCurrentWorkflow()
+
+  // Get socket context to know when stores are rehydrated
+  const { isRehydrated } = useSocket()
 
   const {
     updateNodeDimensions,
@@ -1917,8 +1921,8 @@ const WorkflowContent = React.memo(() => {
     }
   }, [collaborativeSetSubblockValue])
 
-  // Show skeleton UI while loading until the workflow store is hydrated
-  const showSkeletonUI = !isWorkflowReady
+  // Show skeleton UI while loading until the workflow store is hydrated and nodes are ready
+  const showSkeletonUI = !isWorkflowReady || isLoading || !isRehydrated
 
   if (showSkeletonUI) {
     return (
@@ -2022,7 +2026,7 @@ const WorkflowContent = React.memo(() => {
         />
 
         {/* Trigger list for empty workflows - only show after workflow has loaded and hydrated */}
-        {isWorkflowReady && isWorkflowEmpty && effectivePermissions.canEdit && (
+        {isWorkflowReady && !isLoading && isRehydrated && isWorkflowEmpty && effectivePermissions.canEdit && (
           <TriggerList onSelect={handleTriggerSelect} />
         )}
       </div>

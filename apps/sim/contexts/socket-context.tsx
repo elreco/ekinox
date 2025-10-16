@@ -34,6 +34,7 @@ interface SocketContextType {
   socket: Socket | null
   isConnected: boolean
   isConnecting: boolean
+  isRehydrated: boolean
   currentWorkflowId: string | null
   presenceUsers: PresenceUser[]
   joinWorkflow: (workflowId: string) => void
@@ -73,6 +74,7 @@ const SocketContext = createContext<SocketContextType>({
   socket: null,
   isConnected: false,
   isConnecting: false,
+  isRehydrated: false,
   currentWorkflowId: null,
   presenceUsers: [],
   joinWorkflow: () => {},
@@ -106,6 +108,7 @@ export function SocketProvider({ children, user }: SocketProviderProps) {
   const [socket, setSocket] = useState<Socket | null>(null)
   const [isConnected, setIsConnected] = useState(false)
   const [isConnecting, setIsConnecting] = useState(false)
+  const [isRehydrated, setIsRehydrated] = useState(false)
   const [currentWorkflowId, setCurrentWorkflowId] = useState<string | null>(null)
   const [presenceUsers, setPresenceUsers] = useState<PresenceUser[]>([])
   const initializedRef = useRef(false)
@@ -475,6 +478,7 @@ export function SocketProvider({ children, user }: SocketProviderProps) {
 
           if (workflowData?.state) {
             await rehydrateWorkflowStores(workflowData.id, workflowData.state, 'workflow-state')
+            setIsRehydrated(true)
           }
         })
 
@@ -521,6 +525,7 @@ export function SocketProvider({ children, user }: SocketProviderProps) {
 
     // Join the new workflow room
     logger.info(`Joining workflow room: ${urlWorkflowId}`)
+    setIsRehydrated(false)
     socket.emit('join-workflow', {
       workflowId: urlWorkflowId,
     })
@@ -781,6 +786,7 @@ export function SocketProvider({ children, user }: SocketProviderProps) {
         socket,
         isConnected,
         isConnecting,
+        isRehydrated,
         currentWorkflowId,
         presenceUsers,
         joinWorkflow,
