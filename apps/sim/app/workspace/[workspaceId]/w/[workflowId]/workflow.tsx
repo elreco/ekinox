@@ -12,7 +12,6 @@ import ReactFlow, {
   useReactFlow,
 } from 'reactflow'
 import 'reactflow/dist/style.css'
-import { LoadingEkinox } from '@/components/ui/loading-ekinox'
 import { createLogger } from '@/lib/logs/console/logger'
 import { TriggerUtils } from '@/lib/workflows/triggers'
 import { useUserPermissionsContext } from '@/app/workspace/[workspaceId]/providers/workspace-permissions-provider'
@@ -40,7 +39,6 @@ import {
   updateNodeParent as updateNodeParentUtil,
 } from '@/app/workspace/[workspaceId]/w/[workflowId]/utils'
 import { getBlock } from '@/blocks'
-import { useSocket } from '@/contexts/socket-context'
 import { useCollaborativeWorkflow } from '@/hooks/use-collaborative-workflow'
 import { useStreamCleanup } from '@/hooks/use-stream-cleanup'
 import { useWorkspacePermissions } from '@/hooks/use-workspace-permissions'
@@ -89,7 +87,6 @@ interface BlockData {
 const WorkflowContent = React.memo(() => {
   // State
   const [isWorkflowReady, setIsWorkflowReady] = useState(false)
-  const [hasCompletedInitialLoad, setHasCompletedInitialLoad] = useState(false)
 
   // State for tracking node dragging
   const [draggedNodeId, setDraggedNodeId] = useState<string | null>(null)
@@ -124,9 +121,6 @@ const WorkflowContent = React.memo(() => {
 
   // Use the clean abstraction for current workflow state
   const currentWorkflow = useCurrentWorkflow()
-
-  // Get socket context to know when stores are rehydrated
-  const { isRehydrated } = useSocket()
 
   const {
     updateNodeDimensions,
@@ -1922,23 +1916,8 @@ const WorkflowContent = React.memo(() => {
     }
   }, [collaborativeSetSubblockValue])
 
-  // Reset initial load state when workflow changes
-  useEffect(() => {
-    setHasCompletedInitialLoad(false)
-  }, [activeWorkflowId])
-
-  // Track when initial load is complete
-  useEffect(() => {
-    if (!hasCompletedInitialLoad && isWorkflowReady && !isLoading) {
-      const isEffectivelyRehydrated = isRehydrated || isWorkflowEmpty
-      if (isEffectivelyRehydrated) {
-        setHasCompletedInitialLoad(true)
-      }
-    }
-  }, [hasCompletedInitialLoad, isWorkflowReady, isLoading, isRehydrated, isWorkflowEmpty])
-
-  // Show skeleton UI only during initial load
-  const showSkeletonUI = !hasCompletedInitialLoad
+  // Show skeleton UI while loading until the workflow store is hydrated
+  const showSkeletonUI = !isWorkflowReady
 
   if (showSkeletonUI) {
     return (
@@ -1948,16 +1927,13 @@ const WorkflowContent = React.memo(() => {
             <Panel />
           </div>
           <ControlBar hasValidationErrors={nestedSubflowErrors.size > 0} />
-          <div className='workflow-container flex h-full items-center justify-center'>
+          <div className='workflow-container h-full'>
             <Background
               color='hsl(var(--workflow-dots))'
               size={4}
               gap={40}
               style={{ backgroundColor: 'hsl(var(--workflow-background))' }}
             />
-            <div className='z-10'>
-              <LoadingEkinox size='lg' />
-            </div>
           </div>
         </div>
       </div>
@@ -2051,7 +2027,7 @@ const WorkflowContent = React.memo(() => {
         />
 
         {/* Trigger list for empty workflows - only show after workflow has loaded and hydrated */}
-        {hasCompletedInitialLoad && isWorkflowEmpty && effectivePermissions.canEdit && (
+        {isWorkflowReady && isWorkflowEmpty && effectivePermissions.canEdit && (
           <TriggerList onSelect={handleTriggerSelect} />
         )}
       </div>
