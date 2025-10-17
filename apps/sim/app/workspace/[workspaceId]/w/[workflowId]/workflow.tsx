@@ -89,6 +89,7 @@ interface BlockData {
 const WorkflowContent = React.memo(() => {
   // State
   const [isWorkflowReady, setIsWorkflowReady] = useState(false)
+  const [hasCompletedInitialLoad, setHasCompletedInitialLoad] = useState(false)
 
   // State for tracking node dragging
   const [draggedNodeId, setDraggedNodeId] = useState<string | null>(null)
@@ -1921,10 +1922,23 @@ const WorkflowContent = React.memo(() => {
     }
   }, [collaborativeSetSubblockValue])
 
-  // Show skeleton UI while loading until the workflow store is hydrated and nodes are ready
-  // Special case: if workflow is ready, not loading, and empty, consider it rehydrated
-  const isEffectivelyRehydrated = isRehydrated || (isWorkflowReady && !isLoading && isWorkflowEmpty)
-  const showSkeletonUI = !isWorkflowReady || isLoading || !isEffectivelyRehydrated
+  // Reset initial load state when workflow changes
+  useEffect(() => {
+    setHasCompletedInitialLoad(false)
+  }, [activeWorkflowId])
+
+  // Track when initial load is complete
+  useEffect(() => {
+    if (!hasCompletedInitialLoad && isWorkflowReady && !isLoading) {
+      const isEffectivelyRehydrated = isRehydrated || isWorkflowEmpty
+      if (isEffectivelyRehydrated) {
+        setHasCompletedInitialLoad(true)
+      }
+    }
+  }, [hasCompletedInitialLoad, isWorkflowReady, isLoading, isRehydrated, isWorkflowEmpty])
+
+  // Show skeleton UI only during initial load
+  const showSkeletonUI = !hasCompletedInitialLoad
 
   if (showSkeletonUI) {
     return (
@@ -2037,7 +2051,7 @@ const WorkflowContent = React.memo(() => {
         />
 
         {/* Trigger list for empty workflows - only show after workflow has loaded and hydrated */}
-        {isWorkflowReady && !isLoading && isEffectivelyRehydrated && isWorkflowEmpty && effectivePermissions.canEdit && (
+        {hasCompletedInitialLoad && isWorkflowEmpty && effectivePermissions.canEdit && (
           <TriggerList onSelect={handleTriggerSelect} />
         )}
       </div>
