@@ -48,7 +48,7 @@ export async function GET() {
       <rss version="2.0">
         <channel>
           <title>Ekinox Changelog</title>
-          <link>https://sim.dev/changelog</link>
+          <link>https://www.ekinox.app/changelog</link>
           <description>Latest changes, fixes and updates in Ekinox.</description>
           <language>en-us</language>
           ${items}

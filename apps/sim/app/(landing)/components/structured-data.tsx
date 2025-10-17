@@ -163,7 +163,7 @@ export default function StructuredData() {
           'Visual workflow builder',
           'Drag-and-drop interface',
           '100+ integrations',
-          'AI model support (OpenAI, Anthropic, Google)',
+          'AI model support (OpenAI, Anthropic, Google, xAI, Mistral, Perplexity)',
           'Real-time collaboration',
           'Version control',
           'API access',

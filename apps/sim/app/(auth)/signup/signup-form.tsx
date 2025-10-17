@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { client, useSession } from '@/lib/auth-client'
 import { quickValidateEmail } from '@/lib/email/validation'
-import { env, isFalsy, isTruthy } from '@/lib/env'
+import { getEnv, isFalsy, isTruthy } from '@/lib/env'
 import { createLogger } from '@/lib/logs/console/logger'
 import { cn } from '@/lib/utils'
 import { SocialLoginButtons } from '@/app/(auth)/components/social-login-buttons'
@@ -403,8 +403,8 @@ function SignupFormContent({
 
       {/* SSO Login Button (primary top-only when it is the only method) */}
       {(() => {
-        const ssoEnabled = isTruthy(env.NEXT_PUBLIC_SSO_ENABLED)
-        const emailEnabled = !isFalsy(env.NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED)
+        const ssoEnabled = isTruthy(getEnv('NEXT_PUBLIC_SSO_ENABLED'))
+        const emailEnabled = !isFalsy(getEnv('NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED'))
         const hasSocial = githubAvailable || googleAvailable
         const hasOnlySSO = ssoEnabled && !emailEnabled && !hasSocial
         return hasOnlySSO
@@ -419,7 +419,7 @@ function SignupFormContent({
       )}
 
       {/* Email/Password Form - show unless explicitly disabled */}
-      {!isFalsy(env.NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED) && (
+      {!isFalsy(getEnv('NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED')) && (
         <form onSubmit={onSubmit} className={`${inter.className} mt-8 space-y-8`}>
           <div className='space-y-6'>
             <div className='space-y-2'>
@@ -536,8 +536,8 @@ function SignupFormContent({
 
       {/* Divider - show when we have multiple auth methods */}
       {(() => {
-        const ssoEnabled = isTruthy(env.NEXT_PUBLIC_SSO_ENABLED)
-        const emailEnabled = !isFalsy(env.NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED)
+        const ssoEnabled = isTruthy(getEnv('NEXT_PUBLIC_SSO_ENABLED'))
+        const emailEnabled = !isFalsy(getEnv('NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED'))
         const hasSocial = githubAvailable || googleAvailable
         const hasOnlySSO = ssoEnabled && !emailEnabled && !hasSocial
         const showBottomSection = hasSocial || (ssoEnabled && !hasOnlySSO)
@@ -555,8 +555,8 @@ function SignupFormContent({
       )}
 
       {(() => {
-        const ssoEnabled = isTruthy(env.NEXT_PUBLIC_SSO_ENABLED)
-        const emailEnabled = !isFalsy(env.NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED)
+        const ssoEnabled = isTruthy(getEnv('NEXT_PUBLIC_SSO_ENABLED'))
+        const emailEnabled = !isFalsy(getEnv('NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED'))
         const hasSocial = githubAvailable || googleAvailable
         const hasOnlySSO = ssoEnabled && !emailEnabled && !hasSocial
         const showBottomSection = hasSocial || (ssoEnabled && !hasOnlySSO)
@@ -565,7 +565,7 @@ function SignupFormContent({
         <div
           className={cn(
             inter.className,
-            isFalsy(env.NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED) ? 'mt-8' : undefined
+            isFalsy(getEnv('NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED')) ? 'mt-8' : undefined
           )}
         >
           <SocialLoginButtons
@@ -574,7 +574,7 @@ function SignupFormContent({
             callbackURL={redirectUrl || '/workspace'}
             isProduction={isProduction}
           >
-            {isTruthy(env.NEXT_PUBLIC_SSO_ENABLED) && (
+            {isTruthy(getEnv('NEXT_PUBLIC_SSO_ENABLED')) && (
               <SSOLoginButton
                 callbackURL={redirectUrl || '/workspace'}
                 variant='outline'

@@ -42,7 +42,8 @@ vi.mock('@/lib/env', () => ({
 }))
 
 vi.mock('@/lib/urls/utils', () => ({
-  getEmailDomain: vi.fn().mockReturnValue('www.ekinox.app'),
+  getEmailDomain: vi.fn().mockReturnValue('ekinox.app'),
+  getBaseUrl: vi.fn().mockReturnValue('https://www.ekinox.app'),
 }))
 
 import { type EmailType, sendBatchEmails, sendEmail } from '@/lib/email/mailer'
