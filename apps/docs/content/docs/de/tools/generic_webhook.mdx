@@ -6,15 +6,15 @@ description: Empfangen Sie Webhooks von jedem Dienst durch Konfiguration eines
 
 import { BlockInfoCard } from "@/components/ui/block-info-card"
 
-<BlockInfoCard 
+<BlockInfoCard
   type="generic_webhook"
   color="#10B981"
   icon={true}
   iconSvg={`<svg className="block-icon"
-      
+
       fill='currentColor'
-      
-      
+
+
       viewBox='0 0 24 24'
       xmlns='http://www.w3.org/2000/svg'
     >
@@ -25,7 +25,7 @@ import { BlockInfoCard } from "@/components/ui/block-info-card"
 
 ## Übersicht
 
-Der Generic Webhook-Block ermöglicht es Ihnen, Webhooks von jedem externen Dienst zu empfangen. Dies ist ein flexibler Auslöser, der jede JSON-Nutzlast verarbeiten kann und sich daher ideal für die Integration mit Diensten eignet, die keinen dedizierten Sim-Block haben.
+Der Generic Webhook-Block ermöglicht es Ihnen, Webhooks von jedem externen Dienst zu empfangen. Dies ist ein flexibler Auslöser, der jede JSON-Nutzlast verarbeiten kann und sich daher ideal für die Integration mit Diensten eignet, die keinen dedizierten Ekinox-Block haben.
 
 ## Grundlegende Verwendung
 
@@ -36,7 +36,7 @@ Ohne ein Eingabeformat zu definieren, leitet der Webhook den gesamten Anforderun
 ```bash
 curl -X POST https://sim.ai/api/webhooks/trigger/{webhook-path} \
   -H "Content-Type: application/json" \
-  -H "X-Sim-Secret: your-secret" \
+  -H "X-Ekinox-Secret: your-secret" \
   -d '{
     "message": "Test webhook trigger",
     "data": {
@@ -68,7 +68,7 @@ Definieren Sie ein Eingabeschema, um typisierte Felder zu erhalten und erweitert
 ```bash
 curl -X POST https://sim.ai/api/webhooks/trigger/{webhook-path} \
   -H "Content-Type: application/json" \
-  -H "X-Sim-Secret: your-secret" \
+  -H "X-Ekinox-Secret: your-secret" \
   -d '{
     "message": "Invoice submission",
     "priority": 1,
@@ -158,7 +158,7 @@ echo "Hello World" | base64
 # Send webhook with file
 curl -X POST https://sim.ai/api/webhooks/trigger/{webhook-path} \
   -H "Content-Type: application/json" \
-  -H "X-Sim-Secret: your-secret" \
+  -H "X-Ekinox-Secret: your-secret" \
   -d '{
     "subject": "Document for review",
     "attachments": [
@@ -180,7 +180,7 @@ In der Webhook-Konfiguration:
 1. Aktiviere "Authentifizierung erforderlich"
 2. Setze einen geheimen Token
 3. Wähle den Header-Typ:
-   - **Benutzerdefinierter Header**: `X-Sim-Secret: your-token`
+   - **Benutzerdefinierter Header**: `X-Ekinox-Secret: your-token`
    - **Authorization Bearer**: `Authorization: Bearer your-token`
 
 ### Verwendung der Authentifizierung
@@ -189,7 +189,7 @@ In der Webhook-Konfiguration:
 # With custom header
 curl -X POST https://sim.ai/api/webhooks/trigger/{webhook-path} \
   -H "Content-Type: application/json" \
-  -H "X-Sim-Secret: your-secret-token" \
+  -H "X-Ekinox-Secret: your-secret-token" \
   -d '{"message": "Authenticated request"}'
 
 # With bearer token
