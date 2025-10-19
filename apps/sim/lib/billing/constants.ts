@@ -10,9 +10,9 @@ export const DEFAULT_FREE_CREDITS = 5
 /**
  * Default per-user minimum limits (in dollars) for paid plans when env vars are absent
  */
-export const DEFAULT_PRO_TIER_COST_LIMIT = 20
-export const DEFAULT_TEAM_TIER_COST_LIMIT = 60
-export const DEFAULT_ENTERPRISE_TIER_COST_LIMIT = 300
+export const DEFAULT_PRO_TIER_COST_LIMIT = 30
+export const DEFAULT_TEAM_TIER_COST_LIMIT = 100
+export const DEFAULT_ENTERPRISE_TIER_COST_LIMIT = 500
 
 /**
  * Base charge applied to every workflow execution
