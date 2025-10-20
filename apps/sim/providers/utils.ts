@@ -1,3 +1,4 @@
+import { getEnv, isTruthy } from '@/lib/env'
 import { isHosted } from '@/lib/environment'
 import { createLogger } from '@/lib/logs/console/logger'
 import { anthropicProvider } from '@/providers/anthropic'
@@ -135,8 +136,8 @@ export async function updateOpenRouterProviderModels(models: string[]): Promise<
 }
 
 export function getBaseModelProviders(): Record<string, ProviderId> {
-  return Object.entries(providers)
-    .filter(([providerId]) => providerId !== 'ollama')
+  const allProviders = Object.entries(providers)
+    .filter(([providerId]) => providerId !== 'ollama' && providerId !== 'openrouter')
     .reduce(
       (map, [providerId, config]) => {
         config.models.forEach((model) => {
@@ -146,6 +147,20 @@ export function getBaseModelProviders(): Record<string, ProviderId> {
       },
       {} as Record<string, ProviderId>
     )
+
+  return filterBlacklistedModelsFromProviderMap(allProviders)
+}
+
+function filterBlacklistedModelsFromProviderMap(
+  providerMap: Record<string, ProviderId>
+): Record<string, ProviderId> {
+  const filtered: Record<string, ProviderId> = {}
+  for (const [model, providerId] of Object.entries(providerMap)) {
+    if (!isModelBlacklisted(model)) {
+      filtered[model] = providerId
+    }
+  }
+  return filtered
 }
 
 export function getAllModelProviders(): Record<string, ProviderId> {
@@ -201,6 +216,44 @@ export function getAllProviderIds(): ProviderId[] {
 
 export function getProviderModels(providerId: ProviderId): string[] {
   return getProviderModelsFromDefinitions(providerId)
+}
+
+interface ModelBlacklist {
+  models: string[]
+  prefixes: string[]
+  envOverride?: string
+}
+
+const MODEL_BLACKLISTS: ModelBlacklist[] = [
+  {
+    models: ['deepseek-chat', 'deepseek-v3', 'deepseek-r1'],
+    prefixes: ['openrouter/deepseek', 'openrouter/tngtech'],
+    envOverride: 'DEEPSEEK_MODELS_ENABLED',
+  },
+]
+
+function isModelBlacklisted(model: string): boolean {
+  const lowerModel = model.toLowerCase()
+
+  for (const blacklist of MODEL_BLACKLISTS) {
+    if (blacklist.envOverride && isTruthy(getEnv(blacklist.envOverride))) {
+      continue
+    }
+
+    if (blacklist.models.includes(lowerModel)) {
+      return true
+    }
+
+    if (blacklist.prefixes.some((prefix) => lowerModel.startsWith(prefix))) {
+      return true
+    }
+  }
+
+  return false
+}
+
+export function filterBlacklistedModels(models: string[]): string[] {
+  return models.filter((model) => !isModelBlacklisted(model))
 }
 
 /**

@@ -22,9 +22,15 @@ export const metadata = {
     'drag and drop workflows',
     'AI integrations',
     'workflow canvas',
-    'AI development platform',
+    'AI Agent Workflow Builder',
+    'workflow orchestration',
+    'agent builder',
+    'AI workflow automation',
+    'visual programming',
   ],
   authors: [{ name: 'Ekinox Team', url: 'https://www.ekinox.app' }],
+  creator: 'Ekinox',
+  publisher: 'Ekinox',
   category: 'Developer Tools',
   classification: 'Developer Documentation',
   manifest: '/favicon/site.webmanifest',
@@ -44,7 +50,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['fr_FR', 'es_ES', 'de_DE'],
+    alternateLocale: ['es_ES', 'fr_FR', 'de_DE', 'ja_JP', 'zh_CN'],
     url: 'https://docs.ekinox.app',
     siteName: 'Ekinox Documentation',
     title: 'Ekinox Documentation - Visual Workflow Builder for AI Applications',
@@ -52,11 +58,13 @@ export const metadata = {
       'Comprehensive documentation for Ekinox - the visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines.',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Ekinox Documentation - Visual Workflow Builder for AI Applications',
     description:
       'Comprehensive documentation for Ekinox - the visual workflow builder for AI applications.',
-    creator: '@ekinox',
+    creator: '@ekinoxapp',
+    site: '@ekinoxapp',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -72,9 +80,13 @@ export const metadata = {
   alternates: {
     canonical: 'https://docs.ekinox.app',
     languages: {
-      en: '/en',
-      fr: '/fr',
-      zh: '/zh',
+      'x-default': 'https://docs.ekinox.app',
+      en: 'https://docs.ekinox.app',
+      es: 'https://docs.ekinox.app/es',
+      fr: 'https://docs.ekinox.app/fr',
+      de: 'https://docs.ekinox.app/de',
+      ja: 'https://docs.ekinox.app/ja',
+      zh: 'https://docs.ekinox.app/zh',
     },
   },
 }

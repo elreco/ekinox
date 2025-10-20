@@ -12,7 +12,7 @@ export const ZepBlock: BlockConfig<ZepResponse> = {
   bgColor: '#E8E8E8',
   icon: ZepIcon,
   category: 'tools',
-  docsLink: 'https://docs.sim.ai/tools/zep',
+  docsLink: 'https://docs.ekinox.app/tools/zep',
   subBlocks: [
     {
       id: 'operation',

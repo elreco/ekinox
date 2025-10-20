@@ -71,6 +71,31 @@ export const GmailBlock: BlockConfig<GmailToolResponse> = {
       condition: { field: 'operation', value: ['send_gmail', 'draft_gmail'] },
       required: true,
     },
+    // File upload (basic mode)
+    {
+      id: 'attachmentFiles',
+      title: 'Attachments',
+      type: 'file-upload',
+      layout: 'full',
+      canonicalParamId: 'attachments',
+      placeholder: 'Upload files to attach',
+      condition: { field: 'operation', value: ['send_gmail', 'draft_gmail'] },
+      mode: 'basic',
+      multiple: true,
+      required: false,
+    },
+    // Variable reference (advanced mode)
+    {
+      id: 'attachments',
+      title: 'Attachments',
+      type: 'short-input',
+      layout: 'full',
+      canonicalParamId: 'attachments',
+      placeholder: 'Reference files from previous blocks',
+      condition: { field: 'operation', value: ['send_gmail', 'draft_gmail'] },
+      mode: 'advanced',
+      required: false,
+    },
     // Advanced Settings - Additional Recipients
     {
       id: 'cc',
@@ -215,12 +240,14 @@ export const GmailBlock: BlockConfig<GmailToolResponse> = {
     body: { type: 'string', description: 'Email content' },
     cc: { type: 'string', description: 'CC recipients (comma-separated)' },
     bcc: { type: 'string', description: 'BCC recipients (comma-separated)' },
-    // DISABLED: Read/Search operation inputs (requires CASA certification)
+    attachments: { type: 'json', description: 'Files to attach (UserFile array)' },
+    // Read operation inputs
     // folder: { type: 'string', description: 'Gmail folder' },
     // manualFolder: { type: 'string', description: 'Manual folder name' },
     // messageId: { type: 'string', description: 'Message identifier' },
     // unreadOnly: { type: 'boolean', description: 'Unread messages only' },
     // includeAttachments: { type: 'boolean', description: 'Include email attachments' },
+    // Search operation inputs
     // query: { type: 'string', description: 'Search query' },
     // maxResults: { type: 'number', description: 'Maximum results' },
   },

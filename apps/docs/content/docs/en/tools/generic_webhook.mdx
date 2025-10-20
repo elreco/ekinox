@@ -37,7 +37,7 @@ The Generic Webhook block allows you to receive webhooks from any external servi
 Without defining an input format, the webhook passes through the entire request body as-is:
 
 ```bash
-curl -X POST https://sim.ai/api/webhooks/trigger/{webhook-path} \
+curl -X POST https://www.ekinox.app/api/webhooks/trigger/{webhook-path} \
   -H "Content-Type: application/json" \
   -H "X-Ekinox-Secret: your-secret" \
   -d '{
@@ -67,7 +67,7 @@ Define an input schema to get typed fields and enable advanced features like fil
 
 **Webhook Request:**
 ```bash
-curl -X POST https://sim.ai/api/webhooks/trigger/{webhook-path} \
+curl -X POST https://www.ekinox.app/api/webhooks/trigger/{webhook-path} \
   -H "Content-Type: application/json" \
   -H "X-Ekinox-Secret: your-secret" \
   -d '{
@@ -157,7 +157,7 @@ echo "Hello World" | base64
 # SGVsbG8gV29ybGQK
 
 # Send webhook with file
-curl -X POST https://sim.ai/api/webhooks/trigger/{webhook-path} \
+curl -X POST https://www.ekinox.app/api/webhooks/trigger/{webhook-path} \
   -H "Content-Type: application/json" \
   -H "X-Ekinox-Secret: your-secret" \
   -d '{
@@ -188,13 +188,13 @@ In the webhook configuration:
 
 ```bash
 # With custom header
-curl -X POST https://sim.ai/api/webhooks/trigger/{webhook-path} \
+curl -X POST https://www.ekinox.app/api/webhooks/trigger/{webhook-path} \
   -H "Content-Type: application/json" \
   -H "X-Ekinox-Secret: your-secret-token" \
   -d '{"message": "Authenticated request"}'
 
 # With bearer token
-curl -X POST https://sim.ai/api/webhooks/trigger/{webhook-path} \
+curl -X POST https://www.ekinox.app/api/webhooks/trigger/{webhook-path} \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer your-secret-token" \
   -d '{"message": "Authenticated request"}'
