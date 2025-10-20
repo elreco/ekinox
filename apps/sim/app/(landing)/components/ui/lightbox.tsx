@@ -63,7 +63,7 @@ export function Lightbox({ isOpen, onClose, src, alt, type }: LightboxProps) {
             src={getAssetUrl(src)}
             autoPlay
             loop
-            muted
+            muted={false}
             playsInline
             className='max-h-[calc(100vh-6rem)] max-w-[calc(100vw-6rem)] rounded-xl outline-none focus:outline-none'
           />
