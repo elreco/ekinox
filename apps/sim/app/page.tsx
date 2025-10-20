@@ -80,7 +80,7 @@ export const metadata: Metadata = {
       'email automation, slack bots, discord moderation, data analysis, customer support, content generation',
     'llm:integrations':
       'OpenAI, Anthropic, Google AI, Slack, Gmail, Discord, Notion, Airtable, Supabase',
-    'llm:pricing': 'free tier available, pro €29/month, enterprise €199/month, custom solutions',
+    'llm:pricing': 'free tier available, pro $30/month, enterprise $500/month, custom solutions',
   },
 }
 

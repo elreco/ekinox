@@ -245,7 +245,7 @@ export default function GlassPricing() {
           <p className="text-gray-500 text-sm">
             All plans include SSL encryption, automatic backups, and 99.9% uptime SLA.
             <br />
-            <span style={{ color: 'var(--brand-accent-hex)' }} className="font-medium">Start your 14-day free trial</span> - No credit card required
+            <span style={{ color: 'var(--brand-accent-hex)' }} className="font-medium">No credit card required for free plan</span>
           </p>
         </motion.div>
       </div>
