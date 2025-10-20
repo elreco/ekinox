@@ -2,15 +2,9 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Check, Star, Zap, Users, Building2, Sparkles, Crown } from 'lucide-react'
+import { Check, Star, Zap, Users, Crown } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { brandConfig } from '@/lib/brand/config'
-import {
-  getFreeTierLimit,
-  getProTierLimit,
-  getTeamTierLimitPerSeat,
-  getEnterpriseTierLimitPerSeat
-} from '@/lib/billing/subscriptions/utils'
 
 function getPricingTiers() {
   return [
@@ -21,7 +15,7 @@ function getPricingTiers() {
       description: 'Perfect for exploring AI automation',
       icon: Star,
       features: [
-        `$${getFreeTierLimit()} AI credits included`,
+        `$5 AI credits included`,
         '10 workflows/minute',
         'Basic integrations',
         'Community support',
@@ -39,7 +33,7 @@ function getPricingTiers() {
       description: 'Ideal for professionals and growing teams',
       icon: Zap,
       features: [
-        `$${getProTierLimit()} AI credits included`,
+        `$30 AI credits included`,
         'Unlimited workflows',
         'All integrations',
         'Copilot AI assistant',
@@ -59,7 +53,7 @@ function getPricingTiers() {
       description: 'Collaboration and team management',
       icon: Users,
       features: [
-        `$${getTeamTierLimitPerSeat()} AI credits included`,
+        `$100 AI credits included`,
         'Everything in Pro',
         'Real-time collaboration',
         'Team management',
@@ -79,7 +73,7 @@ function getPricingTiers() {
       description: 'Advanced features for large organizations',
       icon: Crown,
       features: [
-        `$${getEnterpriseTierLimitPerSeat()} AI credits included`,
+        `$500 AI credits included`,
         'Everything in Team',
         'Unlimited workspaces',
         'Dedicated support 24/7',
