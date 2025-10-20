@@ -657,7 +657,7 @@ export default function OpenAiN8nEkinox() {
               <p className='mb-4 text-[19px] text-gray-800 leading-relaxed'>
                 The platform includes everything needed for production deployments: background job
                 processing, webhook handling, monitoring, and API management. Workflows can be
-                published as REST API endpoints, embedded via SDKs, or run through chat interfaces.
+                published as REST API endpoints or run through chat interfaces.
               </p>
 
               <h3 className='mt-6 mb-3 font-medium text-[22px] leading-tight'>
