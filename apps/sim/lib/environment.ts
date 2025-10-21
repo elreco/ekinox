@@ -39,5 +39,7 @@ export const isEmailVerificationEnabled = isTruthy(env.EMAIL_VERIFICATION_ENABLE
  * Get cost multiplier based on environment
  */
 export function getCostMultiplier(): number {
-  return isProd ? (Number(env.COST_MULTIPLIER) || 1) : 1
+  // TODO: Remove this once we have a proper cost multiplier
+  // return isProd ? (Number(env.COST_MULTIPLIER) || 1) : 1
+  return 2
 }
