@@ -27,6 +27,7 @@ import {
 import { LoadingEkinox } from '@/components/ui/loading-ekinox'
 import { soehne } from '@/app/fonts/soehne/soehne'
 import { LandingPromptStorage } from '@/lib/browser-storage'
+import { ProductHuntBadge } from '@/app/(landing)/components/product-hunt-badge'
 import type { LandingViewportApi } from '../hero/components'
 import {
   CARD_WIDTH,
@@ -399,35 +400,45 @@ export default function MinimalistHero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-8 mb-8"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-3 px-4 py-2 bg-slate-50 border border-gray-200 rounded-full text-sm font-medium text-gray-600"
-            >
-              <div className="flex items-center justify-center">
-                <svg
-                  width={24}
-                  height={17}
-                  viewBox='0 0 48 34'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <g id="logogram">
-                    <path
-                      d="M15.4992 0H36.5808L21.0816 22.9729H0L15.4992 0Z"
-                      fill="#0066CC"
-                    />
-                    <path
-                      d="M16.4224 25.102L10.4192 34H32.5008L48 11.0271H31.7024L22.2064 25.102H16.4224Z"
-                      fill="#00407F"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <span>Visual AI Automation Platform</span>
-            </motion.div>
+            {/* Badges */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-3 px-4 py-2 bg-slate-50 border border-gray-200 rounded-full text-sm font-medium text-gray-600"
+              >
+                <div className="flex items-center justify-center">
+                  <svg
+                    width={24}
+                    height={17}
+                    viewBox='0 0 48 34'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <g id="logogram">
+                      <path
+                        d="M15.4992 0H36.5808L21.0816 22.9729H0L15.4992 0Z"
+                        fill="#0066CC"
+                      />
+                      <path
+                        d="M16.4224 25.102L10.4192 34H32.5008L48 11.0271H31.7024L22.2064 25.102H16.4224Z"
+                        fill="#00407F"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <span>Visual AI Automation Platform</span>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                <ProductHuntBadge theme="light" size="medium" />
+              </motion.div>
+            </div>
 
             <h1 className={`${soehne.className} text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[0.9] tracking-tight`}>
               Build AI Workflows

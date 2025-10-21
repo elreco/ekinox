@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { brandConfig } from '@/lib/brand/config'
+import { ProductHuntBadge } from '@/app/(landing)/components/product-hunt-badge'
 
 const FOOTER_LINKS = [
   {
@@ -72,6 +73,11 @@ export default function ModernFooter() {
                   Empowering businesses with intelligent AI automation.
                   Build, deploy, and scale your workflows visually.
                 </p>
+
+                {/* Product Hunt Badge */}
+                <div className="mb-6">
+                  <ProductHuntBadge theme="dark" size="medium" />
+                </div>
 
                 {/* Social Links */}
                 <div className="flex items-center gap-4">
