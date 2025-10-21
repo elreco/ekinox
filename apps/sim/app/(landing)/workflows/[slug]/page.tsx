@@ -8,63 +8,65 @@ export { generateMetadata } from './metadata'
 
 const workflows = [
   {
-    title: 'Summarize Gmail emails and log to Google Sheets',
+    title: 'Generate personalized outreach emails from spreadsheet',
     description:
-      'Automatically read new emails, extract key information like sender, subject, action items, and deadlines, then append structured summaries to a Google Sheet for easy tracking.',
-    longDescription: 'Perfect for busy professionals who need to track important communications without manual data entry. The AI extracts relevant details and organizes them automatically.',
+      'Read prospect data from Google Sheets, use AI to research each company and generate personalized email content, then send customized outreach emails via Gmail at scale.',
+    longDescription: 'Perfect for sales teams who need to send personalized outreach at scale. The AI researches each prospect and writes tailored messages that feel human.',
     integrations: [
-      { iconName: 'GmailIcon', name: 'Gmail' },
       { iconName: 'GoogleSheetsIcon', name: 'Google Sheets' },
+      { iconName: 'SerperIcon', name: 'Web Search' },
+      { iconName: 'GmailIcon', name: 'Gmail' },
     ],
-    slug: 'gmail-to-sheets-summary',
+    slug: 'personalized-email-outreach',
     category: 'Email Automation',
     steps: [
-      { title: 'New email arrives in Gmail', description: 'Workflow triggers when an email matching your filters arrives in your inbox.' },
-      { title: 'AI extracts sender, subject, urgency', description: 'GPT-4 analyzes the email content and extracts key metadata including priority level.' },
-      { title: 'Identifies action items and deadlines', description: 'Natural language processing detects tasks, owners, and due dates mentioned in the email.' },
-      { title: 'Appends row to Google Sheets', description: 'Structured data is written to your spreadsheet with timestamp and categorization.' }
+      { title: 'Read prospect list from Google Sheets', description: 'Workflow loads prospect data including names, companies, and contact details from your spreadsheet.' },
+      { title: 'AI researches each company online', description: 'Performs targeted web searches to gather recent news, funding, product launches, and key initiatives.' },
+      { title: 'Generates personalized email content', description: 'Creates custom email copy for each prospect, referencing specific company information and value propositions.' },
+      { title: 'Sends tailored emails via Gmail', description: 'Delivers personalized messages through your Gmail account with proper formatting and tracking.' }
     ],
     benefits: [
-      'Never miss important action items buried in email threads',
-      'Automatic categorization and priority scoring',
-      'Searchable archive of all communications',
-      'Team visibility into pending tasks'
+      'Scale personalized outreach without sacrificing quality',
+      'AI-powered research eliminates manual prospecting time',
+      'Higher response rates with relevant, contextual messaging',
+      'Automated follow-up sequences based on engagement'
     ],
     useCases: [
-      'Customer support teams tracking incoming requests',
-      'Sales teams managing leads from email',
-      'Project managers monitoring stakeholder communications',
-      'Executive assistants organizing calendar and tasks'
+      'Sales teams conducting cold outreach campaigns',
+      'Business development targeting ideal customer profiles',
+      'Recruiters reaching out to qualified candidates',
+      'Partnership teams connecting with potential collaborators'
     ]
   },
   {
-    title: 'Analyze Gmail patterns and update CRM insights',
+    title: 'Auto-qualify leads and send follow-up sequences',
     description:
-      'Monitor Gmail for incoming emails from prospects, analyze communication patterns and engagement levels, then automatically update your CRM with AI-generated insights about lead quality and next best actions.',
-    longDescription: 'Transform email interactions into actionable sales intelligence. AI analyzes response times, email content, and engagement patterns to score leads and suggest optimal follow-up strategies.',
+      'Monitor new leads in your CRM, use AI to research company fit and buying signals, score lead quality, then automatically trigger personalized email sequences via Gmail based on qualification tier.',
+    longDescription: 'Automate your lead qualification process. AI evaluates company size, funding, tech stack, and buying intent to prioritize hot leads and nurture cold ones with appropriate messaging.',
     integrations: [
-      { iconName: 'GmailIcon', name: 'Gmail' },
       { iconName: 'AirtableIcon', name: 'CRM' },
+      { iconName: 'SerperIcon', name: 'Web Search' },
+      { iconName: 'GmailIcon', name: 'Gmail' },
     ],
-    slug: 'gmail-crm-insights',
+    slug: 'lead-qualification-followup',
     category: 'Sales Automation',
     steps: [
-      { title: 'Monitor Gmail for prospect emails', description: 'System tracks incoming emails from leads and prospects in your pipeline.' },
-      { title: 'AI analyzes engagement patterns', description: 'Machine learning evaluates response times, email frequency, and content sentiment.' },
-      { title: 'Scores lead quality and interest level', description: 'Algorithm assigns engagement scores based on communication behavior patterns.' },
-      { title: 'Updates CRM with actionable insights', description: 'Automatically adds lead scores, next actions, and engagement notes to your CRM.' }
+      { title: 'New lead detected in CRM', description: 'Workflow activates when a new lead is created or updated in your CRM system.' },
+      { title: 'AI researches company and buying signals', description: 'Analyzes company size, industry, funding rounds, hiring patterns, and recent news for buying intent.' },
+      { title: 'Scores and qualifies lead tier', description: 'Assigns qualification score (hot/warm/cold) based on ideal customer profile fit and engagement signals.' },
+      { title: 'Sends appropriate email sequence via Gmail', description: 'Triggers personalized email campaigns tailored to qualification tier with relevant messaging and timing.' }
     ],
     benefits: [
-      'Automatic lead scoring based on email engagement',
-      'Identify hot prospects without manual analysis',
-      'Data-driven insights for sales prioritization',
-      'Improved conversion rates through better targeting'
+      'Instant lead qualification without manual research',
+      'Prioritize sales efforts on high-potential prospects',
+      'Automated nurture sequences for different lead tiers',
+      'Higher conversion rates with targeted messaging'
     ],
     useCases: [
-      'Sales teams prioritizing follow-up activities',
-      'Account managers tracking client engagement',
-      'Partnership teams reaching out to potential collaborators',
-      'Recruiters contacting qualified candidates'
+      'Sales teams managing high volumes of inbound leads',
+      'SDRs qualifying prospects before handoff to AEs',
+      'Marketing ops routing MQLs to appropriate sequences',
+      'RevOps teams implementing lead scoring at scale'
     ]
   },
   {
@@ -160,34 +162,34 @@ const workflows = [
     ]
   },
   {
-    title: 'Process invoices and extract data',
+    title: 'Generate financial reports and send alerts',
     description:
-      'Automatically extract invoice details from PDF attachments in email, validate totals, detect duplicates, categorize expenses, and post entries to your accounting system with audit logs.',
-    longDescription: 'Eliminate manual data entry errors. The AI reads PDFs, extracts line items, validates calculations, and can even flag suspicious invoices for review.',
+      'Pull transaction data from Stripe and accounting databases, use AI to analyze spending patterns, detect anomalies, categorize expenses, then generate formatted reports and send alerts via Gmail for urgent items.',
+    longDescription: 'Automate your financial monitoring. AI identifies unusual transactions, tracks budget compliance, and generates executive summaries with actionable insights.',
     integrations: [
-      { iconName: 'GmailIcon', name: 'Gmail' },
+      { iconName: 'StripeIcon', name: 'Stripe' },
       { iconName: 'GoogleSheetsIcon', name: 'Google Sheets' },
-      { iconName: 'NotionIcon', name: 'QuickBooks' },
+      { iconName: 'GmailIcon', name: 'Gmail' },
     ],
-    slug: 'invoice-processing',
+    slug: 'financial-monitoring-alerts',
     category: 'Finance Automation',
     steps: [
-      { title: 'Invoice PDF received via email', description: 'Email trigger monitors specific inbox for invoices with PDF attachments.' },
-      { title: 'AI extracts fields and line items', description: 'OCR and NLP parse vendor, amount, date, line items, and payment terms.' },
-      { title: 'Validates totals and checks duplicates', description: 'Cross-references extracted data against existing records and recalculates totals.' },
-      { title: 'Posts to accounting system', description: 'Creates journal entries in QuickBooks or writes to approval queue in Sheets.' }
+      { title: 'Collect transaction data from Stripe', description: 'Pulls recent payment transactions, refunds, and subscription changes from Stripe API.' },
+      { title: 'AI analyzes spending and detects anomalies', description: 'Machine learning identifies unusual spending patterns, large transactions, and budget overruns.' },
+      { title: 'Categorizes expenses and validates budgets', description: 'Automatically assigns expense categories and compares against approved budgets and historical trends.' },
+      { title: 'Sends formatted reports and alerts via Gmail', description: 'Generates executive-ready financial summaries and immediate alerts for anomalies requiring attention.' }
     ],
     benefits: [
-      '10x faster invoice processing',
-      'Reduced data entry errors',
-      'Automatic duplicate detection',
-      'Audit trail for compliance'
+      'Real-time visibility into financial health',
+      'Early detection of unusual spending patterns',
+      'Automated expense categorization and reporting',
+      'Proactive alerts for budget overruns'
     ],
     useCases: [
-      'Accounts payable teams at scaling companies',
-      'Finance ops automating month-end close',
-      'Controllers enforcing expense policies',
-      'Accounting firms serving multiple clients'
+      'Finance teams monitoring monthly spending',
+      'CFOs tracking budget compliance across departments',
+      'Controllers managing cash flow and forecasting',
+      'Startups monitoring burn rate and runway'
     ]
   },
   {

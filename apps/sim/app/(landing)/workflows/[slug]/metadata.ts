@@ -2,17 +2,17 @@ import type { Metadata } from 'next'
 
 const workflows = [
   {
-    title: 'Summarize Gmail emails and log to Google Sheets',
+    title: 'Generate personalized outreach emails from spreadsheet',
     description:
-      'Automatically read new emails, extract key information like sender, subject, action items, and deadlines, then append structured summaries to a Google Sheet for easy tracking.',
-    slug: 'gmail-to-sheets-summary',
+      'Read prospect data from Google Sheets, use AI to research each company and generate personalized email content, then send customized outreach emails via Gmail at scale.',
+    slug: 'personalized-email-outreach',
     category: 'Email Automation',
   },
   {
-    title: 'Analyze Gmail patterns and update CRM insights',
+    title: 'Auto-qualify leads and send follow-up sequences',
     description:
-      'Monitor Gmail for incoming emails from prospects, analyze communication patterns and engagement levels, then automatically update your CRM with AI-generated insights about lead quality and next best actions.',
-    slug: 'gmail-crm-insights',
+      'Monitor new leads in your CRM, use AI to research company fit and buying signals, score lead quality, then automatically trigger personalized email sequences via Gmail based on qualification tier.',
+    slug: 'lead-qualification-followup',
     category: 'Sales Automation',
   },
   {
@@ -37,10 +37,10 @@ const workflows = [
     category: 'Analytics',
   },
   {
-    title: 'Process invoices and extract data',
+    title: 'Generate financial reports and send alerts',
     description:
-      'Automatically extract invoice details from PDF attachments in email, validate totals, detect duplicates, categorize expenses, and post entries to your accounting system with audit logs.',
-    slug: 'invoice-processing',
+      'Pull transaction data from Stripe and accounting databases, use AI to analyze spending patterns, detect anomalies, categorize expenses, then generate formatted reports and send alerts via Gmail for urgent items.',
+    slug: 'financial-monitoring-alerts',
     category: 'Finance Automation',
   },
   {

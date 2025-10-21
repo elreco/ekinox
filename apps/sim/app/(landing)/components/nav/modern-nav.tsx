@@ -9,12 +9,12 @@ import { useRouter } from 'next/navigation'
 import * as Icons from '@/components/icons'
 
 const WORKFLOWS = [
-  { name: 'Gmail to Sheets', href: '/workflows/gmail-to-sheets-summary', description: 'Extract email insights', icons: ['GmailIcon', 'GoogleSheetsIcon'] },
-  { name: 'Gmail CRM Insights', href: '/workflows/gmail-crm-insights', description: 'Analyze engagement patterns', icons: ['GmailIcon', 'AirtableIcon'] },
+  { name: 'Email Outreach', href: '/workflows/personalized-email-outreach', description: 'Personalized at scale', icons: ['GoogleSheetsIcon', 'GmailIcon'] },
+  { name: 'Lead Qualification', href: '/workflows/lead-qualification-followup', description: 'Auto-qualify & nurture', icons: ['AirtableIcon', 'GmailIcon'] },
   { name: 'Lead Enrichment', href: '/workflows/lead-enrichment', description: 'AI web research', icons: ['AirtableIcon', 'SerperIcon'] },
   { name: 'Support Triage', href: '/workflows/support-triage', description: 'Auto-categorize tickets', icons: ['MailIcon', 'SlackIcon'] },
   { name: 'Weekly Reports', href: '/workflows/weekly-reporting', description: 'Automated insights', icons: ['GoogleSheetsIcon', 'SlackIcon'] },
-  { name: 'Invoice Processing', href: '/workflows/invoice-processing', description: 'Extract invoice data', icons: ['GmailIcon', 'StripeIcon'] },
+  { name: 'Financial Reports', href: '/workflows/financial-monitoring-alerts', description: 'Spending insights', icons: ['StripeIcon', 'GmailIcon'] },
   { name: 'Calendar Insights', href: '/workflows/calendar-productivity-insights', description: 'Optimize schedule', icons: ['GoogleCalendarIcon', 'NotionIcon'] },
   { name: 'Slack Digest', href: '/workflows/slack-daily-digest', description: 'Team communications', icons: ['SlackIcon', 'NotionIcon'] },
   { name: 'Social Monitoring', href: '/workflows/social-media-monitoring', description: 'Brand mentions', icons: ['xIcon', 'LinkedInIcon'] }

@@ -12,39 +12,41 @@ import * as Icons from '@/components/icons'
 
 const workflows = [
   {
-    title: 'Summarize Gmail emails and log to Google Sheets',
+    title: 'Generate personalized outreach emails from spreadsheet',
     description:
-      'Automatically read new emails, extract key information like sender, subject, action items, and deadlines, then append structured summaries to a Google Sheet for easy tracking.',
-    longDescription: 'Perfect for busy professionals who need to track important communications without manual data entry. The AI extracts relevant details and organizes them automatically.',
+      'Read prospect data from Google Sheets, use AI to research each company and generate personalized email content, then send customized outreach emails via Gmail at scale.',
+    longDescription: 'Perfect for sales teams who need to send personalized outreach at scale. The AI researches each prospect and writes tailored messages that feel human.',
     integrations: [
-      { icon: Icons.GmailIcon, name: 'Gmail' },
       { icon: Icons.GoogleSheetsIcon, name: 'Google Sheets' },
+      { icon: Icons.SerperIcon, name: 'Web Search' },
+      { icon: Icons.GmailIcon, name: 'Gmail' },
     ],
-    slug: 'gmail-to-sheets-summary',
+    slug: 'personalized-email-outreach',
     category: 'Email Automation',
     steps: [
-      'New email arrives in Gmail',
-      'AI extracts sender, subject, urgency',
-      'Identifies action items and deadlines',
-      'Appends row to Google Sheets'
+      'Read prospect list from Google Sheets',
+      'AI researches each company online',
+      'Generates personalized email content',
+      'Sends tailored emails via Gmail'
     ]
   },
   {
-    title: 'Analyze Gmail patterns and update CRM insights',
+    title: 'Auto-qualify leads and send follow-up sequences',
     description:
-      'Monitor Gmail for incoming emails from prospects, analyze communication patterns and engagement levels, then automatically update your CRM with AI-generated insights about lead quality and next best actions.',
-    longDescription: 'Transform email interactions into actionable sales intelligence. AI analyzes response times, email content, and engagement patterns to score leads and suggest optimal follow-up strategies.',
+      'Monitor new leads in your CRM, use AI to research company fit and buying signals, score lead quality, then automatically trigger personalized email sequences via Gmail based on qualification tier.',
+    longDescription: 'Automate your lead qualification process. AI evaluates company size, funding, tech stack, and buying intent to prioritize hot leads and nurture cold ones with appropriate messaging.',
     integrations: [
-      { icon: Icons.GmailIcon, name: 'Gmail' },
       { icon: Icons.AirtableIcon, name: 'CRM' },
+      { icon: Icons.SerperIcon, name: 'Web Search' },
+      { icon: Icons.GmailIcon, name: 'Gmail' },
     ],
-    slug: 'gmail-crm-insights',
+    slug: 'lead-qualification-followup',
     category: 'Sales Automation',
     steps: [
-      'Monitor Gmail for prospect emails',
-      'AI analyzes engagement patterns',
-      'Scores lead quality and interest level',
-      'Updates CRM with actionable insights'
+      'New lead detected in CRM',
+      'AI researches company and buying signals',
+      'Scores and qualifies lead tier',
+      'Sends appropriate email sequence via Gmail'
     ]
   },
   {
@@ -104,22 +106,22 @@ const workflows = [
     ]
   },
   {
-    title: 'Process invoices and extract data',
+    title: 'Generate financial reports and send alerts',
     description:
-      'Automatically extract invoice details from PDF attachments in email, validate totals, detect duplicates, categorize expenses, and post entries to your accounting system with audit logs.',
-    longDescription: 'Eliminate manual data entry errors. The AI reads PDFs, extracts line items, validates calculations, and can even flag suspicious invoices for review.',
+      'Pull transaction data from Stripe and accounting databases, use AI to analyze spending patterns, detect anomalies, categorize expenses, then generate formatted reports and send alerts via Gmail for urgent items.',
+    longDescription: 'Automate your financial monitoring. AI identifies unusual transactions, tracks budget compliance, and generates executive summaries with actionable insights.',
     integrations: [
-      { icon: Icons.GmailIcon, name: 'Gmail' },
-      { icon: Icons.GoogleSheetsIcon, name: 'Google Sheets' },
       { icon: Icons.StripeIcon, name: 'Stripe' },
+      { icon: Icons.GoogleSheetsIcon, name: 'Google Sheets' },
+      { icon: Icons.GmailIcon, name: 'Gmail' },
     ],
-    slug: 'invoice-processing',
+    slug: 'financial-monitoring-alerts',
     category: 'Finance Automation',
     steps: [
-      'Invoice PDF received via email',
-      'AI extracts fields and line items',
-      'Validates totals and checks duplicates',
-      'Posts to accounting system'
+      'Collect transaction data from Stripe',
+      'AI analyzes spending and detects anomalies',
+      'Categorizes expenses and validates budgets',
+      'Sends formatted reports and alerts via Gmail'
     ]
   },
   {
