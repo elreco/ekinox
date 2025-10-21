@@ -53,17 +53,17 @@ export default async function Layout({ children, params }: LayoutProps) {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Sim Documentation',
+    name: 'Ekinox Documentation',
     description:
-      'Comprehensive documentation for Sim - the visual workflow builder for AI Agent Workflows.',
-    url: 'https://docs.sim.ai',
+      'Comprehensive documentation for Ekinox - the visual workflow builder for AI Agent Workflows.',
+    url: 'https://docs.ekinox.app',
     publisher: {
       '@type': 'Organization',
-      name: 'Sim',
-      url: 'https://sim.ai',
+      name: 'Ekinox',
+      url: 'https://www.ekinox.app',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://docs.sim.ai/static/logo.png',
+        url: 'https://docs.ekinox.app/static/logo.png',
       },
     },
     inLanguage: lang,
@@ -71,7 +71,7 @@ export default async function Layout({ children, params }: LayoutProps) {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://docs.sim.ai/api/search?q={search_term_string}',
+        urlTemplate: 'https://docs.ekinox.app/api/search?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
@@ -101,7 +101,7 @@ export default async function Layout({ children, params }: LayoutProps) {
               title: (
                 <Image
                   src='/static/logo.png'
-                  alt='Sim'
+                  alt='Ekinox'
                   width={72}
                   height={28}
                   className='h-7 w-auto'
