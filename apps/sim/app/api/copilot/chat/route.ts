@@ -17,6 +17,7 @@ import type { CopilotProviderConfig } from '@/lib/copilot/types'
 import { env } from '@/lib/env'
 import { getCostMultiplier } from '@/lib/environment'
 import { createLogger } from '@/lib/logs/console/logger'
+import { calculateCost } from '@/providers/utils'
 import { hasExceededCostLimit } from '@/lib/billing/core/subscription'
 import { SIM_AGENT_API_URL_DEFAULT, SIM_AGENT_VERSION } from '@/lib/sim-agent/constants'
 import { generateChatTitle } from '@/lib/sim-agent/utils'
@@ -42,12 +43,23 @@ async function updateCopilotCost(
 
     const multiplier = getCostMultiplier()
 
+    // Calculate the cost before sending to the API
+    const costResult = calculateCost(
+      model,
+      inputTokens,
+      outputTokens,
+      false, // useCachedInput
+      multiplier, // inputMultiplier
+      multiplier  // outputMultiplier
+    )
+
     logger.info('Attempting to update Copilot cost', {
       userId,
       model,
       inputTokens,
       outputTokens,
       multiplier,
+      calculatedCost: costResult.total,
     })
 
     const response = await fetch(`${env.BETTER_AUTH_URL}/api/billing/update-cost`, {
@@ -58,11 +70,7 @@ async function updateCopilotCost(
       },
       body: JSON.stringify({
         userId,
-        input: inputTokens,
-        output: outputTokens,
-        model,
-        inputMultiplier: multiplier,
-        outputMultiplier: multiplier,
+        cost: costResult.total,
       }),
     })
 
@@ -73,6 +81,7 @@ async function updateCopilotCost(
         model,
         inputTokens,
         outputTokens,
+        calculatedCost: costResult.total,
         error,
       })
     } else {
